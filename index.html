@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danniela Teixeira | Arquitetura e Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            background-color: #0a0a0a;
+            color: #a3a3a3; 
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            color: #cccccc;
+            font-weight: 300; 
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(10, 10, 10, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo-img {
+            height: 90px; 
+            width: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #a3a3a3;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav a:hover, .lang-btn:hover {
+            color: #c5a880; 
+        }
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+            border-left: 1px solid #333;
+            padding-left: 20px;
+        }
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a3a3a3;
+            font-size: 13px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .lang-btn.active {
+            color: #cccccc;
+            font-weight: 500;
+        }
+
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); 
+            z-index: 1;
+        }
+        .hero-content {
+            z-index: 2;
+            padding: 0 20px;
+            margin-top: 100px;
+        }
+        .hero h1 {
+            font-size: 44px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .btn {
+            padding: 15px 30px;
+            border: 1px solid #a3a3a3;
+            color: #cccccc;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #c5a880; 
+            border-color: #c5a880;
+            color: #0a0a0a;
+        }
+
+        .sobre, .projetos {
+            padding: 100px 5%;
+            text-align: center;
+        }
+        .sobre p {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        .projetos h2, .sobre h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .projeto-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+        .projeto-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: brightness(0.8);
+        }
+        .projeto-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+        .projeto-info {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: #cccccc;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: left;
+        }
+        .projeto-item:hover .projeto-info {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #050505;
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #222;
+        }
+        footer a {
+            color: #a3a3a3;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+            z-index: 2000;
+            text-decoration: none;
+        }
+        .whatsapp-float svg {
+            width: 30px;
+            height: 30px;
+            fill: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; gap: 10px; }
+            .logo-img { height: 55px; }
+            .nav-container { flex-direction: column; gap: 10px; width: 100%; }
+            nav ul { gap: 15px; }
+            .hero-content { margin-top: 140px; }
+            .hero h1 { font-size: 28px; }
+            .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#hero" class="logo">
+            <img src="logo.png" alt="Logo Danniela Teixeira" class="logo-img">
+        </a>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="#hero" data-i18n="menu_inicio">Início</a></li>
+                    <li><a href="#sobre" data-i18n="menu_escritorio">Escritório</a></li>
+                    <li><a href="#projetos" data-i18n="menu_projetos">Projetos</a></li>
+                    <li><a href="#contato" data-i18n="menu_contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="changeLanguage('pt')">PT</button>
+                <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero_titulo">Arquitetura com Propósito</h1>
+            <p data-i18n="hero_subtitulo">Transformando espaços em experiências únicas e atemporais, feitas sob medida para a sua essência.</p>
+            <a href="#projetos" class="btn" data-i18n="hero_botao">Conheça os Projetos</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <h2 data-i18n="sobre_titulo">A Essência do Morar Bem</h2>
+        <p data-i18n="sobre_texto">Liderado por Danniela Teixeira, nosso escritório acredita que a arquitetura vai além da estética: é sobre traduzir identidade, conforto e funcionalidade em cada detalhe. Nosso compromisso é entregar projetos sofisticados e exclusivos.</p>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 data-i18n="projetos_titulo">Projetos em Destaque</h2>
+        <div class="grid-projetos">
+            <div class="projeto-item">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Projeto">
+                <div class="projeto-info">
+                    <h3 data-i18n="proj1_titulo">Residência Aurora</h3>
+                    <p data-i18n="proj1_desc">Design de Interiores</p>
+                </div>
+            </div>
+            <div class="projeto-item">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Projeto">
+                <div class="projeto-info">
+                    <h3 data-i18n="proj2_titulo">Apartamento Horizonte</h3>
+                    <p data-i18n="proj2_desc">Arquitetura Contemporânea</p>
+                </div>
+            </div>
+            <div class="projeto-item">
+                <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=800&q=80" alt="Projeto">
+                <div class="projeto-info">
+                    <h3 data-i18n="proj3_titulo">Casa Vértice</h3>
+                    <p data-i18n="proj3_desc">Reforma Completa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <footer>
+            <h3 data-i18n="footer_titulo">Vamos conversar sobre o seu projeto?</h3>
+            <p style="margin-bottom: 20px;" data-i18n="footer_subtitulo">Entre em contato para agendarmos uma reunião.</p>
+            <br>
+            <a href="https://wa.me/353833684707" target="_blank">WhatsApp</a>
+            <a href="https://www.instagram.com/arquitetadanniela_/" target="_blank">Instagram</a>
+            <a href="mailto:contato@arquitetadanniela.com.br">E-mail</a>
+            <p style="margin-top: 40px; font-size: 12px; color: #555;">&copy; 2026 Danniela Teixeira. Todos os direitos reservados.</p>
+        </footer>
+    </section>
+
+    <a href="https://wa.me/353833684707" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.9 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+
+    <script>
+        const translations = {
+            pt: {
+                menu_inicio: "Início", menu_escritorio: "Escritório", menu_projetos: "Projetos", menu_contato: "Contato",
+                hero_titulo: "Arquitetura com Propósito", hero_subtitulo: "Transformando espaços em experiências únicas e atemporais, feitas sob medida para a sua essência.",
+                hero_botao: "Conheça os Projetos", sobre_titulo: "A Essência do Morar Bem", sobre_texto: "Liderado por Danniela Teixeira, nosso escritório acredita que a arquitetura vai além da estética: é sobre traduzir identidade, conforto e funcionalidade em cada detalhe. Nosso compromisso é entregar projetos sofisticados e exclusivos.",
+                projetos_titulo: "Projetos em Destaque", proj1_titulo: "Residência Aurora", proj1_desc: "Design de Interiores", proj2_titulo: "Apartamento Horizonte", proj2_desc: "Arquitetura Contemporânea", proj3_titulo: "Casa Vértice", proj3_desc: "Reforma Completa",
+                footer_titulo: "Vamos conversar sobre o seu projeto?", footer_subtitulo: "Entre em contato para agendarmos uma reunião."
+            },
+            en: {
+                menu_inicio: "Home", menu_escritorio: "Studio", menu_projetos: "Projects", menu_contato: "Contact",
+                hero_titulo: "Architecture with Purpose", hero_subtitulo: "Transforming spaces into unique and timeless experiences, tailored to your essence.",
+                hero_botao: "View Projects", sobre_titulo: "The Essence of Living Well", sobre_texto: "Led by Danniela Teixeira, our studio believes that architecture goes beyond aesthetics: it's about translating identity, comfort, and functionality into every detail.",
+                projetos_titulo: "Featured Projects", proj1_titulo: "Aurora Residence", proj1_desc: "Interior Design", proj2_titulo: "Horizon Apartment", proj2_desc: "Contemporary Architecture", proj3_titulo: "Vertex House", proj3_desc: "Complete Renovation",
+                footer_titulo: "Let's talk about your project?", footer_subtitulo: "Get in touch to schedule a meeting."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                element.textContent = translations[lang][element.getAttribute('data-i18n')];
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent.toLowerCase() === lang));
+        }
+    </script>
+</body>
+</html>
