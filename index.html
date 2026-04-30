@@ -465,7 +465,7 @@
             color: #555;
         }
         
-        /* ===== BOTÃO VOLTAR AO TOPO (NOVO - MAIS BONITO) ===== */
+        /* ===== BOTÃO VOLTAR AO TOPO (MAIS BONITO) ===== */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -713,9 +713,9 @@
         
         <!-- Filtros -->
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="interior">Interiores</button>
-            <button class="filter-btn" data-filter="exterior">Externos</button>
+            <button class="filter-btn active" data-filter="all" data-i18n="filtro_todos">Todos</button>
+            <button class="filter-btn" data-filter="interior" data-i18n="filtro_interiores">Interiores</button>
+            <button class="filter-btn" data-filter="exterior" data-i18n="filtro_externos">Externos</button>
         </div>
         
         <div class="grid-projetos" id="projetosGrid">
@@ -747,24 +747,24 @@
                 <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Residência Jardim" loading="lazy">
                 <div class="projeto-categoria">Externos</div>
                 <div class="projeto-info">
-                    <h3>Residência Jardim</h3>
-                    <p>Arquitetura Paisagista</p>
+                    <h3 data-i18n="proj4_titulo">Residência Jardim</h3>
+                    <p data-i18n="proj4_desc">Arquitetura Paisagista</p>
                 </div>
             </div>
             <div class="projeto-item" data-categoria="interior">
                 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Loft Urbano" loading="lazy">
                 <div class="projeto-categoria">Interiores</div>
                 <div class="projeto-info">
-                    <h3>Loft Urbano</h3>
-                    <p>Design Contemporâneo</p>
+                    <h3 data-i18n="proj5_titulo">Loft Urbano</h3>
+                    <p data-i18n="proj5_desc">Design Contemporâneo</p>
                 </div>
             </div>
             <div class="projeto-item" data-categoria="exterior">
                 <img src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?auto=format&fit=crop&w=800&q=80" alt="Casa Contêiner" loading="lazy">
                 <div class="projeto-categoria">Externos</div>
                 <div class="projeto-info">
-                    <h3>Casa Contêiner</h3>
-                    <p>Arquitetura Sustentável</p>
+                    <h3 data-i18n="proj6_titulo">Casa Contêiner</h3>
+                    <p data-i18n="proj6_desc">Arquitetura Sustentável</p>
                 </div>
             </div>
         </div>
@@ -781,32 +781,32 @@
         <h2 data-i18n="contato_titulo">Entre em Contato</h2>
         <form class="form-contato" id="contactForm">
             <div class="form-group">
-                <input type="text" id="nome" placeholder="Seu nome" required>
+                <input type="text" id="nome" data-i18n="contato_nome" placeholder="Seu nome" required>
             </div>
             <div class="form-group">
-                <input type="email" id="email" placeholder="Seu e-mail" required>
+                <input type="email" id="email" data-i18n="contato_email" placeholder="Seu e-mail" required>
             </div>
             <div class="form-group">
-                <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+                <textarea id="mensagem" data-i18n="contato_mensagem" placeholder="Sua mensagem" required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Enviar Mensagem</button>
+            <button type="submit" class="submit-btn" data-i18n="contato_botao">Enviar Mensagem</button>
             <div class="form-message" id="formMessage"></div>
         </form>
     </section>
 
     <!-- Newsletter -->
     <section class="newsletter reveal">
-        <h2>Newsletter</h2>
-        <p>Receba novidades e inspirações diretamente no seu e-mail</p>
+        <h2 data-i18n="newsletter_titulo">Newsletter</h2>
+        <p data-i18n="newsletter_desc">Receba novidades e inspirações diretamente no seu e-mail</p>
         <form class="newsletter-form" id="newsletterForm">
-            <input type="email" placeholder="Seu melhor e-mail" required>
-            <button type="submit">Assinar</button>
+            <input type="email" data-i18n="newsletter_placeholder" placeholder="Seu melhor e-mail" required>
+            <button type="submit" data-i18n="newsletter_botao">Assinar</button>
         </form>
     </section>
 
     <!-- Contador de Visitas -->
     <div class="visitor-counter">
-        🌟 Visitas: <span id="visitorCount">0</span>
+        <span data-i18n="visitor_label">🌟 Visitas: </span><span id="visitorCount">0</span>
     </div>
 
     <!-- FOOTER COM BOTÕES ESTILIZADOS -->
@@ -816,25 +816,25 @@
                 <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.9 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
                 </svg>
-                WhatsApp
+                <span data-i18n="footer_whatsapp">WhatsApp</span>
             </a>
             <a href="https://www.instagram.com/arquitetadanniela_/" target="_blank" class="footer-btn instagram">
                 <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                 </svg>
-                Instagram
+                <span data-i18n="footer_instagram">Instagram</span>
             </a>
             <a href="mailto:contato@arquitetadanniela.com.br" class="footer-btn email">
                 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/>
                 </svg>
-                E-mail
+                <span data-i18n="footer_email">E-mail</span>
             </a>
         </div>
         <p>&copy; 2026 Danniela Teixeira. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- BOTÃO VOLTAR AO TOPO (NOVO - MAIS BONITO) -->
+    <!-- BOTÃO VOLTAR AO TOPO (MAIS BONITO) -->
     <button class="back-to-top" id="backToTop">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 4L12 20M12 4L18 10M12 4L6 10" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -981,39 +981,171 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        // TRADUÇÕES
+        // ===== TRADUÇÕES COMPLETAS E CORRIGIDAS =====
         const translations = {
             pt: {
-                menu_inicio: "Início", menu_escritorio: "Escritório", menu_projetos: "Projetos", menu_contato: "Contato",
-                hero_titulo: "Arquitetura com Propósito", hero_subtitulo: "Transformando espaços em experiências únicas e atemporais, feitas sob medida para a sua essência.",
-                hero_botao: "Conheça os Projetos", sobre_titulo: "A Essência do Morar Bem", 
+                // Menu
+                menu_inicio: "Início",
+                menu_escritorio: "Escritório",
+                menu_projetos: "Projetos",
+                menu_contato: "Contato",
+                
+                // Hero
+                hero_titulo: "Arquitetura com Propósito",
+                hero_subtitulo: "Transformando espaços em experiências únicas e atemporais, feitas sob medida para a sua essência.",
+                hero_botao: "Conheça os Projetos",
+                
+                // Sobre
+                sobre_titulo: "A Essência do Morar Bem",
                 sobre_texto: "Liderado por Danniela Teixeira, nosso escritório acredita que a arquitetura vai além da estética: é sobre traduzir identidade, conforto e funcionalidade em cada detalhe. Nosso compromisso é entregar projetos sofisticados e exclusivos.",
-                projetos_titulo: "Projetos em Destaque", proj1_titulo: "Residência Aurora", proj1_desc: "Design de Interiores", 
-                proj2_titulo: "Apartamento Horizonte", proj2_desc: "Arquitetura Contemporânea", 
-                proj3_titulo: "Casa Vértice", proj3_desc: "Reforma Completa",
-                contato_titulo: "Entre em Contato"
+                
+                // Projetos
+                projetos_titulo: "Projetos em Destaque",
+                proj1_titulo: "Residência Aurora",
+                proj1_desc: "Design de Interiores",
+                proj2_titulo: "Apartamento Horizonte",
+                proj2_desc: "Arquitetura Contemporânea",
+                proj3_titulo: "Casa Vértice",
+                proj3_desc: "Reforma Completa",
+                proj4_titulo: "Residência Jardim",
+                proj4_desc: "Arquitetura Paisagista",
+                proj5_titulo: "Loft Urbano",
+                proj5_desc: "Design Contemporâneo",
+                proj6_titulo: "Casa Contêiner",
+                proj6_desc: "Arquitetura Sustentável",
+                
+                // Contato
+                contato_titulo: "Entre em Contato",
+                contato_nome: "Seu nome",
+                contato_email: "Seu e-mail",
+                contato_mensagem: "Sua mensagem",
+                contato_botao: "Enviar Mensagem",
+                
+                // Newsletter
+                newsletter_titulo: "Newsletter",
+                newsletter_desc: "Receba novidades e inspirações diretamente no seu e-mail",
+                newsletter_placeholder: "Seu melhor e-mail",
+                newsletter_botao: "Assinar",
+                
+                // Footer
+                footer_whatsapp: "WhatsApp",
+                footer_instagram: "Instagram",
+                footer_email: "E-mail",
+                
+                // Contador
+                visitor_label: "🌟 Visitas: ",
+                
+                // Filtros
+                filtro_todos: "Todos",
+                filtro_interiores: "Interiores",
+                filtro_externos: "Externos"
             },
             en: {
-                menu_inicio: "Home", menu_escritorio: "Studio", menu_projetos: "Projects", menu_contato: "Contact",
-                hero_titulo: "Architecture with Purpose", hero_subtitulo: "Transforming spaces into unique and timeless experiences, tailored to your essence.",
-                hero_botao: "View Projects", sobre_titulo: "The Essence of Living Well",
-                sobre_texto: "Led by Danniela Teixeira, our studio believes that architecture goes beyond aesthetics: it's about translating identity, comfort, and functionality into every detail.",
-                projetos_titulo: "Featured Projects", proj1_titulo: "Aurora Residence", proj1_desc: "Interior Design",
-                proj2_titulo: "Horizon Apartment", proj2_desc: "Contemporary Architecture",
-                proj3_titulo: "Vertex House", proj3_desc: "Complete Renovation",
-                contato_titulo: "Contact Us"
+                // Menu
+                menu_inicio: "Home",
+                menu_escritorio: "Studio",
+                menu_projetos: "Projects",
+                menu_contato: "Contact",
+                
+                // Hero
+                hero_titulo: "Architecture with Purpose",
+                hero_subtitulo: "Transforming spaces into unique and timeless experiences, tailored to your essence.",
+                hero_botao: "View Projects",
+                
+                // About
+                sobre_titulo: "The Essence of Living Well",
+                sobre_texto: "Led by Danniela Teixeira, our studio believes that architecture goes beyond aesthetics: it's about translating identity, comfort, and functionality into every detail. Our commitment is to deliver sophisticated and exclusive projects.",
+                
+                // Projects
+                projetos_titulo: "Featured Projects",
+                proj1_titulo: "Aurora Residence",
+                proj1_desc: "Interior Design",
+                proj2_titulo: "Horizon Apartment",
+                proj2_desc: "Contemporary Architecture",
+                proj3_titulo: "Vertex Residence",
+                proj3_desc: "Complete Renovation",
+                proj4_titulo: "Garden Residence",
+                proj4_desc: "Landscape Architecture",
+                proj5_titulo: "Urban Loft",
+                proj5_desc: "Contemporary Design",
+                proj6_titulo: "Container House",
+                proj6_desc: "Sustainable Architecture",
+                
+                // Contact
+                contato_titulo: "Contact Us",
+                contato_nome: "Your name",
+                contato_email: "Your email",
+                contato_mensagem: "Your message",
+                contato_botao: "Send Message",
+                
+                // Newsletter
+                newsletter_titulo: "Newsletter",
+                newsletter_desc: "Receive news and inspiration directly to your email",
+                newsletter_placeholder: "Your best email",
+                newsletter_botao: "Subscribe",
+                
+                // Footer
+                footer_whatsapp: "WhatsApp",
+                footer_instagram: "Instagram",
+                footer_email: "Email",
+                
+                // Counter
+                visitor_label: "🌟 Visits: ",
+                
+                // Filters
+                filtro_todos: "All",
+                filtro_interiores: "Interiors",
+                filtro_externos: "Exteriors"
             }
         };
         
+        // Função de tradução melhorada
         window.changeLanguage = function(lang) {
+            // Traduz elementos com data-i18n
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
                 }
             });
+            
+            // Traduz placeholders específicos do formulário (garantia)
+            const nomeInput = document.getElementById('nome');
+            const emailInput = document.getElementById('email');
+            const mensagemTextarea = document.getElementById('mensagem');
+            
+            if (nomeInput) nomeInput.placeholder = translations[lang].contato_nome;
+            if (emailInput) emailInput.placeholder = translations[lang].contato_email;
+            if (mensagemTextarea) mensagemTextarea.placeholder = translations[lang].contato_mensagem;
+            
+            // Traduz título e descrição da newsletter (garantia)
+            const newsletterTitle = document.querySelector('.newsletter h2');
+            const newsletterDesc = document.querySelector('.newsletter p');
+            if (newsletterTitle) newsletterTitle.textContent = translations[lang].newsletter_titulo;
+            if (newsletterDesc) newsletterDesc.textContent = translations[lang].newsletter_desc;
+            
+            // Traduz botões do footer (os spans dentro dos botões)
+            const footerSpans = document.querySelectorAll('.footer-btn span');
+            if (footerSpans.length >= 3) {
+                footerSpans[0].textContent = translations[lang].footer_whatsapp;
+                footerSpans[1].textContent = translations[lang].footer_instagram;
+                footerSpans[2].textContent = translations[lang].footer_email;
+            }
+            
+            // Traduz contador de visitas
+            const visitorSpan = document.querySelector('.visitor-counter span:first-child');
+            if (visitorSpan) {
+                visitorSpan.textContent = translations[lang].visitor_label;
+            }
+            
+            // Atualiza botão ativo do idioma
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                if (btn.textContent.toLowerCase() === lang) {
+                const btnLang = btn.textContent.toLowerCase();
+                if (btnLang === lang) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -1021,7 +1153,7 @@
             });
         };
         
-        // Scroll suave
+        // Scroll suave para âncoras
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
