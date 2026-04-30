@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a0a0a">
     <title>Danniela Teixeira | Arquitetura e Design</title>
     <meta name="description" content="Arquitetura com propósito - Danniela Teixeira transforma espaços em experiências únicas e atemporais.">
     <meta name="author" content="Danniela Teixeira">
     <meta name="keywords" content="arquitetura, design de interiores, projetos residenciais, reformas">
     
-    <!-- Favicon e Logo do GitHub -->
     <link rel="icon" type="image/png" href="favicon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +82,7 @@
             transform: translateY(0);
         }
         
-        /* HEADER */
+        /* HEADER - RESPONSIVO */
         header {
             position: fixed;
             top: 0;
@@ -132,6 +132,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: color 0.3s;
+            white-space: nowrap;
         }
         
         nav a:hover, .lang-btn:hover {
@@ -160,7 +161,7 @@
             font-weight: 500;
         }
         
-        /* HERO */
+        /* HERO - RESPONSIVO */
         .hero {
             min-height: 100vh;
             background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80');
@@ -225,7 +226,7 @@
             transform: translateY(-2px);
         }
         
-        /* SEÇÕES */
+        /* SEÇÕES - RESPONSIVAS */
         .sobre, .projetos, .newsletter {
             padding: 100px 5%;
             text-align: center;
@@ -261,7 +262,7 @@
             background-color: #c5a880;
         }
         
-        /* FILTRO DE PROJETOS */
+        /* FILTRO - RESPONSIVO */
         .filter-buttons {
             margin-bottom: 40px;
             display: flex;
@@ -288,9 +289,10 @@
             color: #0a0a0a;
         }
         
+        /* GRID PROJETOS - RESPONSIVO (1 coluna mobile, 2 tablet, 3 desktop) */
         .grid-projetos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
         
@@ -365,7 +367,7 @@
             z-index: 2;
         }
         
-        /* ===== MODAL DE PROJETO (NOVO) ===== */
+        /* ===== MODAL DE PROJETO - RESPONSIVO ===== */
         .project-modal {
             position: fixed;
             top: 0;
@@ -456,14 +458,15 @@
             clear: both;
         }
         
-        /* Galeria do Modal */
+        /* Galeria do Modal - RESPONSIVA */
         .modal-gallery {
             margin-bottom: 40px;
         }
         
         .modal-main-image {
             width: 100%;
-            height: 500px;
+            height: auto;
+            max-height: 500px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 15px;
@@ -493,7 +496,6 @@
             border-color: #c5a880;
         }
         
-        /* Informações do Projeto */
         .modal-title {
             font-size: 32px;
             color: #cccccc;
@@ -501,9 +503,10 @@
             letter-spacing: 2px;
         }
         
+        /* Ficha técnica - RESPONSIVA (grid adaptável) */
         .modal-tech-specs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             background: rgba(255,255,255,0.05);
             padding: 20px;
@@ -557,7 +560,7 @@
             line-height: 1.6;
         }
         
-        /* FORMULÁRIO DE CONTATO */
+        /* FORMULÁRIO */
         .form-contato {
             max-width: 600px;
             margin: 0 auto;
@@ -661,7 +664,7 @@
             color: #555;
         }
         
-        /* ===== BOTÃO VOLTAR AO TOPO ===== */
+        /* BOTÃO VOLTAR AO TOPO */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -705,7 +708,7 @@
             transform: translateY(-3px);
         }
         
-        /* ===== FOOTER COM BOTÕES ESTILIZADOS ===== */
+        /* FOOTER */
         footer {
             background-color: #050505;
             text-align: center;
@@ -799,12 +802,32 @@
             fill: #fff;
         }
         
-        /* RESPONSIVO */
+        /* ===== RESPONSIVIDADE COMPLETA ===== */
+        
+        /* Tablet (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .grid-projetos {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .modal-tech-specs {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .modal-title {
+                font-size: 28px;
+            }
+        }
+        
+        /* Mobile (até 768px) */
         @media (max-width: 768px) {
             html {
                 scroll-padding-top: 140px;
             }
             
+            /* Header mobile */
             header {
                 flex-direction: column;
                 padding: 12px 5%;
@@ -827,23 +850,131 @@
                 justify-content: center;
             }
             
+            nav a {
+                font-size: 10px;
+                letter-spacing: 1px;
+                white-space: nowrap;
+            }
+            
             .lang-switch {
                 border-left: none;
                 padding-left: 0;
             }
             
+            /* Hero mobile */
             .hero h1 {
                 font-size: 32px;
             }
             
+            .hero p {
+                font-size: 14px;
+                padding: 0 15px;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 11px;
+            }
+            
+            /* Seções mobile */
             .sobre, .projetos, .newsletter {
                 padding: 60px 20px;
             }
             
             .projetos h2, .sobre h2, .newsletter h2 {
-                font-size: 26px;
+                font-size: 24px;
+                margin-bottom: 40px;
             }
             
+            .sobre p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+            
+            /* Grid mobile - 1 coluna */
+            .grid-projetos {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .projeto-info {
+                padding: 15px;
+            }
+            
+            .projeto-info h3 {
+                font-size: 16px;
+            }
+            
+            /* Filtros mobile */
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 10px;
+            }
+            
+            /* Modal mobile */
+            .modal-container {
+                width: 95%;
+                max-height: 85vh;
+            }
+            
+            .modal-content {
+                padding: 20px;
+            }
+            
+            .modal-main-image {
+                max-height: 250px;
+            }
+            
+            .modal-thumb {
+                width: 70px;
+                height: 50px;
+            }
+            
+            .modal-title {
+                font-size: 22px;
+                margin-top: 15px;
+            }
+            
+            .modal-tech-specs {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                padding: 15px;
+            }
+            
+            .spec-label {
+                font-size: 10px;
+            }
+            
+            .spec-value {
+                font-size: 12px;
+            }
+            
+            .modal-description {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            
+            .modal-materials {
+                padding: 15px;
+            }
+            
+            .modal-materials p {
+                font-size: 13px;
+            }
+            
+            .modal-close {
+                width: 35px;
+                height: 35px;
+                top: 10px;
+                right: 10px;
+                margin: 10px;
+            }
+            
+            /* Botões mobile */
             .back-to-top {
                 width: 42px;
                 height: 42px;
@@ -852,30 +983,77 @@
             }
             
             .whatsapp-float {
+                width: 48px;
+                height: 48px;
                 bottom: 20px;
                 left: 20px;
             }
             
+            .whatsapp-float svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            /* Footer mobile */
             .footer-btn {
-                padding: 8px 20px;
+                padding: 8px 18px;
                 font-size: 11px;
             }
             
-            .modal-content {
-                padding: 20px;
+            .footer-btn svg {
+                width: 14px;
+                height: 14px;
             }
             
-            .modal-main-image {
-                height: 250px;
+            /* Newsletter mobile */
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+        
+        /* Mobile pequeno (até 480px) */
+        @media (max-width: 480px) {
+            .modal-tech-specs {
+                grid-template-columns: 1fr;
+                gap: 10px;
             }
             
             .modal-title {
-                font-size: 24px;
+                font-size: 20px;
             }
             
-            .modal-tech-specs {
-                grid-template-columns: 1fr 1fr;
+            .footer-buttons {
                 gap: 15px;
+            }
+            
+            .footer-btn {
+                padding: 6px 14px;
+                font-size: 10px;
+            }
+        }
+        
+        /* Desktop grande (acima de 1400px) */
+        @media (min-width: 1400px) {
+            .sobre, .projetos, .newsletter {
+                padding: 120px 5%;
+            }
+            
+            .grid-projetos {
+                gap: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 64px;
+            }
+            
+            .hero p {
+                font-size: 18px;
             }
         }
     </style>
@@ -980,7 +1158,7 @@
         </div>
     </section>
 
-    <!-- ===== MODAL DE PROJETO ===== -->
+    <!-- MODAL DE PROJETO -->
     <div class="project-modal" id="projectModal">
         <div class="modal-container">
             <div class="modal-close" id="modalClose">
@@ -1061,7 +1239,7 @@
     </a>
 
     <script>
-        // ===== DADOS DOS PROJETOS =====
+        // DADOS DOS PROJETOS
         const projetosData = {
             aurora: {
                 titulo: "Residência Aurora",
@@ -1147,7 +1325,7 @@
             }
         };
 
-        // ===== FUNÇÃO PARA ABRIR MODAL =====
+        // FUNÇÃO PARA ABRIR MODAL
         function openProjectModal(projetoId) {
             const projeto = projetosData[projetoId];
             if (!projeto) return;
@@ -1155,7 +1333,6 @@
             const modal = document.getElementById('projectModal');
             const modalContent = document.getElementById('modalContent');
             
-            // Montar galeria de imagens
             let imagensHtml = `
                 <img class="modal-main-image" id="modalMainImage" src="${projeto.imagens[0]}" alt="${projeto.titulo}">
                 <div class="modal-thumbnails">
@@ -1171,12 +1348,9 @@
             });
             imagensHtml += `</div>`;
             
-            // Montar conteúdo completo
             modalContent.innerHTML = `
                 ${imagensHtml}
-                
                 <h2 class="modal-title">${projeto.titulo}</h2>
-                
                 <div class="modal-tech-specs">
                     <div class="spec-item">
                         <div class="spec-label">Localização</div>
@@ -1195,27 +1369,22 @@
                         <div class="spec-value">${projeto.categoria}</div>
                     </div>
                 </div>
-                
                 <div class="modal-description">
                     <p>${projeto.descricao}</p>
                 </div>
-                
                 <div class="modal-materials">
                     <h4>Materiais Utilizados</h4>
                     <p>${projeto.materiais}</p>
                 </div>
             `;
             
-            // Armazenar imagens no escopo global para o thumbnail changer
             window.currentProjectImages = projeto.imagens;
             window.currentImageIndex = 0;
             
-            // Abrir modal
             modal.classList.add('active');
             document.body.classList.add('modal-open');
         }
         
-        // Função para trocar imagem principal
         function changeModalImage(index) {
             const mainImage = document.getElementById('modalMainImage');
             const thumbs = document.querySelectorAll('.modal-thumb');
@@ -1234,7 +1403,6 @@
             }
         }
         
-        // Fechar modal
         function closeModal() {
             const modal = document.getElementById('projectModal');
             modal.classList.remove('active');
@@ -1251,7 +1419,6 @@
             });
         });
         
-        // Fechar modal ao clicar no X ou fora
         document.getElementById('modalClose').addEventListener('click', closeModal);
         document.getElementById('projectModal').addEventListener('click', (e) => {
             if (e.target === document.getElementById('projectModal')) {
@@ -1259,7 +1426,6 @@
             }
         });
         
-        // Fechar com ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal();
@@ -1294,7 +1460,7 @@
         }, { threshold: 0.1 });
         reveals.forEach(reveal => revealObserver.observe(reveal));
         
-        // FILTRO DE PROJETOS
+        // FILTRO
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projetosItems = document.querySelectorAll('.projeto-item');
         
@@ -1315,7 +1481,7 @@
             });
         });
         
-        // FORMULÁRIO DE CONTATO
+        // FORMULÁRIO
         const contactForm = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
         
@@ -1357,31 +1523,25 @@
             }
         });
         
-        // CONTADOR DE VISITAS
+        // CONTADOR
         let visits = localStorage.getItem('visitorCount');
-        if (visits === null) {
-            visits = 1;
-        } else {
-            visits = parseInt(visits) + 1;
-        }
+        if (visits === null) visits = 1;
+        else visits = parseInt(visits) + 1;
         localStorage.setItem('visitorCount', visits);
         document.getElementById('visitorCount').textContent = visits;
         
-        // BOTÃO VOLTAR AO TOPO
+        // BACK TO TOP
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
+            if (window.scrollY > 300) backToTop.classList.add('show');
+            else backToTop.classList.remove('show');
         });
         
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        // ===== TRADUÇÕES =====
+        // TRADUÇÕES
         const translations = {
             pt: {
                 menu_inicio: "Início", menu_escritorio: "Escritório", menu_projetos: "Projetos", menu_contato: "Contato",
@@ -1461,7 +1621,7 @@
             });
         };
         
-        // Scroll suave
+        // SCROLL SUAVE
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
