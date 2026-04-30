@@ -289,7 +289,7 @@
             color: #0a0a0a;
         }
         
-        /* GRID PROJETOS - RESPONSIVO (1 coluna mobile, 2 tablet, 3 desktop) */
+        /* GRID PROJETOS - RESPONSIVO */
         .grid-projetos {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -367,7 +367,7 @@
             z-index: 2;
         }
         
-        /* ===== MODAL DE PROJETO - RESPONSIVO ===== */
+        /* ===== MODAL DE PROJETO - CORRIGIDO ===== */
         .project-modal {
             position: fixed;
             top: 0;
@@ -458,7 +458,7 @@
             clear: both;
         }
         
-        /* Galeria do Modal - RESPONSIVA */
+        /* Galeria do Modal - CORRIGIDA PARA MOBILE */
         .modal-gallery {
             margin-bottom: 40px;
         }
@@ -476,6 +476,7 @@
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            justify-content: center;
         }
         
         .modal-thumb {
@@ -503,7 +504,7 @@
             letter-spacing: 2px;
         }
         
-        /* Ficha técnica - RESPONSIVA (grid adaptável) */
+        /* Ficha técnica */
         .modal-tech-specs {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -804,7 +805,7 @@
         
         /* ===== RESPONSIVIDADE COMPLETA ===== */
         
-        /* Tablet (768px - 1024px) */
+        /* Tablet */
         @media (max-width: 1024px) {
             .grid-projetos {
                 grid-template-columns: repeat(2, 1fr);
@@ -821,13 +822,12 @@
             }
         }
         
-        /* Mobile (até 768px) */
+        /* Mobile */
         @media (max-width: 768px) {
             html {
                 scroll-padding-top: 140px;
             }
             
-            /* Header mobile */
             header {
                 flex-direction: column;
                 padding: 12px 5%;
@@ -861,7 +861,6 @@
                 padding-left: 0;
             }
             
-            /* Hero mobile */
             .hero h1 {
                 font-size: 32px;
             }
@@ -876,7 +875,6 @@
                 font-size: 11px;
             }
             
-            /* Seções mobile */
             .sobre, .projetos, .newsletter {
                 padding: 60px 20px;
             }
@@ -891,7 +889,6 @@
                 line-height: 1.7;
             }
             
-            /* Grid mobile - 1 coluna */
             .grid-projetos {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -905,7 +902,6 @@
                 font-size: 16px;
             }
             
-            /* Filtros mobile */
             .filter-buttons {
                 gap: 10px;
             }
@@ -915,7 +911,7 @@
                 font-size: 10px;
             }
             
-            /* Modal mobile */
+            /* MODAL MOBILE - CORRIGIDO */
             .modal-container {
                 width: 95%;
                 max-height: 85vh;
@@ -926,7 +922,10 @@
             }
             
             .modal-main-image {
-                max-height: 250px;
+                height: 220px;
+                max-height: 220px;
+                object-fit: contain;
+                background-color: #0a0a0a;
             }
             
             .modal-thumb {
@@ -974,7 +973,6 @@
                 margin: 10px;
             }
             
-            /* Botões mobile */
             .back-to-top {
                 width: 42px;
                 height: 42px;
@@ -994,7 +992,6 @@
                 height: 24px;
             }
             
-            /* Footer mobile */
             .footer-btn {
                 padding: 8px 18px;
                 font-size: 11px;
@@ -1005,7 +1002,6 @@
                 height: 14px;
             }
             
-            /* Newsletter mobile */
             .newsletter-form {
                 flex-direction: column;
                 gap: 10px;
@@ -1017,7 +1013,7 @@
             }
         }
         
-        /* Mobile pequeno (até 480px) */
+        /* Mobile pequeno */
         @media (max-width: 480px) {
             .modal-tech-specs {
                 grid-template-columns: 1fr;
@@ -1026,6 +1022,11 @@
             
             .modal-title {
                 font-size: 20px;
+            }
+            
+            .modal-main-image {
+                height: 180px;
+                max-height: 180px;
             }
             
             .footer-buttons {
@@ -1038,7 +1039,7 @@
             }
         }
         
-        /* Desktop grande (acima de 1400px) */
+        /* Desktop grande */
         @media (min-width: 1400px) {
             .sobre, .projetos, .newsletter {
                 padding: 120px 5%;
