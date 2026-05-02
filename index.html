@@ -227,7 +227,7 @@
         }
         
         /* SEÇÕES - RESPONSIVAS */
-        .sobre, .projetos, .newsletter {
+        .sobre, .projetos {
             padding: 100px 5%;
             text-align: center;
             max-width: 1400px;
@@ -242,7 +242,7 @@
             font-weight: 300;
         }
         
-        .projetos h2, .sobre h2, .newsletter h2 {
+        .projetos h2, .sobre h2 {
             font-size: 32px;
             margin-bottom: 60px;
             text-transform: uppercase;
@@ -251,7 +251,7 @@
             display: inline-block;
         }
         
-        .projetos h2:after, .sobre h2:after, .newsletter h2:after {
+        .projetos h2:after, .sobre h2:after {
             content: '';
             position: absolute;
             bottom: -12px;
@@ -627,44 +627,6 @@
             color: #f44336;
         }
         
-        /* NEWSLETTER */
-        .newsletter {
-            background: linear-gradient(135deg, #0a0a0a, #111);
-            margin-top: 50px;
-        }
-        
-        .newsletter-form {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            max-width: 500px;
-            margin: 30px auto 0;
-        }
-        
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid #333;
-            color: #a3a3a3;
-        }
-        
-        .newsletter-form button {
-            background: none;
-            border: 1px solid #c5a880;
-            padding: 12px 25px;
-            color: #c5a880;
-            cursor: pointer;
-        }
-        
-        .visitor-counter {
-            text-align: center;
-            padding: 20px;
-            font-size: 12px;
-            color: #555;
-        }
-        
         /* BOTÃO VOLTAR AO TOPO */
         .back-to-top {
             position: fixed;
@@ -875,11 +837,11 @@
                 font-size: 11px;
             }
             
-            .sobre, .projetos, .newsletter {
+            .sobre, .projetos {
                 padding: 60px 20px;
             }
             
-            .projetos h2, .sobre h2, .newsletter h2 {
+            .projetos h2, .sobre h2 {
                 font-size: 24px;
                 margin-bottom: 40px;
             }
@@ -1001,16 +963,6 @@
                 width: 14px;
                 height: 14px;
             }
-            
-            .newsletter-form {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .newsletter-form input,
-            .newsletter-form button {
-                width: 100%;
-            }
         }
         
         /* Mobile pequeno */
@@ -1041,7 +993,7 @@
         
         /* Desktop grande */
         @media (min-width: 1400px) {
-            .sobre, .projetos, .newsletter {
+            .sobre, .projetos {
                 padding: 120px 5%;
             }
             
@@ -1189,19 +1141,6 @@
             <div class="form-message" id="formMessage"></div>
         </form>
     </section>
-
-    <section class="newsletter reveal">
-        <h2 data-i18n="newsletter_titulo">Newsletter</h2>
-        <p data-i18n="newsletter_desc">Receba novidades e inspirações diretamente no seu e-mail</p>
-        <form class="newsletter-form" id="newsletterForm">
-            <input type="email" data-i18n="newsletter_placeholder" placeholder="Seu melhor e-mail" required>
-            <button type="submit" data-i18n="newsletter_botao">Assinar</button>
-        </form>
-    </section>
-
-    <div class="visitor-counter">
-        <span data-i18n="visitor_label">🌟 Visitas: </span><span id="visitorCount">0</span>
-    </div>
 
     <footer>
         <div class="footer-buttons">
@@ -1511,26 +1450,6 @@
             }, 5000);
         });
         
-        // NEWSLETTER
-        const newsletterForm = document.getElementById('newsletterForm');
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const emailInput = newsletterForm.querySelector('input');
-            if (emailInput.value && emailInput.value.includes('@')) {
-                alert('Inscrição realizada com sucesso! 📧');
-                emailInput.value = '';
-            } else {
-                alert('Por favor, insira um e-mail válido.');
-            }
-        });
-        
-        // CONTADOR
-        let visits = localStorage.getItem('visitorCount');
-        if (visits === null) visits = 1;
-        else visits = parseInt(visits) + 1;
-        localStorage.setItem('visitorCount', visits);
-        document.getElementById('visitorCount').textContent = visits;
-        
         // BACK TO TOP
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
@@ -1542,7 +1461,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        // TRADUÇÕES
+        // TRADUÇÕES (sem referências ao contador ou newsletter)
         const translations = {
             pt: {
                 menu_inicio: "Início", menu_escritorio: "Escritório", menu_projetos: "Projetos", menu_contato: "Contato",
@@ -1557,10 +1476,8 @@
                 proj6_titulo: "Casa Contêiner", proj6_desc: "Arquitetura Sustentável",
                 contato_titulo: "Entre em Contato", contato_nome: "Seu nome", contato_email: "Seu e-mail",
                 contato_mensagem: "Sua mensagem", contato_botao: "Enviar Mensagem",
-                newsletter_titulo: "Newsletter", newsletter_desc: "Receba novidades e inspirações diretamente no seu e-mail",
-                newsletter_placeholder: "Seu melhor e-mail", newsletter_botao: "Assinar",
                 footer_whatsapp: "WhatsApp", footer_instagram: "Instagram", footer_email: "E-mail",
-                visitor_label: "🌟 Visitas: ", filtro_todos: "Todos", filtro_interiores: "Interiores", filtro_externos: "Externos"
+                filtro_todos: "Todos", filtro_interiores: "Interiores", filtro_externos: "Externos"
             },
             en: {
                 menu_inicio: "Home", menu_escritorio: "Studio", menu_projetos: "Projects", menu_contato: "Contact",
@@ -1575,10 +1492,8 @@
                 proj6_titulo: "Container House", proj6_desc: "Sustainable Architecture",
                 contato_titulo: "Contact Us", contato_nome: "Your name", contato_email: "Your email",
                 contato_mensagem: "Your message", contato_botao: "Send Message",
-                newsletter_titulo: "Newsletter", newsletter_desc: "Receive news and inspiration directly to your email",
-                newsletter_placeholder: "Your best email", newsletter_botao: "Subscribe",
                 footer_whatsapp: "WhatsApp", footer_instagram: "Instagram", footer_email: "Email",
-                visitor_label: "🌟 Visits: ", filtro_todos: "All", filtro_interiores: "Interiors", filtro_externos: "Exteriors"
+                filtro_todos: "All", filtro_interiores: "Interiors", filtro_externos: "Exteriors"
             }
         };
         
@@ -1601,20 +1516,12 @@
             if (emailInput) emailInput.placeholder = translations[lang].contato_email;
             if (mensagemTextarea) mensagemTextarea.placeholder = translations[lang].contato_mensagem;
             
-            const newsletterTitle = document.querySelector('.newsletter h2');
-            const newsletterDesc = document.querySelector('.newsletter p');
-            if (newsletterTitle) newsletterTitle.textContent = translations[lang].newsletter_titulo;
-            if (newsletterDesc) newsletterDesc.textContent = translations[lang].newsletter_desc;
-            
             const footerSpans = document.querySelectorAll('.footer-btn span');
             if (footerSpans.length >= 3) {
                 footerSpans[0].textContent = translations[lang].footer_whatsapp;
                 footerSpans[1].textContent = translations[lang].footer_instagram;
                 footerSpans[2].textContent = translations[lang].footer_email;
             }
-            
-            const visitorSpan = document.querySelector('.visitor-counter span:first-child');
-            if (visitorSpan) visitorSpan.textContent = translations[lang].visitor_label;
             
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 if (btn.textContent.toLowerCase() === lang) btn.classList.add('active');
