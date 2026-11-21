@@ -5,12 +5,24 @@
     <!-- Security: the page may only load files from this site (GitHub Pages cannot set HTTP headers) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F3EEE6">
     <title>Danniela Teixeira | Arquitetura e Design</title>
-    <meta name="description" content="Arquitetura com propósito - Danniela Teixeira transforma espaços em experiências únicas e atemporais.">
+    <meta name="description" content="Danniela Teixeira, projetista de arquitetura e interiores. Projetos residenciais e comerciais, do briefing ao acompanhamento da obra, com projeto executivo completo.">
     <meta name="author" content="Danniela Teixeira">
-    <meta name="keywords" content="arquitetura, design de interiores, projetos residenciais, reformas">
+    <link rel="canonical" href="https://joseegebert-cpu.github.io/arquitetadannielateixeira/">
+    <!-- Link preview on WhatsApp, Instagram, Facebook and LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Danniela Teixeira | Arquitetura e Design">
+    <meta property="og:title" content="Danniela Teixeira | Arquitetura e Design">
+    <meta property="og:description" content="Projetos de arquitetura e interiores, do briefing à obra.">
+    <meta property="og:url" content="https://joseegebert-cpu.github.io/arquitetadannielateixeira/">
+    <meta property="og:image" content="https://joseegebert-cpu.github.io/arquitetadannielateixeira/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sala da Cobertura Alex, projeto de Danniela Teixeira">
+    <meta name="twitter:card" content="summary_large_image">
     
     <link rel="icon" type="image/png" href="favicon.png">
     
@@ -1235,6 +1247,127 @@
         .hero .btn { border-color: #F3EEE6; color: #F3EEE6; }
         .projeto-info { color: #F3EEE6; }
         .projeto-info p { color: #E3CDA0; }
+
+        /* ================= MELHORIAS DA AUDITORIA ================= */
+
+        /* 1. Galeria: imagem inteira (plantas sem corte), setas e miniaturas como botões */
+        .modal-stage {
+            position: relative;
+            background: #E6DCCD;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .modal-main-image {
+            display: block;
+            width: 100%;
+            height: min(62vh, 560px);
+            max-height: none;
+            object-fit: contain;
+            margin: 0;
+            background: transparent;
+        }
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid #A8854F;
+            background: rgba(243, 238, 230, 0.92);
+            color: #2E2620;
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0 3px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .modal-nav:hover { background: #7D5F33; color: #F3EEE6; }
+        .modal-nav.prev { left: 12px; }
+        .modal-nav.next { right: 12px; }
+        .modal-thumb {
+            padding: 0;
+            background: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .modal-thumb img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .modal-close { padding: 0; }
+        .modal-close svg path { stroke: #A8854F; }
+        .modal-close:hover svg path { stroke: #F3EEE6; }
+        @media (max-width: 768px) {
+            .modal-main-image { height: 46vh; max-height: none; }
+            .modal-nav { width: 40px; height: 40px; font-size: 24px; }
+            .modal-nav.prev { left: 6px; }
+            .modal-nav.next { right: 6px; }
+        }
+
+        /* 3. Contraste: dourado mais escuro só em textos pequenos (AA 4,5:1); o dourado da marca continua em linhas e fundos */
+        .lang-btn.active, nav a:hover, .lang-btn:hover,
+        #sobre .sobre-cargo, #sobre .sobre-clientes span,
+        .projeto-categoria, .spec-label, .modal-materials h4,
+        .link-privacidade { color: #7D5F33; }
+        .filter-btn.active, .filter-btn:hover { background-color: #7D5F33; border-color: #7D5F33; color: #F3EEE6; }
+        .submit-btn { border-color: #7D5F33; color: #7D5F33; }
+        .submit-btn:hover { background-color: #7D5F33; color: #F3EEE6; }
+        footer p, footer .link-privacidade, .form-aviso { color: #6B5F52; }
+        .projeto-categoria { font-size: 12px; font-weight: 600; }
+
+        /* 6. Foco visível ao navegar pelo teclado */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible,
+        .projeto-item:focus-visible {
+            outline: 2px solid #7D5F33;
+            outline-offset: 3px;
+        }
+        .projeto-item:focus-visible .projeto-info { opacity: 1; transform: none; }
+
+        /* 7. Nomes dos projetos sempre visíveis (o efeito de passar o mouse continua na foto) */
+        .projeto-info { opacity: 1; transform: none; padding: 40px 22px 18px; }
+
+        /* 4 e 5. Cabeçalho compacto no celular e áreas de toque de 44 px */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 5% 0;
+                gap: 0 12px;
+            }
+            header.scrolled { padding: 4px 5% 0; }
+            .nav-container { display: contents; }
+            .logo { order: 1; }
+            .logo-img { height: 44px; }
+            .lang-switch { order: 2; gap: 0; }
+            .lang-btn { padding: 13px 9px; font-size: 13px; }
+            nav { order: 3; width: 100%; }
+            nav ul { gap: 4px 18px; justify-content: center; }
+            nav a { display: inline-block; padding: 13px 2px; }
+            .footer-btn { min-height: 44px; }
+            .filter-btn { min-height: 44px; }
+            .link-privacidade { display: inline-block; padding: 12px 0; }
+        }
+        .lang-btn { min-height: 32px; }
+
+        /* 8. Respeita a preferência "reduzir movimento" do sistema */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+            .hero { background-attachment: scroll; }
+        }
     </style>
 </head>
 <body>
@@ -1245,7 +1378,7 @@
     
     <header id="header">
         <a href="#hero" class="logo">
-            <img src="logo-bege.png" alt="Logo Danniela Teixeira" class="logo-img" width="1492" height="358">
+            <img src="logo-bege.png" alt="Logo Danniela Teixeira" class="logo-img" width="760" height="182">
         </a>
         <div class="nav-container">
             <nav>
@@ -1265,8 +1398,8 @@
 
     <section id="hero" class="hero">
         <div class="hero-content">
-            <h1 data-i18n="hero_titulo">Arquitetura com Propósito</h1>
-            <p data-i18n="hero_subtitulo">Transformando espaços em experiências únicas e atemporais, feitas sob medida para a sua essência.</p>
+            <h1 data-i18n="hero_titulo">Arquitetura e interiores, do briefing à obra</h1>
+            <p data-i18n="hero_subtitulo">Projetos residenciais e comerciais com projeto executivo completo e acompanhamento próximo da execução.</p>
             <a href="#projetos" class="btn" data-i18n="hero_botao">Conheça os Projetos</a>
         </div>
     </section>
@@ -1303,7 +1436,7 @@
         
         <div class="grid-projetos" id="projetosGrid">
             <div class="projeto-item" data-categoria="interior" data-projeto="samantha">
-                <img src="img/sam_home_ia.jpg" alt="Apartamento Samantha" loading="lazy">
+                <img src="img/card_sam_home_ia.jpg" alt="Apartamento Samantha" loading="lazy">
                 <div class="projeto-categoria">Interiores</div>
                 <div class="projeto-info">
                     <h3 data-i18n="proj1_titulo">Apartamento Samantha</h3>
@@ -1311,7 +1444,7 @@
                 </div>
             </div>
             <div class="projeto-item" data-categoria="interior" data-projeto="alex">
-                <img src="img/alex_sala.jpg" alt="Cobertura Alex" loading="lazy">
+                <img src="img/card_alex_sala.jpg" alt="Cobertura Alex" loading="lazy">
                 <div class="projeto-categoria">Interiores</div>
                 <div class="projeto-info">
                     <h3 data-i18n="proj2_titulo">Cobertura Alex</h3>
@@ -1319,7 +1452,7 @@
                 </div>
             </div>
             <div class="projeto-item" data-categoria="interior" data-projeto="clinica">
-                <img src="img/cli_recepcao.jpg" alt="B Santana Clinic" loading="lazy">
+                <img src="img/card_cli_recepcao.jpg" alt="B Santana Clinic" loading="lazy">
                 <div class="projeto-categoria">Interiores</div>
                 <div class="projeto-info">
                     <h3 data-i18n="proj3_titulo">B Santana Clinic</h3>
@@ -1327,7 +1460,7 @@
                 </div>
             </div>
             <div class="projeto-item" data-categoria="exterior" data-projeto="ibiuna">
-                <img src="img/ib_fachada.jpg" alt="Residência em Ibiúna" loading="lazy">
+                <img src="img/card_ib_fachada.jpg" alt="Residência em Ibiúna" loading="lazy">
                 <div class="projeto-categoria">Externos</div>
                 <div class="projeto-info">
                     <h3 data-i18n="proj4_titulo">Residência em Ibiúna</h3>
@@ -1335,7 +1468,7 @@
                 </div>
             </div>
             <div class="projeto-item" data-categoria="interior" data-projeto="frigo">
-                <img src="img/frigo_hotel_a.jpg" alt="Frigo" loading="lazy">
+                <img src="img/card_frigo_hotel_a.jpg" alt="Frigo" loading="lazy">
                 <div class="projeto-categoria">Interiores</div>
                 <div class="projeto-info">
                     <h3 data-i18n="proj5_titulo">Frigo</h3>
@@ -1343,7 +1476,7 @@
                 </div>
             </div>
             <div class="projeto-item" data-categoria="exterior" data-projeto="avare">
-                <img src="img/avare.jpg" alt="Casa Avaré" loading="lazy">
+                <img src="img/card_avare.jpg" alt="Casa Avaré" loading="lazy">
                 <div class="projeto-categoria">Externos</div>
                 <div class="projeto-info">
                     <h3 data-i18n="proj6_titulo">Casa Avaré</h3>
@@ -1354,13 +1487,13 @@
     </section>
 
     <!-- MODAL DE PROJETO -->
-    <div class="project-modal" id="projectModal">
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-container">
-            <div class="modal-close" id="modalClose">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <button type="button" class="modal-close" id="modalClose" aria-label="Fechar">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
-            </div>
+            </button>
             <div class="modal-content" id="modalContent">
                 <!-- Conteúdo preenchido via JavaScript -->
             </div>
@@ -1475,106 +1608,166 @@
             }
         };
 
+        const motionOk = () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // ENGLISH TEXTS FOR THE PROJECT WINDOWS
+        const projetosEN = {
+            samantha: { categoria: "Renovation and Interiors",
+                descricao_en: "Ren­o­va­tion of a 70 m² apartment. The flat had a single shared bath­room; the project splits that core into a guest bath­room and a master en-suite, with new dry­wall partitions. The con­struc­tion set has nine sheets at 1:50: ex­ist­ing, de­mo­li­tion and con­struc­tion, re­vised plan, layout, floor­ing, elec­tri­cal, ceil­ing, light­ing and plumbing. Design by Laris­sa Abreu Ar­quite­tu­ra e In­te­ri­ores, co­or­di­nat­ed by Leonar­do; Dan­niela Teix­eira de­vel­oped the con­struc­tion doc­u­ments and the layout. Images: renderings.",
+                materiais_en: "Brick slips in the living room, ex­posed con­crete in the dining area, slat­ted panels con­ceal­ing doors and the fuse box, slat­ted head­board, full-height wardrobes, wine niche and stor­age bench in the laundry." },
+            alex: { categoria: "Interiors",
+                descricao_en: "Duplex pent­house near Aveni­da Paulista. The lower floor brings to­geth­er living, dining and kitchen, a study and music room, and a master suite with walk-in closet; the upper floor holds a lounge and a bedroom. Co­or­di­nat­ed by Helio Al­bu­querque; layout plan by Dan­niela Teixeira. Images: renderings.",
+                materiais_en: "The upper hall was en­larged into a sit­ting area set on a 20 cm step. Down­stairs, a join­ery screen with a con­sole con­ceals the water and drainage risers." },
+            clinica: { categoria: "Health and Aesthetics",
+                descricao_en: "Ren­o­va­tion of an ad­vanced aes­thet­ics clinic. Two new rooms, of 8.16 m² and 7.24 m², were added next to the ex­ist­ing rooms with­out touch­ing the reception. Light­ing relies solely on flex­i­ble LED pro­files, 47.26 m in total, draw­ing frames on each ceiling. Design by Dan­niela Teix­eira for Granja Viana Ar­quite­tu­ra & Construção. Images: renderings.",
+                materiais_en: "Branco Itaú­nas gran­ite work­tops, Car­val­ho Malva MDF join­ery and gold de­tails in fit­tings, mir­rors and furniture." },
+            ibiuna: { categoria: "Residential",
+                descricao_en: "A built single-storey house on a long 884.40 m² plot, or­gan­ised in bands: garden and access at the front, the house in the middle and leisure at the back. The 77.98 m² porch shel­ters two cars and dou­bles as a cov­ered ve­ran­da; kitchen, dining and living form a single 46.26 m² space. Au­thors: Rafael Diniz and Dan­niela Teixeira. Images: renderings.",
+                materiais_en: "Roman clay tiles on two offset roof planes, white-painted eu­ca­lyp­tus fas­cias, eu­ca­lyp­tus frames and rail­ings, Marfim Nobre acrylic paint and a brick barbecue." },
+            frigo: { categoria: "Commercial",
+                descricao_en: "A chain of self-service mini mar­kets open 24 hours. The first phys­i­cal store was built inside a hotel in São Paulo, with design, build and fit-out by Dan­niela Teix­eira; she then led the roll-out of more than 15 units of the chain. Images: pho­to­graphs of the fin­ished work.",
+                materiais_en: "Timber join­ery with light­ing on every shelf, ap­plied let­ter­ing read­ing “Pick up, pay and take away”, a self-checkout kiosk; in the next unit, wood-effect panels, an L-shaped shelf and a light slot in the ceiling." },
+            avare: { categoria: "Residential",
+                descricao_en: "A two-storey house with a white façade and floor-to-ceiling black frames. The upper slab projects over the en­trance with re­cessed lighting. Image: render.",
+                materiais_en: "Black frames, timber-effect side panel, glass balustrade on the bal­cony and wall lights on the façade." }
+        };
+        const modalLabels = {
+            pt: { local: 'Localização', ano: 'Ano', area: 'Área', categoria: 'Categoria', materiais: 'Materiais e soluções', imagem: 'Imagem', de: 'de', anterior: 'Imagem anterior', proxima: 'Próxima imagem', fechar: 'Fechar', abrir: 'Ver projeto' },
+            en: { local: 'Location', ano: 'Year', area: 'Area', categoria: 'Category', materiais: 'Materials and solutions', imagem: 'Image', de: 'of', anterior: 'Previous image', proxima: 'Next image', fechar: 'Close', abrir: 'View project' }
+        };
+
         // FUNÇÃO PARA ABRIR MODAL
+        let lastFocus = null;
         function openProjectModal(projetoId) {
             const projeto = projetosData[projetoId];
             if (!projeto) return;
-            
+            const en = currentLang === 'en' ? projetosEN[projetoId] : null;
+            const L = modalLabels[currentLang];
             const modal = document.getElementById('projectModal');
             const modalContent = document.getElementById('modalContent');
-            
-            let imagensHtml = `
-                <img class="modal-main-image" id="modalMainImage" src="${projeto.imagens[0]}" alt="${projeto.titulo}">
-                <div class="modal-thumbnails">
-            `;
-            
-            projeto.imagens.forEach((img, index) => {
-                imagensHtml += `
-                    <img class="modal-thumb ${index === 0 ? 'active' : ''}" 
-                         src="${img}" 
-                         alt="Imagem ${index + 1}" 
-                         onclick="changeModalImage(${index})">
-                `;
-            });
-            imagensHtml += `</div>`;
-            
+            const n = projeto.imagens.length;
+
+            const thumbs = n > 1 ? `<div class="modal-thumbnails">${projeto.imagens.map((img, i) =>
+                `<button type="button" class="modal-thumb ${i === 0 ? 'active' : ''}" data-i="${i}" aria-label="${L.imagem} ${i + 1} ${L.de} ${n}"><img src="${img}" alt="" loading="lazy"></button>`).join('')}</div>` : '';
+            const arrows = n > 1 ? `<button type="button" class="modal-nav prev" aria-label="${L.anterior}">&#8249;</button><button type="button" class="modal-nav next" aria-label="${L.proxima}">&#8250;</button>` : '';
+
             modalContent.innerHTML = `
-                ${imagensHtml}
-                <h2 class="modal-title">${projeto.titulo}</h2>
+                <div class="modal-stage">
+                    <img class="modal-main-image" id="modalMainImage" src="${projeto.imagens[0]}" alt="${projeto.titulo}, ${L.imagem.toLowerCase()} 1 ${L.de} ${n}">
+                    ${arrows}
+                </div>
+                ${thumbs}
+                <h2 class="modal-title" id="modalTitle">${projeto.titulo}</h2>
                 <div class="modal-tech-specs">
-                    ${[['Localização', projeto.local], ['Ano', projeto.ano], ['Área', projeto.area], ['Categoria', projeto.categoria]]
+                    ${[[L.local, projeto.local], [L.ano, projeto.ano], [L.area, projeto.area], [L.categoria, en ? en.categoria : projeto.categoria]]
                         .filter(([, v]) => v)
                         .map(([k, v]) => `<div class="spec-item"><div class="spec-label">${k}</div><div class="spec-value">${v}</div></div>`).join('')}
                 </div>
                 <div class="modal-description">
-                    <p>${projeto.descricao}</p>
+                    <p>${en ? en.descricao_en : projeto.descricao}</p>
                 </div>
                 <div class="modal-materials">
-                    <h4>Materiais Utilizados</h4>
-                    <p>${projeto.materiais}</p>
+                    <h4>${L.materiais}</h4>
+                    <p>${en ? en.materiais_en : projeto.materiais}</p>
                 </div>
             `;
-            
+            modalContent.querySelectorAll('.modal-thumb').forEach(b => b.addEventListener('click', () => changeModalImage(+b.dataset.i)));
+            const prev = modalContent.querySelector('.modal-nav.prev'), next = modalContent.querySelector('.modal-nav.next');
+            if (prev) prev.addEventListener('click', () => changeModalImage((window.currentImageIndex - 1 + n) % n));
+            if (next) next.addEventListener('click', () => changeModalImage((window.currentImageIndex + 1) % n));
+
             window.currentProjectImages = projeto.imagens;
+            window.currentProjectTitle = projeto.titulo;
             window.currentImageIndex = 0;
-            
-            modal.classList.add('active');
-            document.body.classList.add('modal-open');
+            showModal();
         }
-        
+
         function changeModalImage(index) {
             const mainImage = document.getElementById('modalMainImage');
-            const thumbs = document.querySelectorAll('.modal-thumb');
-            
-            if (mainImage && window.currentProjectImages[index]) {
-                mainImage.src = window.currentProjectImages[index];
-                window.currentImageIndex = index;
-                
-                thumbs.forEach((thumb, i) => {
-                    if (i === index) {
-                        thumb.classList.add('active');
-                    } else {
-                        thumb.classList.remove('active');
-                    }
-                });
-            }
+            const imgs = window.currentProjectImages;
+            if (!mainImage || !imgs || !imgs[index]) return;
+            const L = modalLabels[currentLang];
+            mainImage.src = imgs[index];
+            mainImage.alt = `${window.currentProjectTitle}, ${L.imagem.toLowerCase()} ${index + 1} ${L.de} ${imgs.length}`;
+            window.currentImageIndex = index;
+            document.querySelectorAll('.modal-thumb').forEach((t, i) => t.classList.toggle('active', i === index));
         }
-        
+
+        function showModal() {
+            lastFocus = document.activeElement;
+            document.getElementById('projectModal').classList.add('active');
+            document.body.classList.add('modal-open');
+            document.getElementById('modalClose').setAttribute('aria-label', modalLabels[currentLang].fechar);
+            setTimeout(() => document.getElementById('modalClose').focus({ preventScroll: true }), 50);
+        }
+
         function closeModal() {
             const modal = document.getElementById('projectModal');
+            if (!modal.classList.contains('active')) return;
             modal.classList.remove('active');
             document.body.classList.remove('modal-open');
+            window.currentProjectImages = null;
+            if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
         }
-        
-        // Event listeners para os projetos
+
+        // Project cards: open with click, Enter or Space (keyboard accessible)
         document.querySelectorAll('.projeto-item').forEach(item => {
-            item.addEventListener('click', (e) => {
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+            const open = () => {
                 const projetoId = item.getAttribute('data-projeto');
-                if (projetoId && projetosData[projetoId]) {
-                    openProjectModal(projetoId);
-                }
+                if (projetoId && projetosData[projetoId]) openProjectModal(projetoId);
+            };
+            item.addEventListener('click', open);
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
             });
         });
-        
+
         document.getElementById('modalClose').addEventListener('click', closeModal);
         document.getElementById('projectModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('projectModal')) {
-                closeModal();
-            }
+            if (e.target === document.getElementById('projectModal')) closeModal();
         });
-        
+
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
+            const modal = document.getElementById('projectModal');
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') { closeModal(); return; }
+            const imgs = window.currentProjectImages;
+            if (imgs && imgs.length > 1 && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+                const d = e.key === 'ArrowRight' ? 1 : -1;
+                changeModalImage((window.currentImageIndex + d + imgs.length) % imgs.length);
+            }
+            if (e.key === 'Tab') { // keep focus inside the window
+                const f = [...modal.querySelectorAll('button, a[href], input, textarea')].filter(el => el.offsetParent !== null);
+                if (!f.length) return;
+                const first = f[0], last = f[f.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
             }
         });
-        
-        // PRELOADER
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('preloader').classList.add('hide');
-            }, 500);
-        });
+
+        // Swipe between images on touch screens
+        (() => {
+            let x0 = null;
+            const stage = document.getElementById('modalContent');
+            stage.addEventListener('touchstart', (e) => { if (e.target.closest('.modal-stage')) x0 = e.touches[0].clientX; }, { passive: true });
+            stage.addEventListener('touchend', (e) => {
+                const imgs = window.currentProjectImages;
+                if (x0 === null || !imgs || imgs.length < 2) return;
+                const dx = e.changedTouches[0].clientX - x0; x0 = null;
+                if (Math.abs(dx) > 40) changeModalImage((window.currentImageIndex + (dx < 0 ? 1 : -1) + imgs.length) % imgs.length);
+            }, { passive: true });
+        })();
+
+        // PRELOADER: hides as soon as the page structure and fonts are ready (max 2.5 s),
+        // instead of waiting for every image to finish downloading
+        (() => {
+            const hide = () => document.getElementById('preloader').classList.add('hide');
+            const ready = () => (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(hide, 150));
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready); else ready();
+            setTimeout(hide, 2500);
+        })();
         
         // HEADER SCROLL EFFECT
         const header = document.getElementById('header');
@@ -1625,9 +1818,9 @@
             if (e) e.preventDefault();
             const t = translations[currentLang];
             document.getElementById('modalContent').innerHTML =
-                `<h2 class="modal-title">${t.privacidade_titulo}</h2><div class="modal-description privacidade">${t.privacidade_html}</div>`;
-            document.getElementById('projectModal').classList.add('active');
-            document.body.classList.add('modal-open');
+                `<h2 class="modal-title" id="modalTitle">${t.privacidade_titulo}</h2><div class="modal-description privacidade">${t.privacidade_html}</div>`;
+            window.currentProjectImages = null;
+            showModal();
         }
         document.querySelectorAll('.link-privacidade').forEach(a => a.addEventListener('click', openPrivacy));
 
@@ -1663,7 +1856,7 @@
         });
         
         backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: motionOk() ? 'smooth' : 'auto' });
         });
         
         // TRADUÇÕES (sem referências ao contador ou newsletter)
@@ -1677,7 +1870,7 @@
                 sd3t: "3D e render", sd3: "SketchUp e Twinmotion, com apoio de inteligência artificial",
                 sd4t: "Europa", sd4: "intercâmbio de oito meses em Dublin, na Irlanda",
                 sobre_clientes_t: "Clientes comerciais",
-                hero_titulo: "Arquitetura com Propósito", hero_subtitulo: "Transformando espaços em experiências únicas e atemporais, feitas sob medida para a sua essência.",
+                hero_titulo: "Arquitetura e interiores, do briefing à obra", hero_subtitulo: "Projetos residenciais e comerciais com projeto executivo completo e acompanhamento próximo da execução.",
                 hero_botao: "Conheça os Projetos", sobre_titulo: "Sobre mim",
                 projetos_titulo: "Projetos em Destaque", proj1_titulo: "Apartamento Samantha", proj1_desc: "Reforma e Interiores", 
                 proj2_titulo: "Cobertura Alex", proj2_desc: "Cobertura Duplex", 
@@ -1706,7 +1899,7 @@
                 sd3t: "3D and rendering", sd3: "SketchUp and Twinmotion, supported by AI tools",
                 sd4t: "Europe", sd4: "eight-month exchange in Dublin, Ireland",
                 sobre_clientes_t: "Commercial clients",
-                hero_titulo: "Architecture with Purpose", hero_subtitulo: "Transforming spaces into unique and timeless experiences, tailored to your essence.",
+                hero_titulo: "Architecture and interiors, from brief to site", hero_subtitulo: "Residential and commercial projects with full construction documents and close site supervision.",
                 hero_botao: "View Projects", sobre_titulo: "About me",
                 projetos_titulo: "Featured Projects", proj1_titulo: "Apartamento Samantha", proj1_desc: "Renovation and Interiors",
                 proj2_titulo: "Cobertura Alex", proj2_desc: "Duplex Penthouse",
@@ -1768,7 +1961,8 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+                    const offset = document.getElementById('header').offsetHeight + 8;
+                    window.scrollTo({ top: target.offsetTop - offset, behavior: motionOk() ? 'smooth' : 'auto' });
                 }
             });
         });
