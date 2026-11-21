@@ -1054,6 +1054,100 @@
             }
         }
 
+        /* ===== TEXTOS JUSTIFICADOS ===== */
+        #sobre .sobre-conteudo p:not(.sobre-cargo):not(.sobre-clientes),
+        .modal-description p,
+        .modal-materials p {
+            text-align: justify;
+            text-align-last: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* ===== SOBRE MIM ===== */
+        #sobre .sobre-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+            gap: 64px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        #sobre .sobre-foto { margin: 0; }
+        #sobre .sobre-foto img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        #sobre .sobre-conteudo p {
+            max-width: none;
+            margin: 0 0 16px;
+        }
+        #sobre .sobre-cargo {
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #A8854F;
+        }
+        #sobre .sobre-destaques {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 32px;
+            margin: 28px 0 8px;
+            padding: 0;
+        }
+        #sobre .sobre-destaques li {
+            border-top: 1px solid #D2C5B2;
+            padding: 16px 0 20px;
+        }
+        #sobre .sobre-destaques strong {
+            display: block;
+            font-family: var(--font-titulo);
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 1.12;
+            color: #2E2620;
+            margin-bottom: 6px;
+        }
+        #sobre .sobre-destaques span {
+            display: block;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #4A3F36;
+        }
+        #sobre .sobre-clientes {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4A3F36;
+            border-top: 1px solid #D2C5B2;
+            padding-top: 16px;
+            margin-bottom: 0;
+        }
+        #sobre .sobre-clientes span {
+            display: block;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #A8854F;
+            margin-bottom: 4px;
+        }
+        @media (max-width: 900px) {
+            #sobre .sobre-grid { grid-template-columns: 1fr; gap: 36px; }
+            #sobre .sobre-foto { max-width: 420px; width: 100%; margin: 0 auto; }
+        }
+        @media (max-width: 480px) {
+            #sobre .sobre-destaques { grid-template-columns: 1fr; }
+            #sobre .sobre-destaques strong { font-size: 26px; }
+        }
+
         /* WhatsApp: minimalista, na paleta do site */
         .whatsapp-float {
             background-color: #F3EEE6;
@@ -1099,7 +1193,7 @@
             <nav>
                 <ul>
                     <li><a href="#hero" data-i18n="menu_inicio">Início</a></li>
-                    <li><a href="#sobre" data-i18n="menu_escritorio">Escritório</a></li>
+                    <li><a href="#sobre" data-i18n="menu_escritorio">Sobre</a></li>
                     <li><a href="#projetos" data-i18n="menu_projetos">Projetos</a></li>
                     <li><a href="#contato" data-i18n="menu_contato">Contato</a></li>
                 </ul>
@@ -1120,8 +1214,24 @@
     </section>
 
     <section id="sobre" class="sobre reveal">
-        <h2 data-i18n="sobre_titulo">A Essência do Morar Bem</h2>
-        <p data-i18n="sobre_texto">Liderado por Danniela Teixeira, nosso escritório acredita que a arquitetura vai além da estética: é sobre traduzir identidade, conforto e funcionalidade em cada detalhe. Nosso compromisso é entregar projetos sofisticados e exclusivos.</p>
+        <h2 data-i18n="sobre_titulo">Sobre mim</h2>
+        <div class="sobre-grid">
+            <figure class="sobre-foto">
+                <img src="danniela.jpg" alt="Retrato de Danniela Teixeira" width="960" height="1200" loading="lazy">
+            </figure>
+            <div class="sobre-conteudo">
+                <p class="sobre-cargo" data-i18n="sobre_cargo">Projetista de arquitetura e interiores</p>
+                <p data-i18n="sobre_p1">Tra­ba­lho com pro­je­to desde 2019, em es­cri­tó­rios e em em­pre­sa própria. De 2020 a 2025 dirigi a Granja Viana Ar­qui­te­tu­ra &amp; Cons­tru­ção, aten­den­do cli­en­tes re­si­den­ci­ais e comerciais.</p>
+                <p data-i18n="sobre_p2">Acom­pa­nho todas as etapas, do bri­e­fing à obra: le­van­ta­men­to, estudo pre­li­mi­nar, pro­je­to legal, pro­je­to exe­cu­ti­vo, de­ta­lha­men­to de mar­ce­na­ria, lu­mi­no­téc­ni­co e ima­gens 3D. Meu foco é um pro­je­to exe­cu­ti­vo que chegue à obra resolvido.</p>
+                <ul class="sobre-destaques">
+                    <li><strong>150+</strong><span data-i18n="sd1">projetos entregues, de 50 a 400 m²</span></li>
+                    <li><strong>AutoCAD</strong><span data-i18n="sd2">nível avançado em projeto legal, executivo e marcenaria</span></li>
+                    <li><strong data-i18n="sd3t">3D e render</strong><span data-i18n="sd3">SketchUp e Twinmotion, com apoio de inteligência artificial</span></li>
+                    <li><strong data-i18n="sd4t">Europa</strong><span data-i18n="sd4">intercâmbio de oito meses em Dublin, na Irlanda</span></li>
+                </ul>
+                <p class="sobre-clientes"><span data-i18n="sobre_clientes_t">Clientes comerciais</span> Frigo, Stylish Hair, NOP Odonto e NOP Odonto Radiologia</p>
+            </div>
+        </div>
     </section>
 
     <section id="projetos" class="projetos reveal">
@@ -1260,8 +1370,8 @@
                 categoria: "Reforma e Interiores",
                 local: "Max Haus Berrini, São Paulo",
                 area: "70 m²",
-                descricao: "Reforma de um apartamento de 70 m². O apartamento tinha um único banheiro, de uso comum; a reforma divide esse núcleo em banheiro social e banheiro da suíte master, com paredes novas em drywall. O projeto executivo tem nove pranchas na escala 1:50: original, demolir e construir, planta modificada, layout, piso, elétrica, forro, iluminação e hidráulica. Projeto do escritório Larissa Abreu Arquitetura e Interiores, com coordenação de Leonardo; Danniela Teixeira desenvolveu o projeto executivo e o layout. Imagens: renderizações.",
-                materiais: "Tijolinho no home, concreto aparente no jantar, painéis ripados que disfarçam portas e o quadro de luz, cabeceira em ripado, armários altos, nicho de vinho e banco-baú na área de serviço.",
+                descricao: "Re­for­ma de um apar­ta­men­to de 70 m². O apar­ta­men­to tinha um único ba­nhei­ro, de uso comum; a re­for­ma divide esse núcleo em ba­nhei­ro social e ba­nhei­ro da suíte master, com pa­re­des novas em drywall. O pro­je­to exe­cu­ti­vo tem nove pran­chas na escala 1:50: ori­gi­nal, de­mo­lir e cons­truir, planta mo­di­fi­ca­da, layout, piso, elé­tri­ca, forro, ilu­mi­na­ção e hidráulica. Pro­je­to do es­cri­tó­rio La­ris­sa Abreu Ar­qui­te­tu­ra e In­te­ri­o­res, com co­or­de­na­ção de Le­o­nar­do; Dan­ni­e­la Tei­xei­ra de­sen­vol­veu o pro­je­to exe­cu­ti­vo e o layout. Ima­gens: renderizações.",
+                materiais: "Ti­jo­li­nho no home, con­cre­to apa­ren­te no jantar, pai­néis ri­pa­dos que dis­far­çam portas e o quadro de luz, ca­be­cei­ra em ripado, ar­má­rios altos, nicho de vinho e banco-baú na área de serviço.",
                 imagens: ["img/sam_home_ia.jpg", "img/sam_45.jpg", "img/sam_48.jpg", "img/sam_52.jpg", "img/sam_50.jpg", "img/sam_56.jpg", "img/sam_layout.jpg"]
             },
             alex: {
@@ -1270,8 +1380,8 @@
                 local: "Ed. Lotus, Bela Vista, São Paulo",
                 ano: "2026",
                 area: "266,09 m²",
-                descricao: "Cobertura duplex na região da Avenida Paulista. No primeiro pavimento, sala, jantar e cozinha integrados, escritório e sala de música e suíte master com closet integrado; no segundo, um salão de estar e um quarto. Coordenação de Helio Albuquerque; planta de layout de Danniela Teixeira. Imagens: renderizações.",
-                materiais: "O hall do segundo pavimento foi ampliado e ganhou um estar com degrau de 20 cm. No primeiro, um brise de marcenaria com aparador esconde as prumadas de água e esgoto.",
+                descricao: "Co­ber­tu­ra duplex na região da Ave­ni­da Paulista. No pri­mei­ro pa­vi­men­to, sala, jantar e co­zi­nha in­te­gra­dos, es­cri­tó­rio e sala de música e suíte master com closet in­te­gra­do; no se­gun­do, um salão de estar e um quarto. Co­or­de­na­ção de Helio Al­bu­quer­que; planta de layout de Dan­ni­e­la Teixeira. Ima­gens: renderizações.",
+                materiais: "O hall do se­gun­do pa­vi­men­to foi am­pli­a­do e ganhou um estar com degrau de 20 cm. No pri­mei­ro, um brise de mar­ce­na­ria com apa­ra­dor es­con­de as pru­ma­das de água e esgoto.",
                 imagens: ["img/alex_sala.jpg", "img/alex_superior.jpg", "img/alex_superior2.jpg", "img/alex_pav1.jpg", "img/alex_pav2.jpg"]
             },
             clinica: {
@@ -1279,8 +1389,8 @@
                 categoria: "Saúde e Estética",
                 local: "Barueri, SP",
                 ano: "2026",
-                descricao: "Reforma de uma clínica de estética avançada. Duas salas novas, de 8,16 m² e 7,24 m², foram criadas ao lado das salas existentes, sem mexer na recepção. A iluminação usa só perfis de LED flex, 47,26 m no total, que desenham molduras no forro de cada sala. Projeto de Danniela Teixeira pela Granja Viana Arquitetura & Construção. Imagens: renderizações.",
-                materiais: "Granito Branco Itaúnas nas bancadas, MDF Carvalho Malva na marcenaria e detalhes dourados em metais, espelhos e mobiliário.",
+                descricao: "Re­for­ma de uma clí­ni­ca de es­té­ti­ca avançada. Duas salas novas, de 8,16 m² e 7,24 m², foram cri­a­das ao lado das salas exis­ten­tes, sem mexer na recepção. A ilu­mi­na­ção usa só perfis de LED flex, 47,26 m no total, que de­se­nham mol­du­ras no forro de cada sala. Pro­je­to de Dan­ni­e­la Tei­xei­ra pela Granja Viana Ar­qui­te­tu­ra & Construção. Ima­gens: renderizações.",
+                materiais: "Gra­ni­to Branco Itaú­nas nas ban­ca­das, MDF Car­va­lho Malva na mar­ce­na­ria e de­ta­lhes dou­ra­dos em metais, es­pe­lhos e mobiliário.",
                 imagens: ["img/cli_recepcao.jpg", "img/cli_procedimento.jpg", "img/cli_consultorio.jpg", "img/cli_copa.jpg", "img/cli_planta_ilum.jpg"]
             },
             ibiuna: {
@@ -1288,23 +1398,23 @@
                 categoria: "Residencial",
                 local: "Ibiúna, SP",
                 area: "244,39 m²",
-                descricao: "Casa térrea construída em um terreno longo de 884,40 m², organizada em faixas: jardim e acesso na frente, a casa no centro e o lazer ao fundo. O alpendre de 77,98 m² abriga dois carros e funciona como varanda coberta; cozinha, jantar e estar formam um único ambiente de 46,26 m². Autoria de Rafael Diniz e Danniela Teixeira. Imagens: renderizações.",
-                materiais: "Telha cerâmica romana em dois planos desencontrados, testeiras em eucalipto pintado de branco, molduras e gradis em eucalipto, pintura acrílica Marfim Nobre e churrasqueira em tijolinho.",
+                descricao: "Casa térrea cons­tru­í­da em um ter­re­no longo de 884,40 m², or­ga­ni­za­da em faixas: jardim e acesso na frente, a casa no centro e o lazer ao fundo. O al­pen­dre de 77,98 m² abriga dois carros e fun­ci­o­na como va­ran­da co­ber­ta; co­zi­nha, jantar e estar formam um único am­bi­en­te de 46,26 m². Au­to­ria de Rafael Diniz e Dan­ni­e­la Teixeira. Ima­gens: renderizações.",
+                materiais: "Telha ce­râ­mi­ca romana em dois planos de­sen­con­tra­dos, tes­tei­ras em eu­ca­lip­to pin­ta­do de branco, mol­du­ras e gradis em eu­ca­lip­to, pin­tu­ra acrí­li­ca Marfim Nobre e chur­ras­quei­ra em tijolinho.",
                 imagens: ["img/ib_fachada.jpg", "img/ib_entardecer.jpg", "img/ib_lazer.jpg", "img/ib_layout.jpg"]
             },
             frigo: {
                 titulo: "Frigo",
                 categoria: "Comercial",
                 local: "São Paulo, SP",
-                descricao: "Rede de minimercados autônomos que funcionam 24 horas. A primeira loja física foi montada dentro de um hotel em São Paulo, com projeto, obra e execução de Danniela Teixeira; depois, ela conduziu a implantação de mais de 15 unidades da rede. Imagens: fotografias da obra concluída.",
-                materiais: "Marcenaria em madeira com luz em cada prateleira, letras aplicadas com a frase “Pegue, pague e leve”, totem de autoatendimento; na unidade seguinte, painéis amadeirados, estante em L e rasgo de luz no forro.",
+                descricao: "Rede de mi­ni­mer­ca­dos au­tô­no­mos que fun­ci­o­nam 24 horas. A pri­mei­ra loja física foi mon­ta­da dentro de um hotel em São Paulo, com pro­je­to, obra e exe­cu­ção de Dan­ni­e­la Tei­xei­ra; depois, ela con­du­ziu a im­plan­ta­ção de mais de 15 uni­da­des da rede. Ima­gens: fo­to­gra­fi­as da obra concluída.",
+                materiais: "Mar­ce­na­ria em ma­dei­ra com luz em cada pra­te­lei­ra, letras apli­ca­das com a frase “Pegue, pague e leve”, totem de au­to­a­ten­di­men­to; na uni­da­de se­guin­te, pai­néis ama­dei­ra­dos, es­tan­te em L e rasgo de luz no forro.",
                 imagens: ["img/frigo_hotel_a.jpg", "img/frigo_hotel_b.jpg", "img/frigo_u2_a.jpg"]
             },
             avare: {
                 titulo: "Casa Avaré",
                 categoria: "Residencial",
-                descricao: "Residência de dois pavimentos com fachada branca e esquadrias pretas de piso a teto. A laje superior avança sobre a entrada com iluminação embutida. Imagem: render.",
-                materiais: "Esquadrias pretas, painel amadeirado na lateral, guarda-corpo de vidro na sacada e arandelas na fachada.",
+                descricao: "Re­si­dên­cia de dois pa­vi­men­tos com fa­cha­da branca e es­qua­dri­as pretas de piso a teto. A laje su­pe­ri­or avança sobre a en­tra­da com ilu­mi­na­ção embutida. Imagem: render.",
+                materiais: "Es­qua­dri­as pretas, painel ama­dei­ra­do na la­te­ral, guarda-corpo de vidro na sacada e aran­de­las na fachada.",
                 imagens: ["img/avare.jpg"]
             }
         };
@@ -1495,10 +1605,16 @@
         // TRADUÇÕES (sem referências ao contador ou newsletter)
         const translations = {
             pt: {
-                menu_inicio: "Início", menu_escritorio: "Escritório", menu_projetos: "Projetos", menu_contato: "Contato",
+                menu_inicio: "Início", menu_escritorio: "Sobre", menu_projetos: "Projetos", menu_contato: "Contato",
+                sobre_cargo: "Projetista de arquitetura e interiores",
+                sobre_p1: "Tra­ba­lho com pro­je­to desde 2019, em es­cri­tó­rios e em em­pre­sa própria. De 2020 a 2025 dirigi a Granja Viana Ar­qui­te­tu­ra & Cons­tru­ção, aten­den­do cli­en­tes re­si­den­ci­ais e comerciais.",
+                sobre_p2: "Acom­pa­nho todas as etapas, do bri­e­fing à obra: le­van­ta­men­to, estudo pre­li­mi­nar, pro­je­to legal, pro­je­to exe­cu­ti­vo, de­ta­lha­men­to de mar­ce­na­ria, lu­mi­no­téc­ni­co e ima­gens 3D. Meu foco é um pro­je­to exe­cu­ti­vo que chegue à obra resolvido.",
+                sd1: "projetos entregues, de 50 a 400 m²", sd2: "nível avançado em projeto legal, executivo e marcenaria",
+                sd3t: "3D e render", sd3: "SketchUp e Twinmotion, com apoio de inteligência artificial",
+                sd4t: "Europa", sd4: "intercâmbio de oito meses em Dublin, na Irlanda",
+                sobre_clientes_t: "Clientes comerciais",
                 hero_titulo: "Arquitetura com Propósito", hero_subtitulo: "Transformando espaços em experiências únicas e atemporais, feitas sob medida para a sua essência.",
-                hero_botao: "Conheça os Projetos", sobre_titulo: "A Essência do Morar Bem", 
-                sobre_texto: "Liderado por Danniela Teixeira, nosso escritório acredita que a arquitetura vai além da estética: é sobre traduzir identidade, conforto e funcionalidade em cada detalhe. Nosso compromisso é entregar projetos sofisticados e exclusivos.",
+                hero_botao: "Conheça os Projetos", sobre_titulo: "Sobre mim",
                 projetos_titulo: "Projetos em Destaque", proj1_titulo: "Apartamento Samantha", proj1_desc: "Reforma e Interiores", 
                 proj2_titulo: "Cobertura Alex", proj2_desc: "Cobertura Duplex", 
                 proj3_titulo: "B Santana Clinic", proj3_desc: "Clínica de Estética",
@@ -1511,10 +1627,16 @@
                 filtro_todos: "Todos", filtro_interiores: "Interiores", filtro_externos: "Externos"
             },
             en: {
-                menu_inicio: "Home", menu_escritorio: "Studio", menu_projetos: "Projects", menu_contato: "Contact",
+                menu_inicio: "Home", menu_escritorio: "About", menu_projetos: "Projects", menu_contato: "Contact",
+                sobre_cargo: "Architectural and interior designer",
+                sobre_p1: "I have worked on projects since 2019, in stu­dios and in my own company. From 2020 to 2025 I ran Granja Viana Ar­quite­tu­ra & Con­strução, serv­ing res­i­den­tial and com­mer­cial clients.",
+                sobre_p2: "I follow every stage, from brief to site: survey, con­cept design, plan­ning draw­ings, con­struc­tion doc­u­ments, join­ery de­tail­ing, light­ing design and 3D images. My focus is a con­struc­tion set that reach­es the site fully resolved.",
+                sd1: "projects delivered, from 50 to 400 m²", sd2: "advanced level in planning drawings, construction documents and joinery",
+                sd3t: "3D and rendering", sd3: "SketchUp and Twinmotion, supported by AI tools",
+                sd4t: "Europe", sd4: "eight-month exchange in Dublin, Ireland",
+                sobre_clientes_t: "Commercial clients",
                 hero_titulo: "Architecture with Purpose", hero_subtitulo: "Transforming spaces into unique and timeless experiences, tailored to your essence.",
-                hero_botao: "View Projects", sobre_titulo: "The Essence of Living Well",
-                sobre_texto: "Led by Danniela Teixeira, our studio believes that architecture goes beyond aesthetics: it's about translating identity, comfort, and functionality into every detail.",
+                hero_botao: "View Projects", sobre_titulo: "About me",
                 projetos_titulo: "Featured Projects", proj1_titulo: "Apartamento Samantha", proj1_desc: "Renovation and Interiors",
                 proj2_titulo: "Cobertura Alex", proj2_desc: "Duplex Penthouse",
                 proj3_titulo: "B Santana Clinic", proj3_desc: "Aesthetics Clinic",
@@ -1529,6 +1651,7 @@
         };
         
         window.changeLanguage = function(lang) {
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang][key]) {
