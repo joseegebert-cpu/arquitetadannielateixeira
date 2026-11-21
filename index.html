@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <!-- Security: the page may only load files from this site (GitHub Pages cannot set HTTP headers) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <meta name="theme-color" content="#F3EEE6">
     <title>Danniela Teixeira | Arquitetura e Design</title>
@@ -11,11 +14,45 @@
     
     <link rel="icon" type="image/png" href="favicon.png">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+
     <style>
+        /* Fontes hospedadas no próprio site (Fraunces e Manrope, licença OFL):
+           o navegador do visitante não faz nenhuma requisição ao Google. */
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url('fonts/fraunces-latin-ext.woff2') format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url('fonts/fraunces-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 400 600;
+            font-display: swap;
+            src: url('fonts/manrope-latin-ext.woff2') format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        @font-face {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 400 600;
+            font-display: swap;
+            src: url('fonts/manrope-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
         :root {
             --font-titulo: 'Fraunces', Georgia, serif;
             --font-texto: 'Manrope', Arial, sans-serif;
@@ -1054,6 +1091,24 @@
             }
         }
 
+        /* ===== FORMULÁRIO E PRIVACIDADE ===== */
+        .form-aviso {
+            margin-top: 14px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #857868;
+            text-align: center;
+        }
+        .link-privacidade {
+            color: #A8854F;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        footer .link-privacidade { color: #857868; }
+        .link-privacidade:hover { color: #2E2620; }
+        .modal-description.privacidade p { margin-bottom: 14px; }
+        .modal-description.privacidade strong { color: #2E2620; font-weight: 600; }
+
         /* ===== TEXTOS JUSTIFICADOS ===== */
         #sobre .sobre-conteudo p:not(.sobre-cargo):not(.sobre-clientes),
         .modal-description p,
@@ -1190,7 +1245,7 @@
     
     <header id="header">
         <a href="#hero" class="logo">
-            <img src="logo-bege.png" alt="Logo Danniela Teixeira" class="logo-img" onerror="this.src='https://placehold.co/400x150/0a0a0a/c5a880?text=DT'">
+            <img src="logo-bege.png" alt="Logo Danniela Teixeira" class="logo-img" width="1492" height="358">
         </a>
         <div class="nav-container">
             <nav>
@@ -1316,28 +1371,26 @@
         <h2 data-i18n="contato_titulo">Entre em Contato</h2>
         <form class="form-contato" id="contactForm">
             <div class="form-group">
-                <input type="text" id="nome" data-i18n="contato_nome" placeholder="Seu nome" required>
+                <input type="text" id="nome" data-i18n="contato_nome" placeholder="Seu nome" aria-label="Nome" autocomplete="name" required>
             </div>
             <div class="form-group">
-                <input type="email" id="email" data-i18n="contato_email" placeholder="Seu e-mail" required>
+                <textarea id="mensagem" data-i18n="contato_mensagem" placeholder="Conte um pouco sobre o seu projeto" aria-label="Mensagem" required></textarea>
             </div>
-            <div class="form-group">
-                <textarea id="mensagem" data-i18n="contato_mensagem" placeholder="Sua mensagem" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn" data-i18n="contato_botao">Enviar Mensagem</button>
-            <div class="form-message" id="formMessage"></div>
+            <button type="submit" class="submit-btn" data-i18n="contato_botao">Enviar pelo WhatsApp</button>
+            <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+            <p class="form-aviso"><span data-i18n="form_aviso">Ao enviar, o WhatsApp abre com a sua mensagem pronta. Nenhum dado fica guardado neste site.</span> <a href="#" class="link-privacidade" data-i18n="privacidade_link">Aviso de privacidade</a></p>
         </form>
     </section>
 
     <footer>
         <div class="footer-buttons">
-            <a href="https://wa.me/353833684707" target="_blank" class="footer-btn whatsapp">
+            <a href="https://wa.me/353833684707" target="_blank" rel="noopener noreferrer" class="footer-btn whatsapp">
                 <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.9 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
                 </svg>
                 <span data-i18n="footer_whatsapp">WhatsApp</span>
             </a>
-            <a href="https://www.instagram.com/arquitetadanniela_/" target="_blank" class="footer-btn instagram">
+            <a href="https://www.instagram.com/arquitetadanniela_/" target="_blank" rel="noopener noreferrer" class="footer-btn instagram">
                 <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                 </svg>
@@ -1350,7 +1403,7 @@
                 <span data-i18n="footer_email">E-mail</span>
             </a>
         </div>
-        <p>&copy; 2026 Danniela Teixeira. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Danniela Teixeira. <span data-i18n="footer_direitos">Todos os direitos reservados.</span> · <a href="#" class="link-privacidade" data-i18n="privacidade_link">Aviso de privacidade</a></p>
     </footer>
 
     <button class="back-to-top" id="backToTop">
@@ -1359,7 +1412,7 @@
         </svg>
     </button>
 
-    <a href="https://wa.me/353833684707" class="whatsapp-float" target="_blank" rel="noopener">
+    <a href="https://wa.me/353833684707" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
         <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.9 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
         </svg>
@@ -1371,7 +1424,7 @@
             samantha: {
                 titulo: "Apartamento Samantha",
                 categoria: "Reforma e Interiores",
-                local: "Max Haus Berrini, São Paulo",
+                local: "São Paulo, SP",
                 area: "70 m²",
                 descricao: "Re­for­ma de um apar­ta­men­to de 70 m². O apar­ta­men­to tinha um único ba­nhei­ro, de uso comum; a re­for­ma divide esse núcleo em ba­nhei­ro social e ba­nhei­ro da suíte master, com pa­re­des novas em drywall. O pro­je­to exe­cu­ti­vo tem nove pran­chas na escala 1:50: ori­gi­nal, de­mo­lir e cons­truir, planta mo­di­fi­ca­da, layout, piso, elé­tri­ca, forro, ilu­mi­na­ção e hidráulica. Pro­je­to do es­cri­tó­rio La­ris­sa Abreu Ar­qui­te­tu­ra e In­te­ri­o­res, com co­or­de­na­ção de Le­o­nar­do; Dan­ni­e­la Tei­xei­ra de­sen­vol­veu o pro­je­to exe­cu­ti­vo e o layout. Ima­gens: renderizações.",
                 materiais: "Ti­jo­li­nho no home, con­cre­to apa­ren­te no jantar, pai­néis ri­pa­dos que dis­far­çam portas e o quadro de luz, ca­be­cei­ra em ripado, ar­má­rios altos, nicho de vinho e banco-baú na área de serviço.",
@@ -1380,7 +1433,7 @@
             alex: {
                 titulo: "Cobertura Alex",
                 categoria: "Interiores",
-                local: "Ed. Lotus, Bela Vista, São Paulo",
+                local: "Bela Vista, São Paulo",
                 ano: "2026",
                 area: "266,09 m²",
                 descricao: "Co­ber­tu­ra duplex na região da Ave­ni­da Paulista. No pri­mei­ro pa­vi­men­to, sala, jantar e co­zi­nha in­te­gra­dos, es­cri­tó­rio e sala de música e suíte master com closet in­te­gra­do; no se­gun­do, um salão de estar e um quarto. Co­or­de­na­ção de Helio Al­bu­quer­que; planta de layout de Dan­ni­e­la Teixeira. Ima­gens: renderizações.",
@@ -1565,33 +1618,41 @@
             });
         });
         
+        let currentLang = 'pt';
+
+        // AVISO DE PRIVACIDADE (abre na mesma janela modal dos projetos)
+        function openPrivacy(e) {
+            if (e) e.preventDefault();
+            const t = translations[currentLang];
+            document.getElementById('modalContent').innerHTML =
+                `<h2 class="modal-title">${t.privacidade_titulo}</h2><div class="modal-description privacidade">${t.privacidade_html}</div>`;
+            document.getElementById('projectModal').classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+        document.querySelectorAll('.link-privacidade').forEach(a => a.addEventListener('click', openPrivacy));
+
         // FORMULÁRIO
         const contactForm = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
         
+        // The form keeps no data: it only opens WhatsApp with the text the visitor typed.
+        const WHATSAPP = '353833684707';
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const t = translations[currentLang];
             const nome = document.getElementById('nome').value.trim();
-            const email = document.getElementById('email').value.trim();
             const mensagem = document.getElementById('mensagem').value.trim();
-            
-            if (!nome || !email || !mensagem) {
-                formMessage.textContent = 'Por favor, preencha todos os campos.';
+
+            if (!nome || !mensagem) {
+                formMessage.textContent = t.form_erro;
                 formMessage.className = 'form-message error';
                 return;
             }
-            if (!email.includes('@')) {
-                formMessage.textContent = 'Por favor, insira um e-mail válido.';
-                formMessage.className = 'form-message error';
-                return;
-            }
-            
-            formMessage.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+
+            const texto = `${t.wa_intro} ${nome}.\n\n${mensagem}`;
+            window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+            formMessage.textContent = t.form_ok;
             formMessage.className = 'form-message success';
-            contactForm.reset();
-            setTimeout(() => {
-                formMessage.textContent = '';
-            }, 5000);
         });
         
         // BACK TO TOP
@@ -1624,8 +1685,15 @@
                 proj4_titulo: "Residência em Ibiúna", proj4_desc: "Residência Térrea",
                 proj5_titulo: "Frigo", proj5_desc: "Minimercados Autônomos",
                 proj6_titulo: "Casa Avaré", proj6_desc: "Residência Unifamiliar",
-                contato_titulo: "Entre em Contato", contato_nome: "Seu nome", contato_email: "Seu e-mail",
-                contato_mensagem: "Sua mensagem", contato_botao: "Enviar Mensagem",
+                contato_titulo: "Entre em Contato", contato_nome: "Seu nome",
+                contato_mensagem: "Conte um pouco sobre o seu projeto", contato_botao: "Enviar pelo WhatsApp",
+                form_erro: "Preencha seu nome e a mensagem.", form_ok: "O WhatsApp foi aberto com a sua mensagem. É só tocar em enviar.",
+                wa_intro: "Olá, Danniela! Meu nome é",
+                form_aviso: "Ao enviar, o WhatsApp abre com a sua mensagem pronta. Nenhum dado fica guardado neste site.",
+                privacidade_link: "Aviso de privacidade",
+                privacidade_titulo: "Aviso de privacidade",
+                privacidade_html: "<p><strong>Responsável:</strong> Danniela Teixeira, projetista de arquitetura e interiores.</p><p><strong>O que este site coleta:</strong> nada. Ele não usa cookies, não guarda informações no seu navegador, não tem ferramentas de estatística, publicidade ou rastreamento, e as fontes e imagens são servidas pelo próprio site.</p><p><strong>Formulário de contato:</strong> o nome e a mensagem que você digita não são enviados a este site; o botão apenas abre o WhatsApp com o texto pronto, e você decide se envia.</p><p><strong>Contato por WhatsApp, e-mail ou Instagram:</strong> os dados que você enviar por esses canais (como nome, telefone e mensagem) são usados somente para responder sobre o seu projeto e não são compartilhados com terceiros. Esses serviços têm as próprias políticas de privacidade.</p><p><strong>Hospedagem:</strong> o site é hospedado pelo GitHub Pages, que pode registrar dados técnicos de acesso, como o endereço IP, para segurança e funcionamento do serviço.</p><p><strong>Seus direitos (LGPD, Lei 13.709/2018):</strong> você pode pedir acesso, correção ou exclusão dos seus dados de contato a qualquer momento pelo WhatsApp ou pelo e-mail indicados no rodapé.</p>",
+                privacidade_fechar: "Fechar", footer_direitos: "Todos os direitos reservados.",
                 footer_whatsapp: "WhatsApp", footer_instagram: "Instagram", footer_email: "E-mail",
                 filtro_todos: "Todos", filtro_interiores: "Interiores", filtro_externos: "Externos"
             },
@@ -1646,14 +1714,22 @@
                 proj4_titulo: "Residência em Ibiúna", proj4_desc: "Single-storey House",
                 proj5_titulo: "Frigo", proj5_desc: "Self-service Mini Markets",
                 proj6_titulo: "Casa Avaré", proj6_desc: "Single-family House",
-                contato_titulo: "Contact Us", contato_nome: "Your name", contato_email: "Your email",
-                contato_mensagem: "Your message", contato_botao: "Send Message",
+                contato_titulo: "Contact Us", contato_nome: "Your name",
+                contato_mensagem: "Tell me a little about your project", contato_botao: "Send via WhatsApp",
+                form_erro: "Please fill in your name and message.", form_ok: "WhatsApp is open with your message. Just tap send.",
+                wa_intro: "Hello, Danniela! My name is",
+                form_aviso: "When you send, WhatsApp opens with your message ready. No data is stored on this site.",
+                privacidade_link: "Privacy notice",
+                privacidade_titulo: "Privacy notice",
+                privacidade_html: "<p><strong>Controller:</strong> Danniela Teixeira, architectural and interior designer.</p><p><strong>What this site collects:</strong> nothing. It uses no cookies, stores nothing in your browser, has no analytics, advertising or tracking tools, and fonts and images are served by the site itself.</p><p><strong>Contact form:</strong> the name and message you type are not sent to this site; the button only opens WhatsApp with the text ready, and you decide whether to send it.</p><p><strong>Contact via WhatsApp, email or Instagram:</strong> the data you send through these channels (such as name, phone number and message) is used only to reply about your project and is not shared with third parties. These services have their own privacy policies.</p><p><strong>Hosting:</strong> the site is hosted on GitHub Pages, which may log technical access data, such as IP addresses, for security and operation of the service.</p><p><strong>Your rights (Brazilian LGPD, Law 13,709/2018):</strong> you can ask to access, correct or delete your contact data at any time via the WhatsApp or email shown in the footer.</p>",
+                privacidade_fechar: "Close", footer_direitos: "All rights reserved.",
                 footer_whatsapp: "WhatsApp", footer_instagram: "Instagram", footer_email: "Email",
                 filtro_todos: "All", filtro_interiores: "Interiors", filtro_externos: "Exteriors"
             }
         };
         
         window.changeLanguage = function(lang) {
+            currentLang = lang;
             document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
