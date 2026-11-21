@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#F3EEE6">
     <title>Danniela Teixeira | Arquitetura e Design</title>
     <meta name="description" content="Arquitetura com propósito - Danniela Teixeira transforma espaços em experiências únicas e atemporais.">
     <meta name="author" content="Danniela Teixeira">
@@ -13,14 +13,14 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&family=Italiana&display=swap" rel="stylesheet">
     
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Archivo', sans-serif;
         }
         
         /* ===== PRELOADER ===== */
@@ -30,7 +30,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #0a0a0a;
+            background: #F3EEE6;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -46,8 +46,8 @@
         .loader {
             width: 50px;
             height: 50px;
-            border: 3px solid #333;
-            border-top-color: #c5a880;
+            border: 3px solid #D2C5B2;
+            border-top-color: #A8854F;
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -57,8 +57,8 @@
         }
         
         body {
-            background-color: #0a0a0a;
-            color: #a3a3a3;
+            background-color: #F3EEE6;
+            color: #4A3F36;
             scroll-behavior: smooth;
         }
         
@@ -91,10 +91,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(10, 10, 10, 0.95);
+            background-color: rgba(243, 238, 230, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid #D2C5B2;
             transition: all 0.3s ease;
         }
         
@@ -127,7 +127,7 @@
         
         nav a {
             text-decoration: none;
-            color: #a3a3a3;
+            color: #4A3F36;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -136,20 +136,20 @@
         }
         
         nav a:hover, .lang-btn:hover {
-            color: #c5a880;
+            color: #A8854F;
         }
         
         .lang-switch {
             display: flex;
             gap: 12px;
-            border-left: 1px solid #333;
+            border-left: 1px solid #D2C5B2;
             padding-left: 25px;
         }
         
         .lang-btn {
             background: none;
             border: none;
-            color: #a3a3a3;
+            color: #4A3F36;
             font-size: 12px;
             cursor: pointer;
             text-transform: uppercase;
@@ -157,14 +157,14 @@
         }
         
         .lang-btn.active {
-            color: #c5a880;
+            color: #A8854F;
             font-weight: 500;
         }
         
         /* HERO - RESPONSIVO */
         .hero {
             min-height: 100vh;
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(46,38,32,0.30), rgba(46,38,32,0.55)), url('img/hero.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -209,8 +209,8 @@
         
         .btn {
             padding: 14px 32px;
-            border: 1px solid #a3a3a3;
-            color: #cccccc;
+            border: 1px solid #4A3F36;
+            color: #2E2620;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -220,9 +220,9 @@
         }
         
         .btn:hover {
-            background-color: #c5a880;
-            border-color: #c5a880;
-            color: #0a0a0a;
+            background-color: #A8854F;
+            border-color: #A8854F;
+            color: #F3EEE6;
             transform: translateY(-2px);
         }
         
@@ -259,7 +259,7 @@
             transform: translateX(-50%);
             width: 50px;
             height: 2px;
-            background-color: #c5a880;
+            background-color: #A8854F;
         }
         
         /* FILTRO - RESPONSIVO */
@@ -273,9 +273,9 @@
         
         .filter-btn {
             background: none;
-            border: 1px solid #a3a3a3;
+            border: 1px solid #4A3F36;
             padding: 8px 20px;
-            color: #a3a3a3;
+            color: #4A3F36;
             cursor: pointer;
             font-size: 12px;
             text-transform: uppercase;
@@ -284,9 +284,9 @@
         }
         
         .filter-btn.active, .filter-btn:hover {
-            background-color: #c5a880;
-            border-color: #c5a880;
-            color: #0a0a0a;
+            background-color: #A8854F;
+            border-color: #A8854F;
+            color: #F3EEE6;
         }
         
         /* GRID PROJETOS - RESPONSIVO */
@@ -328,8 +328,8 @@
             left: 0;
             right: 0;
             padding: 25px;
-            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-            color: #cccccc;
+            background: linear-gradient(to top, rgba(46,38,32,0.92), transparent);
+            color: #2E2620;
             opacity: 0;
             transition: opacity 0.4s ease;
             text-align: left;
@@ -350,19 +350,19 @@
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #c5a880;
+            color: #A8854F;
         }
         
         .projeto-categoria {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: rgba(0,0,0,0.7);
+            background: rgba(243,238,230,0.92);
             padding: 4px 12px;
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #c5a880;
+            color: #A8854F;
             border-radius: 20px;
             z-index: 2;
         }
@@ -374,7 +374,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
+            background-color: rgba(46, 38, 32, 0.85);
             z-index: 2000;
             display: flex;
             align-items: center;
@@ -394,7 +394,7 @@
             width: 90%;
             max-width: 1200px;
             max-height: 90vh;
-            background: #0a0a0a;
+            background: #F3EEE6;
             border-radius: 8px;
             overflow-y: auto;
             overflow-x: hidden;
@@ -411,11 +411,11 @@
         }
         
         .modal-container::-webkit-scrollbar-track {
-            background: #222;
+            background: #D2C5B2;
         }
         
         .modal-container::-webkit-scrollbar-thumb {
-            background: #c5a880;
+            background: #A8854F;
             border-radius: 3px;
         }
         
@@ -426,8 +426,8 @@
             float: right;
             width: 40px;
             height: 40px;
-            background: rgba(0,0,0,0.8);
-            border: 1px solid #c5a880;
+            background: #F3EEE6;
+            border: 1px solid #A8854F;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -439,18 +439,18 @@
         }
         
         .modal-close:hover {
-            background: #c5a880;
+            background: #A8854F;
             transform: rotate(90deg);
         }
         
         .modal-close svg {
             width: 20px;
             height: 20px;
-            fill: #c5a880;
+            fill: #A8854F;
         }
         
         .modal-close:hover svg {
-            fill: #0a0a0a;
+            fill: #F3EEE6;
         }
         
         .modal-content {
@@ -494,12 +494,12 @@
         }
         
         .modal-thumb.active {
-            border-color: #c5a880;
+            border-color: #A8854F;
         }
         
         .modal-title {
             font-size: 32px;
-            color: #cccccc;
+            color: #2E2620;
             margin-bottom: 20px;
             letter-spacing: 2px;
         }
@@ -509,7 +509,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(168,133,79,0.08);
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 30px;
@@ -523,18 +523,18 @@
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #c5a880;
+            color: #A8854F;
             margin-bottom: 5px;
         }
         
         .spec-value {
             font-size: 14px;
-            color: #a3a3a3;
+            color: #4A3F36;
         }
         
         .modal-description {
             line-height: 1.8;
-            color: #a3a3a3;
+            color: #4A3F36;
             margin-bottom: 30px;
         }
         
@@ -543,14 +543,14 @@
         }
         
         .modal-materials {
-            background: rgba(197, 168, 128, 0.1);
+            background: rgba(168, 133, 79, 0.1);
             padding: 20px;
             border-radius: 8px;
-            border-left: 3px solid #c5a880;
+            border-left: 3px solid #A8854F;
         }
         
         .modal-materials h4 {
-            color: #c5a880;
+            color: #A8854F;
             margin-bottom: 10px;
             font-size: 14px;
             letter-spacing: 1px;
@@ -576,9 +576,9 @@
         .form-group textarea {
             width: 100%;
             padding: 12px 15px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid #333;
-            color: #a3a3a3;
+            background: rgba(168,133,79,0.08);
+            border: 1px solid #D2C5B2;
+            color: #4A3F36;
             font-size: 14px;
             transition: all 0.3s;
         }
@@ -586,7 +586,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #c5a880;
+            border-color: #A8854F;
         }
         
         .form-group textarea {
@@ -596,9 +596,9 @@
         
         .submit-btn {
             background: none;
-            border: 1px solid #c5a880;
+            border: 1px solid #A8854F;
             padding: 12px 30px;
-            color: #c5a880;
+            color: #A8854F;
             cursor: pointer;
             font-size: 12px;
             text-transform: uppercase;
@@ -608,8 +608,8 @@
         }
         
         .submit-btn:hover {
-            background-color: #c5a880;
-            color: #0a0a0a;
+            background-color: #A8854F;
+            color: #F3EEE6;
         }
         
         .form-message {
@@ -634,7 +634,7 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: #c5a880;
+            background: #A8854F;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -646,7 +646,7 @@
             z-index: 100;
             cursor: pointer;
             border: none;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+            box-shadow: 0 4px 15px rgba(168, 133, 79, 0.3);
         }
         
         .back-to-top.show {
@@ -656,14 +656,14 @@
         
         .back-to-top:hover {
             transform: translateY(-5px);
-            background: #d4b48c;
-            box-shadow: 0 6px 20px rgba(197, 168, 128, 0.4);
+            background: #B8955E;
+            box-shadow: 0 6px 20px rgba(168, 133, 79, 0.4);
         }
         
         .back-to-top svg {
             width: 24px;
             height: 24px;
-            fill: #0a0a0a;
+            fill: #F3EEE6;
             transition: transform 0.3s;
         }
         
@@ -673,10 +673,10 @@
         
         /* FOOTER */
         footer {
-            background-color: #050505;
+            background-color: #E6DCCD;
             text-align: center;
             padding: 60px 20px 40px;
-            border-top: 1px solid #222;
+            border-top: 1px solid #D2C5B2;
         }
         
         .footer-buttons {
@@ -692,9 +692,9 @@
             align-items: center;
             gap: 10px;
             background: none;
-            border: 1px solid #a3a3a3;
+            border: 1px solid #4A3F36;
             padding: 12px 28px;
-            color: #a3a3a3;
+            color: #4A3F36;
             text-decoration: none;
             font-size: 13px;
             text-transform: uppercase;
@@ -706,18 +706,18 @@
         .footer-btn svg {
             width: 18px;
             height: 18px;
-            fill: #a3a3a3;
+            fill: #4A3F36;
             transition: fill 0.3s;
         }
         
         .footer-btn:hover {
-            background-color: #c5a880;
-            border-color: #c5a880;
-            color: #0a0a0a;
+            background-color: #A8854F;
+            border-color: #A8854F;
+            color: #F3EEE6;
         }
         
         .footer-btn:hover svg {
-            fill: #0a0a0a;
+            fill: #F3EEE6;
         }
         
         .footer-btn.whatsapp:hover {
@@ -733,7 +733,7 @@
         footer p {
             margin-top: 30px;
             font-size: 12px;
-            color: #555;
+            color: #857868;
         }
         
         /* WHATSAPP FLUTUANTE */
@@ -887,7 +887,7 @@
                 height: 220px;
                 max-height: 220px;
                 object-fit: contain;
-                background-color: #0a0a0a;
+                background-color: #F3EEE6;
             }
             
             .modal-thumb {
@@ -1009,6 +1009,17 @@
                 font-size: 18px;
             }
         }
+
+        /* ===== FONTES E CORES DO PORTFÓLIO ===== */
+        .hero h1, .projetos h2, .sobre h2, .projeto-info h3, .modal-title {
+            font-family: 'Italiana', serif;
+            font-weight: 400;
+        }
+        .projetos h2, .sobre h2 { color: #2E2620; }
+        .hero-content { color: #F3EEE6; }
+        .hero .btn { border-color: #F3EEE6; color: #F3EEE6; }
+        .projeto-info { color: #F3EEE6; }
+        .projeto-info p { color: #E3CDA0; }
     </style>
 </head>
 <body>
@@ -1019,7 +1030,7 @@
     
     <header id="header">
         <a href="#hero" class="logo">
-            <img src="logo.png" alt="Logo Danniela Teixeira" class="logo-img" onerror="this.src='https://placehold.co/400x150/0a0a0a/c5a880?text=DT'">
+            <img src="logo-bege.png" alt="Logo Danniela Teixeira" class="logo-img" onerror="this.src='https://placehold.co/400x150/0a0a0a/c5a880?text=DT'">
         </a>
         <div class="nav-container">
             <nav>
@@ -1060,52 +1071,52 @@
         </div>
         
         <div class="grid-projetos" id="projetosGrid">
-            <div class="projeto-item" data-categoria="interior" data-projeto="aurora">
-                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Residência Aurora" loading="lazy">
+            <div class="projeto-item" data-categoria="interior" data-projeto="samantha">
+                <img src="img/sam_home_ia.jpg" alt="Apartamento Samantha" loading="lazy">
                 <div class="projeto-categoria">Interiores</div>
                 <div class="projeto-info">
-                    <h3 data-i18n="proj1_titulo">Residência Aurora</h3>
-                    <p data-i18n="proj1_desc">Design de Interiores</p>
+                    <h3 data-i18n="proj1_titulo">Apartamento Samantha</h3>
+                    <p data-i18n="proj1_desc">Reforma e Interiores</p>
                 </div>
             </div>
-            <div class="projeto-item" data-categoria="exterior" data-projeto="horizonte">
-                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Apartamento Horizonte" loading="lazy">
-                <div class="projeto-categoria">Externos</div>
-                <div class="projeto-info">
-                    <h3 data-i18n="proj2_titulo">Apartamento Horizonte</h3>
-                    <p data-i18n="proj2_desc">Arquitetura Contemporânea</p>
-                </div>
-            </div>
-            <div class="projeto-item" data-categoria="interior" data-projeto="vertice">
-                <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=800&q=80" alt="Casa Vértice" loading="lazy">
+            <div class="projeto-item" data-categoria="interior" data-projeto="alex">
+                <img src="img/alex_sala.jpg" alt="Cobertura Alex" loading="lazy">
                 <div class="projeto-categoria">Interiores</div>
                 <div class="projeto-info">
-                    <h3 data-i18n="proj3_titulo">Casa Vértice</h3>
-                    <p data-i18n="proj3_desc">Reforma Completa</p>
+                    <h3 data-i18n="proj2_titulo">Cobertura Alex</h3>
+                    <p data-i18n="proj2_desc">Cobertura Duplex</p>
                 </div>
             </div>
-            <div class="projeto-item" data-categoria="exterior" data-projeto="jardim">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Residência Jardim" loading="lazy">
-                <div class="projeto-categoria">Externos</div>
-                <div class="projeto-info">
-                    <h3 data-i18n="proj4_titulo">Residência Jardim</h3>
-                    <p data-i18n="proj4_desc">Arquitetura Paisagista</p>
-                </div>
-            </div>
-            <div class="projeto-item" data-categoria="interior" data-projeto="loft">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Loft Urbano" loading="lazy">
+            <div class="projeto-item" data-categoria="interior" data-projeto="clinica">
+                <img src="img/cli_recepcao.jpg" alt="B Santana Clinic" loading="lazy">
                 <div class="projeto-categoria">Interiores</div>
                 <div class="projeto-info">
-                    <h3 data-i18n="proj5_titulo">Loft Urbano</h3>
-                    <p data-i18n="proj5_desc">Design Contemporâneo</p>
+                    <h3 data-i18n="proj3_titulo">B Santana Clinic</h3>
+                    <p data-i18n="proj3_desc">Clínica de Estética</p>
                 </div>
             </div>
-            <div class="projeto-item" data-categoria="exterior" data-projeto="container">
-                <img src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?auto=format&fit=crop&w=800&q=80" alt="Casa Contêiner" loading="lazy">
+            <div class="projeto-item" data-categoria="exterior" data-projeto="ibiuna">
+                <img src="img/ib_fachada.jpg" alt="Residência em Ibiúna" loading="lazy">
                 <div class="projeto-categoria">Externos</div>
                 <div class="projeto-info">
-                    <h3 data-i18n="proj6_titulo">Casa Contêiner</h3>
-                    <p data-i18n="proj6_desc">Arquitetura Sustentável</p>
+                    <h3 data-i18n="proj4_titulo">Residência em Ibiúna</h3>
+                    <p data-i18n="proj4_desc">Residência Térrea</p>
+                </div>
+            </div>
+            <div class="projeto-item" data-categoria="interior" data-projeto="frigo">
+                <img src="img/frigo_hotel_a.jpg" alt="Frigo" loading="lazy">
+                <div class="projeto-categoria">Interiores</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj5_titulo">Frigo</h3>
+                    <p data-i18n="proj5_desc">Minimercados Autônomos</p>
+                </div>
+            </div>
+            <div class="projeto-item" data-categoria="exterior" data-projeto="avare">
+                <img src="img/avare.jpg" alt="Casa Avaré" loading="lazy">
+                <div class="projeto-categoria">Externos</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj6_titulo">Casa Avaré</h3>
+                    <p data-i18n="proj6_desc">Residência Unifamiliar</p>
                 </div>
             </div>
         </div>
@@ -1168,7 +1179,7 @@
 
     <button class="back-to-top" id="backToTop">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 4L12 20M12 4L18 10M12 4L6 10" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M12 4L12 20M12 4L18 10M12 4L6 10" stroke="#F3EEE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
     </button>
 
@@ -1181,87 +1192,57 @@
     <script>
         // DADOS DOS PROJETOS
         const projetosData = {
-            aurora: {
-                titulo: "Residência Aurora",
-                categoria: "Design de Interiores",
+            samantha: {
+                titulo: "Apartamento Samantha",
+                categoria: "Reforma e Interiores",
+                local: "Max Haus Berrini, São Paulo",
+                area: "70 m²",
+                descricao: "Reforma de um apartamento de 70 m². O apartamento tinha um único banheiro, de uso comum; a reforma divide esse núcleo em banheiro social e banheiro da suíte master, com paredes novas em drywall. O projeto executivo tem nove pranchas na escala 1:50: original, demolir e construir, planta modificada, layout, piso, elétrica, forro, iluminação e hidráulica. Projeto do escritório Larissa Abreu Arquitetura e Interiores, com coordenação de Leonardo; Danniela Teixeira desenvolveu o projeto executivo e o layout. Imagens: renderizações.",
+                materiais: "Tijolinho no home, concreto aparente no jantar, painéis ripados que disfarçam portas e o quadro de luz, cabeceira em ripado, armários altos, nicho de vinho e banco-baú na área de serviço.",
+                imagens: ["img/sam_home_ia.jpg", "img/sam_45.jpg", "img/sam_48.jpg", "img/sam_52.jpg", "img/sam_50.jpg", "img/sam_56.jpg", "img/sam_layout.jpg"]
+            },
+            alex: {
+                titulo: "Cobertura Alex",
+                categoria: "Interiores",
+                local: "Ed. Lotus, Bela Vista, São Paulo",
+                ano: "2026",
+                area: "266,09 m²",
+                descricao: "Cobertura duplex na região da Avenida Paulista. No primeiro pavimento, sala, jantar e cozinha integrados, escritório e sala de música e suíte master com closet integrado; no segundo, um salão de estar e um quarto. Coordenação de Helio Albuquerque; planta de layout de Danniela Teixeira. Imagens: renderizações.",
+                materiais: "O hall do segundo pavimento foi ampliado e ganhou um estar com degrau de 20 cm. No primeiro, um brise de marcenaria com aparador esconde as prumadas de água e esgoto.",
+                imagens: ["img/alex_sala.jpg", "img/alex_superior.jpg", "img/alex_superior2.jpg", "img/alex_pav1.jpg", "img/alex_pav2.jpg"]
+            },
+            clinica: {
+                titulo: "B Santana Clinic",
+                categoria: "Saúde e Estética",
+                local: "Barueri, SP",
+                ano: "2026",
+                descricao: "Reforma de uma clínica de estética avançada. Duas salas novas, de 8,16 m² e 7,24 m², foram criadas ao lado das salas existentes, sem mexer na recepção. A iluminação usa só perfis de LED flex, 47,26 m no total, que desenham molduras no forro de cada sala. Projeto de Danniela Teixeira pela Granja Viana Arquitetura & Construção. Imagens: renderizações.",
+                materiais: "Granito Branco Itaúnas nas bancadas, MDF Carvalho Malva na marcenaria e detalhes dourados em metais, espelhos e mobiliário.",
+                imagens: ["img/cli_recepcao.jpg", "img/cli_procedimento.jpg", "img/cli_consultorio.jpg", "img/cli_copa.jpg", "img/cli_planta_ilum.jpg"]
+            },
+            ibiuna: {
+                titulo: "Residência em Ibiúna",
+                categoria: "Residencial",
+                local: "Ibiúna, SP",
+                area: "244,39 m²",
+                descricao: "Casa térrea construída em um terreno longo de 884,40 m², organizada em faixas: jardim e acesso na frente, a casa no centro e o lazer ao fundo. O alpendre de 77,98 m² abriga dois carros e funciona como varanda coberta; cozinha, jantar e estar formam um único ambiente de 46,26 m². Autoria de Rafael Diniz e Danniela Teixeira. Imagens: renderizações.",
+                materiais: "Telha cerâmica romana em dois planos desencontrados, testeiras em eucalipto pintado de branco, molduras e gradis em eucalipto, pintura acrílica Marfim Nobre e churrasqueira em tijolinho.",
+                imagens: ["img/ib_fachada.jpg", "img/ib_entardecer.jpg", "img/ib_lazer.jpg", "img/ib_layout.jpg"]
+            },
+            frigo: {
+                titulo: "Frigo",
+                categoria: "Comercial",
                 local: "São Paulo, SP",
-                ano: "2024",
-                area: "380m²",
-                descricao: "A Residência Aurora é um projeto que busca integrar a natureza ao ambiente interno, criando espaços fluidos e aconchegantes. A paleta de cores terrosas combinada com madeira natural e texturas suaves traz uma sensação de acolhimento e tranquilidade.",
-                materiais: "Madeira de demolição, mármore travertino, vidro temperado, tecidos naturais (linho e algodão), iluminação LED embutida.",
-                imagens: [
-                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80"
-                ]
+                descricao: "Rede de minimercados autônomos que funcionam 24 horas. A primeira loja física foi montada dentro de um hotel em São Paulo, com projeto, obra e execução de Danniela Teixeira; depois, ela conduziu a implantação das unidades seguintes. Imagens: fotografias da obra concluída.",
+                materiais: "Marcenaria em madeira com luz em cada prateleira, letras aplicadas com a frase “Pegue, pague e leve”, totem de autoatendimento; na unidade seguinte, painéis amadeirados, estante em L e rasgo de luz no forro.",
+                imagens: ["img/frigo_hotel_a.jpg", "img/frigo_hotel_b.jpg", "img/frigo_u2_a.jpg"]
             },
-            horizonte: {
-                titulo: "Apartamento Horizonte",
-                categoria: "Arquitetura Contemporânea",
-                local: "Rio de Janeiro, RJ",
-                ano: "2023",
-                area: "180m²",
-                descricao: "Com vista para o mar, o Apartamento Horizonte foi pensado para valorizar a luz natural e a paisagem. O projeto priorizou a fluidez dos espaços, integração social e materiais que remetem à costa brasileira.",
-                materiais: "Porcelanato liquefeito, painéis ripados em madeira, vidros com proteção UV, metais em acabamento escovado.",
-                imagens: [
-                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
-                ]
-            },
-            vertice: {
-                titulo: "Casa Vértice",
-                categoria: "Reforma Completa",
-                local: "Belo Horizonte, MG",
-                ano: "2024",
-                area: "520m²",
-                descricao: "Uma reforma completa que transformou uma construção antiga em uma residência moderna e funcional. O desafio foi preservar elementos originais enquanto incorporava tecnologia e conforto contemporâneo.",
-                materiais: "Concreto aparente, vidro laminado, porcelanato retificado, iluminação indireta, automação residencial.",
-                imagens: [
-                    "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"
-                ]
-            },
-            jardim: {
-                titulo: "Residência Jardim",
-                categoria: "Arquitetura Paisagista",
-                local: "Curitiba, PR",
-                ano: "2023",
-                area: "650m²",
-                descricao: "Integração perfeita entre arquitetura e paisagismo. A Residência Jardim foi projetada para que a natureza fizesse parte do cotidiano, com jardins internos, varandas verdes e ampla ventilação natural.",
-                materiais: "Pedra natural, madeira de reflorestamento, vidros panorâmicos, sistemas de captação de água da chuva.",
-                imagens: [
-                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80"
-                ]
-            },
-            loft: {
-                titulo: "Loft Urbano",
-                categoria: "Design Contemporâneo",
-                local: "São Paulo, SP",
-                ano: "2024",
-                area: "95m²",
-                descricao: "Um loft para um jovem casal que buscava praticidade sem abrir mão do estilo. O projeto otimizou cada metro quadrado com soluções inteligentes e móveis planejados.",
-                materiais: "Microcimento, vidro fumê, ferragens embutidas, iluminação cênica, revestimentos acústicos.",
-                imagens: [
-                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"
-                ]
-            },
-            container: {
-                titulo: "Casa Contêiner",
-                categoria: "Arquitetura Sustentável",
-                local: "Florianópolis, SC",
-                ano: "2024",
-                area: "160m²",
-                descricao: "Projeto inovador utilizando contêineres marítimos reaproveitados. Uma construção sustentável que alia design contemporâneo, eficiência energética e baixo impacto ambiental.",
-                materiais: "Contêineres reaproveitados, isolamento térmico ecológico, pintura com tinta fria, sistema fotovoltaico, madeira certificada.",
-                imagens: [
-                    "https://images.unsplash.com/photo-1600585153490-76fb20a32601?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80"
-                ]
+            avare: {
+                titulo: "Casa Avaré",
+                categoria: "Residencial",
+                descricao: "Residência de dois pavimentos com fachada branca e esquadrias pretas de piso a teto. A laje superior avança sobre a entrada com iluminação embutida. Imagem: render.",
+                materiais: "Esquadrias pretas, painel amadeirado na lateral, guarda-corpo de vidro na sacada e arandelas na fachada.",
+                imagens: ["img/avare.jpg"]
             }
         };
 
@@ -1292,22 +1273,9 @@
                 ${imagensHtml}
                 <h2 class="modal-title">${projeto.titulo}</h2>
                 <div class="modal-tech-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">Localização</div>
-                        <div class="spec-value">${projeto.local}</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">Ano</div>
-                        <div class="spec-value">${projeto.ano}</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">Área</div>
-                        <div class="spec-value">${projeto.area}</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">Categoria</div>
-                        <div class="spec-value">${projeto.categoria}</div>
-                    </div>
+                    ${[['Localização', projeto.local], ['Ano', projeto.ano], ['Área', projeto.area], ['Categoria', projeto.categoria]]
+                        .filter(([, v]) => v)
+                        .map(([k, v]) => `<div class="spec-item"><div class="spec-label">${k}</div><div class="spec-value">${v}</div></div>`).join('')}
                 </div>
                 <div class="modal-description">
                     <p>${projeto.descricao}</p>
@@ -1468,12 +1436,12 @@
                 hero_titulo: "Arquitetura com Propósito", hero_subtitulo: "Transformando espaços em experiências únicas e atemporais, feitas sob medida para a sua essência.",
                 hero_botao: "Conheça os Projetos", sobre_titulo: "A Essência do Morar Bem", 
                 sobre_texto: "Liderado por Danniela Teixeira, nosso escritório acredita que a arquitetura vai além da estética: é sobre traduzir identidade, conforto e funcionalidade em cada detalhe. Nosso compromisso é entregar projetos sofisticados e exclusivos.",
-                projetos_titulo: "Projetos em Destaque", proj1_titulo: "Residência Aurora", proj1_desc: "Design de Interiores", 
-                proj2_titulo: "Apartamento Horizonte", proj2_desc: "Arquitetura Contemporânea", 
-                proj3_titulo: "Casa Vértice", proj3_desc: "Reforma Completa",
-                proj4_titulo: "Residência Jardim", proj4_desc: "Arquitetura Paisagista",
-                proj5_titulo: "Loft Urbano", proj5_desc: "Design Contemporâneo",
-                proj6_titulo: "Casa Contêiner", proj6_desc: "Arquitetura Sustentável",
+                projetos_titulo: "Projetos em Destaque", proj1_titulo: "Apartamento Samantha", proj1_desc: "Reforma e Interiores", 
+                proj2_titulo: "Cobertura Alex", proj2_desc: "Cobertura Duplex", 
+                proj3_titulo: "B Santana Clinic", proj3_desc: "Clínica de Estética",
+                proj4_titulo: "Residência em Ibiúna", proj4_desc: "Residência Térrea",
+                proj5_titulo: "Frigo", proj5_desc: "Minimercados Autônomos",
+                proj6_titulo: "Casa Avaré", proj6_desc: "Residência Unifamiliar",
                 contato_titulo: "Entre em Contato", contato_nome: "Seu nome", contato_email: "Seu e-mail",
                 contato_mensagem: "Sua mensagem", contato_botao: "Enviar Mensagem",
                 footer_whatsapp: "WhatsApp", footer_instagram: "Instagram", footer_email: "E-mail",
@@ -1484,12 +1452,12 @@
                 hero_titulo: "Architecture with Purpose", hero_subtitulo: "Transforming spaces into unique and timeless experiences, tailored to your essence.",
                 hero_botao: "View Projects", sobre_titulo: "The Essence of Living Well",
                 sobre_texto: "Led by Danniela Teixeira, our studio believes that architecture goes beyond aesthetics: it's about translating identity, comfort, and functionality into every detail.",
-                projetos_titulo: "Featured Projects", proj1_titulo: "Aurora Residence", proj1_desc: "Interior Design",
-                proj2_titulo: "Horizon Apartment", proj2_desc: "Contemporary Architecture",
-                proj3_titulo: "Vertex Residence", proj3_desc: "Complete Renovation",
-                proj4_titulo: "Garden Residence", proj4_desc: "Landscape Architecture",
-                proj5_titulo: "Urban Loft", proj5_desc: "Contemporary Design",
-                proj6_titulo: "Container House", proj6_desc: "Sustainable Architecture",
+                projetos_titulo: "Featured Projects", proj1_titulo: "Apartamento Samantha", proj1_desc: "Renovation and Interiors",
+                proj2_titulo: "Cobertura Alex", proj2_desc: "Duplex Penthouse",
+                proj3_titulo: "B Santana Clinic", proj3_desc: "Aesthetics Clinic",
+                proj4_titulo: "Residência em Ibiúna", proj4_desc: "Single-storey House",
+                proj5_titulo: "Frigo", proj5_desc: "Self-service Mini Markets",
+                proj6_titulo: "Casa Avaré", proj6_desc: "Single-family House",
                 contato_titulo: "Contact Us", contato_nome: "Your name", contato_email: "Your email",
                 contato_mensagem: "Your message", contato_botao: "Send Message",
                 footer_whatsapp: "WhatsApp", footer_instagram: "Instagram", footer_email: "Email",
