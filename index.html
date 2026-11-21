@@ -1139,6 +1139,9 @@
             color: #A8854F;
             margin-bottom: 4px;
         }
+        /* the section ends on a left-aligned line: trim its bottom padding so the gap
+           to "Projetos em Destaque" matches the rest of the page */
+        #sobre.sobre { padding-bottom: 0; }
         @media (max-width: 900px) {
             #sobre .sobre-grid { grid-template-columns: 1fr; gap: 36px; }
             #sobre .sobre-foto { max-width: 420px; width: 100%; margin: 0 auto; }
