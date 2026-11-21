@@ -1045,6 +1045,15 @@
             line-height: 1.3;
         }
 
+        /* iOS/Android don't support fixed backgrounds: they stretch the photo to the full page
+           height and it looks pixelated. Keep the parallax only on desktop with a mouse. */
+        @media (max-width: 1024px), (hover: none), (pointer: coarse) {
+            .hero {
+                background-attachment: scroll;
+                background-position: 45% center;
+            }
+        }
+
         /* WhatsApp: minimalista, na paleta do site */
         .whatsapp-float {
             background-color: #F3EEE6;
