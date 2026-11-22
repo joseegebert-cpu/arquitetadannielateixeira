@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Security: the page may only load files from this site (GitHub Pages cannot set HTTP headers) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F3EEE6">
+    <title>Danniela Teixeira | Arquitetura e Design</title>
+    <meta name="description" content="Danniela Teixeira, projetista de arquitetura e interiores. Projetos residenciais e comerciais, do briefing ao acompanhamento da obra, com projeto executivo completo.">
+    <meta name="author" content="Danniela Teixeira">
+    <link rel="canonical" href="https://joseegebert-cpu.github.io/arquitetadannielateixeira/">
+    <!-- Link preview on WhatsApp, Instagram, Facebook and LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Danniela Teixeira | Arquitetura e Design">
+    <meta property="og:title" content="Danniela Teixeira | Arquitetura e Design">
+    <meta property="og:description" content="Projetos de arquitetura e interiores, do briefing à obra.">
+    <meta property="og:url" content="https://joseegebert-cpu.github.io/arquitetadannielateixeira/">
+    <meta property="og:image" content="https://joseegebert-cpu.github.io/arquitetadannielateixeira/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sala da Cobertura Alex, projeto de Danniela Teixeira">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+    <style>
+        /* Fontes hospedadas no próprio site (Fraunces e Manrope, licença OFL):
+           o navegador do visitante não faz nenhuma requisição ao Google. */
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url('fonts/fraunces-latin-ext.woff2') format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url('fonts/fraunces-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 400 600;
+            font-display: swap;
+            src: url('fonts/manrope-latin-ext.woff2') format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        @font-face {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 400 600;
+            font-display: swap;
+            src: url('fonts/manrope-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        :root {
+            --font-titulo: 'Fraunces', Georgia, serif;
+            --font-texto: 'Manrope', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-texto);
+        }
+        
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #F3EEE6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #D2C5B2;
+            border-top-color: #A8854F;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        body {
+            background-color: #F3EEE6;
+            color: #4A3F36;
+            scroll-behavior: smooth;
+        }
+        
+        body.modal-open {
+            overflow: hidden;
+        }
+        
+        html {
+            scroll-padding-top: 100px;
+        }
+        
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* HEADER - RESPONSIVO */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(243, 238, 230, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #D2C5B2;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 8px 5%;
+        }
+        
+        .logo-img {
+            height: 90px;
+            width: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #4A3F36;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        
+        nav a:hover, .lang-btn:hover {
+            color: #A8854F;
+        }
+        
+        .lang-switch {
+            display: flex;
+            gap: 12px;
+            border-left: 1px solid #D2C5B2;
+            padding-left: 25px;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #4A3F36;
+            font-size: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        
+        .lang-btn.active {
+            color: #A8854F;
+            font-weight: 500;
+        }
+        
+        /* HERO - RESPONSIVO */
+        .hero {
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(46,38,32,0.30), rgba(46,38,32,0.55)), url('hero-principal.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 35px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border: 1px solid #4A3F36;
+            color: #2E2620;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #A8854F;
+            border-color: #A8854F;
+            color: #F3EEE6;
+            transform: translateY(-2px);
+        }
+        
+        /* SEÇÕES - RESPONSIVAS */
+        .sobre, .projetos {
+            padding: 100px 5%;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .sobre p {
+            font-size: 16px;
+            line-height: 1.9;
+            max-width: 750px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        .projetos h2, .sobre h2 {
+            font-size: 32px;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .projetos h2:after, .sobre h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: #A8854F;
+        }
+        
+        /* FILTRO - RESPONSIVO */
+        .filter-buttons {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: 1px solid #4A3F36;
+            padding: 8px 20px;
+            color: #4A3F36;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #A8854F;
+            border-color: #A8854F;
+            color: #F3EEE6;
+        }
+        
+        /* GRID PROJETOS - RESPONSIVO */
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .projeto-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        
+        .projeto-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .projeto-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: brightness(0.75);
+        }
+        
+        .projeto-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(0.95);
+        }
+        
+        .projeto-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(46,38,32,0.92), transparent);
+            color: #2E2620;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            text-align: left;
+            transform: translateY(10px);
+        }
+        
+        .projeto-item:hover .projeto-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .projeto-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .projeto-info p {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #A8854F;
+        }
+        
+        .projeto-categoria {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(243,238,230,0.92);
+            padding: 4px 12px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #A8854F;
+            border-radius: 20px;
+            z-index: 2;
+        }
+        
+        /* ===== MODAL DE PROJETO - CORRIGIDO ===== */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(46, 38, 32, 0.85);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .project-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            background: #F3EEE6;
+            border-radius: 8px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-modal.active .modal-container {
+            transform: scale(1);
+        }
+        
+        .modal-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .modal-container::-webkit-scrollbar-track {
+            background: #D2C5B2;
+        }
+        
+        .modal-container::-webkit-scrollbar-thumb {
+            background: #A8854F;
+            border-radius: 3px;
+        }
+        
+        .modal-close {
+            position: sticky;
+            top: 15px;
+            right: 15px;
+            float: right;
+            width: 40px;
+            height: 40px;
+            background: #F3EEE6;
+            border: 1px solid #A8854F;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            margin: 15px;
+            transition: all 0.3s;
+        }
+        
+        .modal-close:hover {
+            background: #A8854F;
+            transform: rotate(90deg);
+        }
+        
+        .modal-close svg {
+            width: 20px;
+            height: 20px;
+            fill: #A8854F;
+        }
+        
+        .modal-close:hover svg {
+            fill: #F3EEE6;
+        }
+        
+        .modal-content {
+            padding: 30px 40px 50px;
+            clear: both;
+        }
+        
+        /* Galeria do Modal - CORRIGIDA PARA MOBILE */
+        .modal-gallery {
+            margin-bottom: 40px;
+        }
+        
+        .modal-main-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .modal-thumbnails {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .modal-thumb {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .modal-thumb:hover {
+            transform: translateY(-3px);
+        }
+        
+        .modal-thumb.active {
+            border-color: #A8854F;
+        }
+        
+        .modal-title {
+            font-size: 32px;
+            color: #2E2620;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        /* Ficha técnica */
+        .modal-tech-specs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background: rgba(168,133,79,0.08);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .spec-item {
+            text-align: center;
+        }
+        
+        .spec-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #A8854F;
+            margin-bottom: 5px;
+        }
+        
+        .spec-value {
+            font-size: 14px;
+            color: #4A3F36;
+        }
+        
+        .modal-description {
+            line-height: 1.8;
+            color: #4A3F36;
+            margin-bottom: 30px;
+        }
+        
+        .modal-description p {
+            margin-bottom: 15px;
+        }
+        
+        .modal-materials {
+            background: rgba(168, 133, 79, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #A8854F;
+        }
+        
+        .modal-materials h4 {
+            color: #A8854F;
+            margin-bottom: 10px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        .modal-materials p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* FORMULÁRIO */
+        .form-contato {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(168,133,79,0.08);
+            border: 1px solid #D2C5B2;
+            color: #4A3F36;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #A8854F;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background: none;
+            border: 1px solid #A8854F;
+            padding: 12px 30px;
+            color: #A8854F;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: #A8854F;
+            color: #F3EEE6;
+        }
+        
+        .form-message {
+            margin-top: 15px;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .form-message.success {
+            color: #4caf50;
+        }
+        
+        .form-message.error {
+            color: #f44336;
+        }
+        
+        /* BOTÃO VOLTAR AO TOPO */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #A8854F;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 100;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 15px rgba(168, 133, 79, 0.3);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: #B8955E;
+            box-shadow: 0 6px 20px rgba(168, 133, 79, 0.4);
+        }
+        
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: #F3EEE6;
+            transition: transform 0.3s;
+        }
+        
+        .back-to-top:hover svg {
+            transform: translateY(-3px);
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: #E6DCCD;
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-top: 1px solid #D2C5B2;
+        }
+        
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            border: 1px solid #4A3F36;
+            padding: 12px 28px;
+            color: #4A3F36;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-radius: 40px;
+        }
+        
+        .footer-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #4A3F36;
+            transition: fill 0.3s;
+        }
+        
+        .footer-btn:hover {
+            background-color: #A8854F;
+            border-color: #A8854F;
+            color: #F3EEE6;
+        }
+        
+        .footer-btn:hover svg {
+            fill: #F3EEE6;
+        }
+        
+        .footer-btn.whatsapp:hover {
+            background-color: #25D366;
+            border-color: #25D366;
+        }
+        
+        .footer-btn.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
+            border-color: transparent;
+        }
+        
+        footer p {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #857868;
+        }
+        
+        /* WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background-color: #128C7E;
+        }
+        
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+        
+        /* ===== RESPONSIVIDADE COMPLETA ===== */
+        
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .grid-projetos {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .modal-tech-specs {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .modal-title {
+                font-size: 28px;
+            }
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 140px;
+            }
+            
+            header {
+                flex-direction: column;
+                padding: 12px 5%;
+                gap: 12px;
+            }
+            
+            .logo-img {
+                height: 55px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+            }
+            
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                font-size: 10px;
+                letter-spacing: 1px;
+                white-space: nowrap;
+            }
+            
+            .lang-switch {
+                border-left: none;
+                padding-left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 14px;
+                padding: 0 15px;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 11px;
+            }
+            
+            .sobre, .projetos {
+                padding: 60px 20px;
+            }
+            
+            .projetos h2, .sobre h2 {
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+            
+            .sobre p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+            
+            .grid-projetos {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .projeto-info {
+                padding: 15px;
+            }
+            
+            .projeto-info h3 {
+                font-size: 16px;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 10px;
+            }
+            
+            /* MODAL MOBILE - CORRIGIDO */
+            .modal-container {
+                width: 95%;
+                max-height: 85vh;
+            }
+            
+            .modal-content {
+                padding: 20px;
+            }
+            
+            .modal-main-image {
+                height: 220px;
+                max-height: 220px;
+                object-fit: contain;
+                background-color: #F3EEE6;
+            }
+            
+            .modal-thumb {
+                width: 70px;
+                height: 50px;
+            }
+            
+            .modal-title {
+                font-size: 22px;
+                margin-top: 15px;
+            }
+            
+            .modal-tech-specs {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                padding: 15px;
+            }
+            
+            .spec-label {
+                font-size: 10px;
+            }
+            
+            .spec-value {
+                font-size: 12px;
+            }
+            
+            .modal-description {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            
+            .modal-materials {
+                padding: 15px;
+            }
+            
+            .modal-materials p {
+                font-size: 13px;
+            }
+            
+            .modal-close {
+                width: 35px;
+                height: 35px;
+                top: 10px;
+                right: 10px;
+                margin: 10px;
+            }
+            
+            .back-to-top {
+                width: 42px;
+                height: 42px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-float {
+                width: 48px;
+                height: 48px;
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .whatsapp-float svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .footer-btn {
+                padding: 8px 18px;
+                font-size: 11px;
+            }
+            
+            .footer-btn svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+        
+        /* Mobile pequeno */
+        @media (max-width: 480px) {
+            .modal-tech-specs {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .modal-title {
+                font-size: 20px;
+            }
+            
+            .modal-main-image {
+                height: 180px;
+                max-height: 180px;
+            }
+            
+            .footer-buttons {
+                gap: 15px;
+            }
+            
+            .footer-btn {
+                padding: 6px 14px;
+                font-size: 10px;
+            }
+        }
+        
+        /* Desktop grande */
+        @media (min-width: 1400px) {
+            .sobre, .projetos {
+                padding: 120px 5%;
+            }
+            
+            .grid-projetos {
+                gap: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 64px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+
+        /* ===== TIPOGRAFIA: Fraunces (títulos) + Manrope (texto) ===== */
+        .hero h1, .projetos h2, .sobre h2, .modal-title {
+            font-family: var(--font-titulo);
+            font-weight: 500;
+            font-style: normal;
+            font-optical-sizing: auto;
+            text-transform: none;
+            letter-spacing: -0.01em;
+            line-height: 1.12;
+            text-wrap: balance;
+        }
+        .hero h1 { font-size: clamp(42px, 5vw, 72px); }
+        .projetos h2, .sobre h2 { font-size: clamp(34px, 3.4vw, 48px); color: #2E2620; }
+        .modal-title { font-size: clamp(30px, 3vw, 42px); letter-spacing: -0.01em; }
+        .sobre p, .hero p, .modal-description, .modal-materials p, .spec-value { font-weight: 400; }
+        .sobre p, .modal-description { font-size: 17px; line-height: 1.6; }
+        .hero p { font-size: 17px; line-height: 1.6; text-wrap: pretty; }
+        .hero h1, .hero p { text-shadow: 0 1px 14px rgba(30, 24, 20, 0.55), 0 1px 2px rgba(30, 24, 20, 0.35); }
+        nav a, .lang-btn { font-size: 13px; font-weight: 500; }
+        .form-group input, .form-group textarea, .spec-label, .projeto-categoria,
+        .modal-materials h4, .projeto-info p, .footer-btn { font-weight: 500; }
+        .lang-btn.active, .filter-btn.active { font-weight: 600; }
+        .btn, .filter-btn, .submit-btn { font-size: 14px; font-weight: 600; }
+        .projeto-info h3 {
+            font-family: var(--font-texto);
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
+        /* iOS/Android don't support fixed backgrounds: they stretch the photo to the full page
+           height and it looks pixelated. Keep the parallax only on desktop with a mouse. */
+        @media (max-width: 1024px), (hover: none), (pointer: coarse) {
+            .hero {
+                background-attachment: scroll;
+                background-position: 45% center;
+            }
+        }
+
+        /* ===== FORMULÁRIO E PRIVACIDADE ===== */
+        .form-aviso {
+            margin-top: 14px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #857868;
+            text-align: center;
+        }
+        .link-privacidade {
+            color: #A8854F;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        footer .link-privacidade { color: #857868; }
+        .link-privacidade:hover { color: #2E2620; }
+        .modal-description.privacidade p { margin-bottom: 14px; }
+        .modal-description.privacidade strong { color: #2E2620; font-weight: 600; }
+
+        /* ===== TEXTOS JUSTIFICADOS ===== */
+        #sobre .sobre-conteudo p:not(.sobre-cargo):not(.sobre-clientes),
+        .modal-description p,
+        .modal-materials p {
+            text-align: justify;
+            text-align-last: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* ===== SOBRE MIM ===== */
+        #sobre .sobre-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+            gap: 64px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        #sobre .sobre-foto { margin: 0; }
+        #sobre .sobre-foto img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        #sobre .sobre-conteudo p {
+            max-width: none;
+            margin: 0 0 16px;
+        }
+        #sobre .sobre-cargo {
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #A8854F;
+        }
+        #sobre .sobre-destaques {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 32px;
+            margin: 28px 0 8px;
+            padding: 0;
+        }
+        #sobre .sobre-destaques li {
+            border-top: 1px solid #D2C5B2;
+            padding: 16px 0 20px;
+        }
+        #sobre .sobre-destaques strong {
+            display: block;
+            font-family: var(--font-titulo);
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 1.12;
+            color: #2E2620;
+            margin-bottom: 6px;
+        }
+        #sobre .sobre-destaques span {
+            display: block;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #4A3F36;
+        }
+        #sobre .sobre-clientes {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4A3F36;
+            border-top: 1px solid #D2C5B2;
+            padding-top: 16px;
+            margin-bottom: 0;
+        }
+        #sobre .sobre-clientes span {
+            display: block;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #A8854F;
+            margin-bottom: 4px;
+        }
+        /* the section ends on a left-aligned line: trim its bottom padding so the gap
+           to "Projetos em Destaque" matches the rest of the page */
+        #sobre.sobre { padding-bottom: 0; }
+        @media (max-width: 900px) {
+            #sobre .sobre-grid { grid-template-columns: 1fr; gap: 36px; }
+            #sobre .sobre-foto { max-width: 420px; width: 100%; margin: 0 auto; }
+        }
+        @media (max-width: 480px) {
+            #sobre .sobre-destaques { grid-template-columns: 1fr; }
+            #sobre .sobre-destaques strong { font-size: 26px; }
+        }
+
+        /* WhatsApp: minimalista, na paleta do site */
+        .whatsapp-float {
+            background-color: #F3EEE6;
+            border: 1px solid #A8854F;
+            box-shadow: none;
+        }
+        .whatsapp-float svg { fill: #A8854F; transition: fill 0.3s; }
+        .whatsapp-float:hover { background-color: #A8854F; transform: scale(1.05); }
+        .whatsapp-float:hover svg { fill: #F3EEE6; }
+        .footer-btn.whatsapp:hover { background-color: #A8854F; border-color: #A8854F; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: clamp(36px, 10.5vw, 42px); }
+            .projetos h2, .sobre h2 { font-size: clamp(28px, 8.4vw, 34px); }
+            .sobre p, .modal-description, .hero p { font-size: 16px; line-height: 1.6; }
+            nav a { font-size: 12px; }
+            .modal-title { font-size: 28px; }
+            .projeto-info h3 { font-size: 17px; }
+        }
+        @media (max-width: 380px) {
+            nav ul { gap: 12px; }
+            nav a { font-size: 11px; letter-spacing: 0.5px; }
+            /* no hover on touch screens: keep project names readable */
+            .projeto-info { opacity: 1; transform: none; }
+        }
+        .hero-content { color: #F3EEE6; }
+        .hero .btn { border-color: #F3EEE6; color: #F3EEE6; }
+        .projeto-info { color: #F3EEE6; }
+        .projeto-info p { color: #E3CDA0; }
+
+        /* ================= MELHORIAS DA AUDITORIA ================= */
+
+        /* 1. Galeria: imagem inteira (plantas sem corte), setas e miniaturas como botões */
+        .modal-stage {
+            position: relative;
+            background: #E6DCCD;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .modal-main-image {
+            display: block;
+            width: 100%;
+            height: min(62vh, 560px);
+            max-height: none;
+            object-fit: contain;
+            margin: 0;
+            background: transparent;
+        }
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid #A8854F;
+            background: rgba(243, 238, 230, 0.92);
+            color: #2E2620;
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0 3px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .modal-nav:hover { background: #7D5F33; color: #F3EEE6; }
+        .modal-nav.prev { left: 12px; }
+        .modal-nav.next { right: 12px; }
+        .modal-thumb {
+            padding: 0;
+            background: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .modal-thumb img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .modal-close { padding: 0; }
+        .modal-close svg path { stroke: #A8854F; }
+        .modal-close:hover svg path { stroke: #F3EEE6; }
+        @media (max-width: 768px) {
+            .modal-main-image { height: 46vh; max-height: none; }
+            .modal-nav { width: 40px; height: 40px; font-size: 24px; }
+            .modal-nav.prev { left: 6px; }
+            .modal-nav.next { right: 6px; }
+        }
+
+        /* 3. Contraste: dourado mais escuro só em textos pequenos (AA 4,5:1); o dourado da marca continua em linhas e fundos */
+        .lang-btn.active, nav a:hover, .lang-btn:hover,
+        #sobre .sobre-cargo, #sobre .sobre-clientes span,
+        .projeto-categoria, .spec-label, .modal-materials h4,
+        .link-privacidade { color: #7D5F33; }
+        .filter-btn.active, .filter-btn:hover { background-color: #7D5F33; border-color: #7D5F33; color: #F3EEE6; }
+        .submit-btn { border-color: #7D5F33; color: #7D5F33; }
+        .submit-btn:hover { background-color: #7D5F33; color: #F3EEE6; }
+        footer p, footer .link-privacidade, .form-aviso { color: #6B5F52; }
+        .projeto-categoria { font-size: 12px; font-weight: 600; }
+
+        /* 6. Foco visível ao navegar pelo teclado */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible,
+        .projeto-item:focus-visible {
+            outline: 2px solid #7D5F33;
+            outline-offset: 3px;
+        }
+        .projeto-item:focus-visible .projeto-info { opacity: 1; transform: none; }
+
+        /* 7. Nomes dos projetos sempre visíveis (o efeito de passar o mouse continua na foto) */
+        .projeto-info { opacity: 1; transform: none; padding: 40px 22px 18px; }
+
+        /* 4 e 5. Cabeçalho compacto no celular e áreas de toque de 44 px */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 5% 0;
+                gap: 0 12px;
+            }
+            header.scrolled { padding: 4px 5% 0; }
+            .nav-container { display: contents; }
+            .logo { order: 1; }
+            .logo-img { height: 44px; }
+            .lang-switch { order: 2; gap: 0; }
+            .lang-btn { padding: 13px 9px; font-size: 13px; }
+            nav { order: 3; width: 100%; }
+            nav ul { gap: 4px 18px; justify-content: center; }
+            nav a { display: inline-block; padding: 13px 2px; }
+            .footer-btn { min-height: 44px; }
+            .filter-btn { min-height: 44px; }
+            .link-privacidade { display: inline-block; padding: 12px 0; }
+        }
+        .lang-btn { min-height: 32px; }
+
+        /* 8. Respeita a preferência "reduzir movimento" do sistema */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+            .hero { background-attachment: scroll; }
+        }
+    </style>
+</head>
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+    
+    <header id="header">
+        <a href="#hero" class="logo">
+            <img src="logo-bege.png" alt="Logo Danniela Teixeira" class="logo-img" width="760" height="182">
+        </a>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="#hero" data-i18n="menu_inicio">Início</a></li>
+                    <li><a href="#sobre" data-i18n="menu_escritorio">Sobre</a></li>
+                    <li><a href="#projetos" data-i18n="menu_projetos">Projetos</a></li>
+                    <li><a href="#contato" data-i18n="menu_contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="changeLanguage('pt')">PT</button>
+                <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero_titulo">Arquitetura e interiores, do briefing à obra</h1>
+            <p data-i18n="hero_subtitulo">Projetos residenciais e comerciais com projeto executivo completo e acompanhamento próximo da execução.</p>
+            <a href="#projetos" class="btn" data-i18n="hero_botao">Conheça os Projetos</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre reveal">
+        <h2 data-i18n="sobre_titulo">Sobre mim</h2>
+        <div class="sobre-grid">
+            <figure class="sobre-foto">
+                <img src="danniela.jpg" alt="Retrato de Danniela Teixeira" width="960" height="1200" loading="lazy">
+            </figure>
+            <div class="sobre-conteudo">
+                <p class="sobre-cargo" data-i18n="sobre_cargo">Projetista de arquitetura e interiores</p>
+                <p data-i18n="sobre_p1">Tra­ba­lho com pro­je­to desde 2019, em es­cri­tó­rios e em em­pre­sa própria. De 2020 a 2025 dirigi a Granja Viana Ar­qui­te­tu­ra &amp; Cons­tru­ção, aten­den­do cli­en­tes re­si­den­ci­ais e comerciais.</p>
+                <p data-i18n="sobre_p2">Acom­pa­nho todas as etapas, do bri­e­fing à obra: le­van­ta­men­to, estudo pre­li­mi­nar, pro­je­to legal, pro­je­to exe­cu­ti­vo, de­ta­lha­men­to de mar­ce­na­ria, lu­mi­no­téc­ni­co e ima­gens 3D. Meu foco é um pro­je­to exe­cu­ti­vo que chegue à obra resolvido.</p>
+                <ul class="sobre-destaques">
+                    <li><strong>150+</strong><span data-i18n="sd1">projetos entregues, de 50 a 400 m²</span></li>
+                    <li><strong>AutoCAD</strong><span data-i18n="sd2">nível avançado em projeto legal, executivo e marcenaria</span></li>
+                    <li><strong data-i18n="sd3t">3D e render</strong><span data-i18n="sd3">SketchUp e Twinmotion, com apoio de inteligência artificial</span></li>
+                    <li><strong data-i18n="sd4t">Europa</strong><span data-i18n="sd4">intercâmbio de oito meses em Dublin, na Irlanda</span></li>
+                </ul>
+                <p class="sobre-clientes"><span data-i18n="sobre_clientes_t">Clientes comerciais</span> Frigo, Stylish Hair, NOP Odonto e NOP Odonto Radiologia</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos reveal">
+        <h2 data-i18n="projetos_titulo">Projetos em Destaque</h2>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all" data-i18n="filtro_todos">Todos</button>
+            <button class="filter-btn" data-filter="interior" data-i18n="filtro_interiores">Interiores</button>
+            <button class="filter-btn" data-filter="exterior" data-i18n="filtro_externos">Externos</button>
+        </div>
+        
+        <div class="grid-projetos" id="projetosGrid">
+            <div class="projeto-item" data-categoria="interior" data-projeto="samantha">
+                <img src="img/card_sam_home_ia.jpg" alt="Apartamento Samantha" loading="lazy">
+                <div class="projeto-categoria">Interiores</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj1_titulo">Apartamento Samantha</h3>
+                    <p data-i18n="proj1_desc">Reforma e Interiores</p>
+                </div>
+            </div>
+            <div class="projeto-item" data-categoria="interior" data-projeto="alex">
+                <img src="img/card_alex_sala.jpg" alt="Cobertura Alex" loading="lazy">
+                <div class="projeto-categoria">Interiores</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj2_titulo">Cobertura Alex</h3>
+                    <p data-i18n="proj2_desc">Cobertura Duplex</p>
+                </div>
+            </div>
+            <div class="projeto-item" data-categoria="interior" data-projeto="clinica">
+                <img src="img/card_cli_recepcao.jpg" alt="B Santana Clinic" loading="lazy">
+                <div class="projeto-categoria">Interiores</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj3_titulo">B Santana Clinic</h3>
+                    <p data-i18n="proj3_desc">Clínica de Estética</p>
+                </div>
+            </div>
+            <div class="projeto-item" data-categoria="exterior" data-projeto="ibiuna">
+                <img src="img/card_ib_fachada.jpg" alt="Residência em Ibiúna" loading="lazy">
+                <div class="projeto-categoria">Externos</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj4_titulo">Residência em Ibiúna</h3>
+                    <p data-i18n="proj4_desc">Residência Térrea</p>
+                </div>
+            </div>
+            <div class="projeto-item" data-categoria="interior" data-projeto="frigo">
+                <img src="img/card_frigo_hotel_a.jpg" alt="Frigo" loading="lazy">
+                <div class="projeto-categoria">Interiores</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj5_titulo">Frigo</h3>
+                    <p data-i18n="proj5_desc">Minimercados Autônomos</p>
+                </div>
+            </div>
+            <div class="projeto-item" data-categoria="exterior" data-projeto="avare">
+                <img src="img/card_avare.jpg" alt="Casa Avaré" loading="lazy">
+                <div class="projeto-categoria">Externos</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj6_titulo">Casa Avaré</h3>
+                    <p data-i18n="proj6_desc">Residência Unifamiliar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE PROJETO -->
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-container">
+            <button type="button" class="modal-close" id="modalClose" aria-label="Fechar">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="modal-content" id="modalContent">
+                <!-- Conteúdo preenchido via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <section id="contato" class="sobre reveal">
+        <h2 data-i18n="contato_titulo">Entre em Contato</h2>
+        <form class="form-contato" id="contactForm">
+            <div class="form-group">
+                <input type="text" id="nome" data-i18n="contato_nome" placeholder="Seu nome" aria-label="Nome" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+                <textarea id="mensagem" data-i18n="contato_mensagem" placeholder="Conte um pouco sobre o seu projeto" aria-label="Mensagem" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" data-i18n="contato_botao">Enviar pelo WhatsApp</button>
+            <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+            <p class="form-aviso"><span data-i18n="form_aviso">Ao enviar, o WhatsApp abre com a sua mensagem pronta. Nenhum dado fica guardado neste site.</span> <a href="#" class="link-privacidade" data-i18n="privacidade_link">Aviso de privacidade</a></p>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-buttons">
+            <a href="https://wa.me/353833684707" target="_blank" rel="noopener noreferrer" class="footer-btn whatsapp">
+                <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.9 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                </svg>
+                <span data-i18n="footer_whatsapp">WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/arquitetadanniela_/" target="_blank" rel="noopener noreferrer" class="footer-btn instagram">
+                <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                </svg>
+                <span data-i18n="footer_instagram">Instagram</span>
+            </a>
+            <a href="mailto:contato@arquitetadanniela.com.br" class="footer-btn email">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/>
+                </svg>
+                <span data-i18n="footer_email">E-mail</span>
+            </a>
+        </div>
+        <p>&copy; 2026 Danniela Teixeira. <span data-i18n="footer_direitos">Todos os direitos reservados.</span> · <a href="#" class="link-privacidade" data-i18n="privacidade_link">Aviso de privacidade</a></p>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L12 20M12 4L18 10M12 4L6 10" stroke="#F3EEE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+    </button>
+
+    <a href="https://wa.me/353833684707" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.9 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <script>
+        // DADOS DOS PROJETOS
+        const projetosData = {
+            samantha: {
+                titulo: "Apartamento Samantha",
+                categoria: "Reforma e Interiores",
+                local: "São Paulo, SP",
+                area: "70 m²",
+                descricao: "Re­for­ma de um apar­ta­men­to de 70 m². O apar­ta­men­to tinha um único ba­nhei­ro, de uso comum; a re­for­ma divide esse núcleo em ba­nhei­ro social e ba­nhei­ro da suíte master, com pa­re­des novas em drywall. O pro­je­to exe­cu­ti­vo tem nove pran­chas na escala 1:50: ori­gi­nal, de­mo­lir e cons­truir, planta mo­di­fi­ca­da, layout, piso, elé­tri­ca, forro, ilu­mi­na­ção e hidráulica. Pro­je­to do es­cri­tó­rio La­ris­sa Abreu Ar­qui­te­tu­ra e In­te­ri­o­res, com co­or­de­na­ção de Le­o­nar­do; Dan­ni­e­la Tei­xei­ra de­sen­vol­veu o pro­je­to exe­cu­ti­vo e o layout. Ima­gens: renderizações.",
+                materiais: "Ti­jo­li­nho no home, con­cre­to apa­ren­te no jantar, pai­néis ri­pa­dos que dis­far­çam portas e o quadro de luz, ca­be­cei­ra em ripado, ar­má­rios altos, nicho de vinho e banco-baú na área de serviço.",
+                imagens: ["img/sam_home_ia.jpg", "img/sam_45.jpg", "img/sam_48.jpg", "img/sam_52.jpg", "img/sam_50.jpg", "img/sam_56.jpg", "img/sam_layout.jpg"]
+            },
+            alex: {
+                titulo: "Cobertura Alex",
+                categoria: "Interiores",
+                local: "Bela Vista, São Paulo",
+                ano: "2026",
+                area: "266,09 m²",
+                descricao: "Co­ber­tu­ra duplex na região da Ave­ni­da Paulista. No pri­mei­ro pa­vi­men­to, sala, jantar e co­zi­nha in­te­gra­dos, es­cri­tó­rio e sala de música e suíte master com closet in­te­gra­do; no se­gun­do, um salão de estar e um quarto. Co­or­de­na­ção de Helio Al­bu­quer­que; planta de layout de Dan­ni­e­la Teixeira. Ima­gens: renderizações.",
+                materiais: "O hall do se­gun­do pa­vi­men­to foi am­pli­a­do e ganhou um estar com degrau de 20 cm. No pri­mei­ro, um brise de mar­ce­na­ria com apa­ra­dor es­con­de as pru­ma­das de água e esgoto.",
+                imagens: ["img/alex_sala.jpg", "img/alex_superior.jpg", "img/alex_superior2.jpg", "img/alex_pav1.jpg", "img/alex_pav2.jpg"]
+            },
+            clinica: {
+                titulo: "B Santana Clinic",
+                categoria: "Saúde e Estética",
+                local: "Barueri, SP",
+                ano: "2026",
+                descricao: "Re­for­ma de uma clí­ni­ca de es­té­ti­ca avançada. Duas salas novas, de 8,16 m² e 7,24 m², foram cri­a­das ao lado das salas exis­ten­tes, sem mexer na recepção. A ilu­mi­na­ção usa só perfis de LED flex, 47,26 m no total, que de­se­nham mol­du­ras no forro de cada sala. Pro­je­to de Dan­ni­e­la Tei­xei­ra pela Granja Viana Ar­qui­te­tu­ra & Construção. Ima­gens: renderizações.",
+                materiais: "Gra­ni­to Branco Itaú­nas nas ban­ca­das, MDF Car­va­lho Malva na mar­ce­na­ria e de­ta­lhes dou­ra­dos em metais, es­pe­lhos e mobiliário.",
+                imagens: ["img/cli_recepcao.jpg", "img/cli_procedimento.jpg", "img/cli_consultorio.jpg", "img/cli_copa.jpg", "img/cli_planta_ilum.jpg"]
+            },
+            ibiuna: {
+                titulo: "Residência em Ibiúna",
+                categoria: "Residencial",
+                local: "Ibiúna, SP",
+                area: "244,39 m²",
+                descricao: "Casa térrea cons­tru­í­da em um ter­re­no longo de 884,40 m², or­ga­ni­za­da em faixas: jardim e acesso na frente, a casa no centro e o lazer ao fundo. O al­pen­dre de 77,98 m² abriga dois carros e fun­ci­o­na como va­ran­da co­ber­ta; co­zi­nha, jantar e estar formam um único am­bi­en­te de 46,26 m². Au­to­ria de Rafael Diniz e Dan­ni­e­la Teixeira. Ima­gens: renderizações.",
+                materiais: "Telha ce­râ­mi­ca romana em dois planos de­sen­con­tra­dos, tes­tei­ras em eu­ca­lip­to pin­ta­do de branco, mol­du­ras e gradis em eu­ca­lip­to, pin­tu­ra acrí­li­ca Marfim Nobre e chur­ras­quei­ra em tijolinho.",
+                imagens: ["img/ib_fachada.jpg", "img/ib_entardecer.jpg", "img/ib_lazer.jpg", "img/ib_layout.jpg"]
+            },
+            frigo: {
+                titulo: "Frigo",
+                categoria: "Comercial",
+                local: "São Paulo, SP",
+                descricao: "Rede de mi­ni­mer­ca­dos au­tô­no­mos que fun­ci­o­nam 24 horas. A pri­mei­ra loja física foi mon­ta­da dentro de um hotel em São Paulo, com pro­je­to, obra e exe­cu­ção de Dan­ni­e­la Tei­xei­ra; depois, ela con­du­ziu a im­plan­ta­ção de mais de 15 uni­da­des da rede. Ima­gens: fo­to­gra­fi­as da obra concluída.",
+                materiais: "Mar­ce­na­ria em ma­dei­ra com luz em cada pra­te­lei­ra, letras apli­ca­das com a frase “Pegue, pague e leve”, totem de au­to­a­ten­di­men­to; na uni­da­de se­guin­te, pai­néis ama­dei­ra­dos, es­tan­te em L e rasgo de luz no forro.",
+                imagens: ["img/frigo_hotel_a.jpg", "img/frigo_hotel_b.jpg", "img/frigo_u2_a.jpg"]
+            },
+            avare: {
+                titulo: "Casa Avaré",
+                categoria: "Residencial",
+                descricao: "Re­si­dên­cia de dois pa­vi­men­tos com fa­cha­da branca e es­qua­dri­as pretas de piso a teto. A laje su­pe­ri­or avança sobre a en­tra­da com ilu­mi­na­ção embutida. Imagem: render.",
+                materiais: "Es­qua­dri­as pretas, painel ama­dei­ra­do na la­te­ral, guarda-corpo de vidro na sacada e aran­de­las na fachada.",
+                imagens: ["img/avare.jpg"]
+            }
+        };
+
+        const motionOk = () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // ENGLISH TEXTS FOR THE PROJECT WINDOWS
+        const projetosEN = {
+            samantha: { categoria: "Renovation and Interiors",
+                descricao_en: "Ren­o­va­tion of a 70 m² apartment. The flat had a single shared bath­room; the project splits that core into a guest bath­room and a master en-suite, with new dry­wall partitions. The con­struc­tion set has nine sheets at 1:50: ex­ist­ing, de­mo­li­tion and con­struc­tion, re­vised plan, layout, floor­ing, elec­tri­cal, ceil­ing, light­ing and plumbing. Design by Laris­sa Abreu Ar­quite­tu­ra e In­te­ri­ores, co­or­di­nat­ed by Leonar­do; Dan­niela Teix­eira de­vel­oped the con­struc­tion doc­u­ments and the layout. Images: renderings.",
+                materiais_en: "Brick slips in the living room, ex­posed con­crete in the dining area, slat­ted panels con­ceal­ing doors and the fuse box, slat­ted head­board, full-height wardrobes, wine niche and stor­age bench in the laundry." },
+            alex: { categoria: "Interiors",
+                descricao_en: "Duplex pent­house near Aveni­da Paulista. The lower floor brings to­geth­er living, dining and kitchen, a study and music room, and a master suite with walk-in closet; the upper floor holds a lounge and a bedroom. Co­or­di­nat­ed by Helio Al­bu­querque; layout plan by Dan­niela Teixeira. Images: renderings.",
+                materiais_en: "The upper hall was en­larged into a sit­ting area set on a 20 cm step. Down­stairs, a join­ery screen with a con­sole con­ceals the water and drainage risers." },
+            clinica: { categoria: "Health and Aesthetics",
+                descricao_en: "Ren­o­va­tion of an ad­vanced aes­thet­ics clinic. Two new rooms, of 8.16 m² and 7.24 m², were added next to the ex­ist­ing rooms with­out touch­ing the reception. Light­ing relies solely on flex­i­ble LED pro­files, 47.26 m in total, draw­ing frames on each ceiling. Design by Dan­niela Teix­eira for Granja Viana Ar­quite­tu­ra & Construção. Images: renderings.",
+                materiais_en: "Branco Itaú­nas gran­ite work­tops, Car­val­ho Malva MDF join­ery and gold de­tails in fit­tings, mir­rors and furniture." },
+            ibiuna: { categoria: "Residential",
+                descricao_en: "A built single-storey house on a long 884.40 m² plot, or­gan­ised in bands: garden and access at the front, the house in the middle and leisure at the back. The 77.98 m² porch shel­ters two cars and dou­bles as a cov­ered ve­ran­da; kitchen, dining and living form a single 46.26 m² space. Au­thors: Rafael Diniz and Dan­niela Teixeira. Images: renderings.",
+                materiais_en: "Roman clay tiles on two offset roof planes, white-painted eu­ca­lyp­tus fas­cias, eu­ca­lyp­tus frames and rail­ings, Marfim Nobre acrylic paint and a brick barbecue." },
+            frigo: { categoria: "Commercial",
+                descricao_en: "A chain of self-service mini mar­kets open 24 hours. The first phys­i­cal store was built inside a hotel in São Paulo, with design, build and fit-out by Dan­niela Teix­eira; she then led the roll-out of more than 15 units of the chain. Images: pho­to­graphs of the fin­ished work.",
+                materiais_en: "Timber join­ery with light­ing on every shelf, ap­plied let­ter­ing read­ing “Pick up, pay and take away”, a self-checkout kiosk; in the next unit, wood-effect panels, an L-shaped shelf and a light slot in the ceiling." },
+            avare: { categoria: "Residential",
+                descricao_en: "A two-storey house with a white façade and floor-to-ceiling black frames. The upper slab projects over the en­trance with re­cessed lighting. Image: render.",
+                materiais_en: "Black frames, timber-effect side panel, glass balustrade on the bal­cony and wall lights on the façade." }
+        };
+        const modalLabels = {
+            pt: { local: 'Localização', ano: 'Ano', area: 'Área', categoria: 'Categoria', materiais: 'Materiais e soluções', imagem: 'Imagem', de: 'de', anterior: 'Imagem anterior', proxima: 'Próxima imagem', fechar: 'Fechar', abrir: 'Ver projeto' },
+            en: { local: 'Location', ano: 'Year', area: 'Area', categoria: 'Category', materiais: 'Materials and solutions', imagem: 'Image', de: 'of', anterior: 'Previous image', proxima: 'Next image', fechar: 'Close', abrir: 'View project' }
+        };
+
+        // FUNÇÃO PARA ABRIR MODAL
+        let lastFocus = null;
+        function openProjectModal(projetoId) {
+            const projeto = projetosData[projetoId];
+            if (!projeto) return;
+            const en = currentLang === 'en' ? projetosEN[projetoId] : null;
+            const L = modalLabels[currentLang];
+            const modal = document.getElementById('projectModal');
+            const modalContent = document.getElementById('modalContent');
+            const n = projeto.imagens.length;
+
+            const thumbs = n > 1 ? `<div class="modal-thumbnails">${projeto.imagens.map((img, i) =>
+                `<button type="button" class="modal-thumb ${i === 0 ? 'active' : ''}" data-i="${i}" aria-label="${L.imagem} ${i + 1} ${L.de} ${n}"><img src="${img}" alt="" loading="lazy"></button>`).join('')}</div>` : '';
+            const arrows = n > 1 ? `<button type="button" class="modal-nav prev" aria-label="${L.anterior}">&#8249;</button><button type="button" class="modal-nav next" aria-label="${L.proxima}">&#8250;</button>` : '';
+
+            modalContent.innerHTML = `
+                <div class="modal-stage">
+                    <img class="modal-main-image" id="modalMainImage" src="${projeto.imagens[0]}" alt="${projeto.titulo}, ${L.imagem.toLowerCase()} 1 ${L.de} ${n}">
+                    ${arrows}
+                </div>
+                ${thumbs}
+                <h2 class="modal-title" id="modalTitle">${projeto.titulo}</h2>
+                <div class="modal-tech-specs">
+                    ${[[L.local, projeto.local], [L.ano, projeto.ano], [L.area, projeto.area], [L.categoria, en ? en.categoria : projeto.categoria]]
+                        .filter(([, v]) => v)
+                        .map(([k, v]) => `<div class="spec-item"><div class="spec-label">${k}</div><div class="spec-value">${v}</div></div>`).join('')}
+                </div>
+                <div class="modal-description">
+                    <p>${en ? en.descricao_en : projeto.descricao}</p>
+                </div>
+                <div class="modal-materials">
+                    <h4>${L.materiais}</h4>
+                    <p>${en ? en.materiais_en : projeto.materiais}</p>
+                </div>
+            `;
+            modalContent.querySelectorAll('.modal-thumb').forEach(b => b.addEventListener('click', () => changeModalImage(+b.dataset.i)));
+            const prev = modalContent.querySelector('.modal-nav.prev'), next = modalContent.querySelector('.modal-nav.next');
+            if (prev) prev.addEventListener('click', () => changeModalImage((window.currentImageIndex - 1 + n) % n));
+            if (next) next.addEventListener('click', () => changeModalImage((window.currentImageIndex + 1) % n));
+
+            window.currentProjectImages = projeto.imagens;
+            window.currentProjectTitle = projeto.titulo;
+            window.currentImageIndex = 0;
+            showModal();
+        }
+
+        function changeModalImage(index) {
+            const mainImage = document.getElementById('modalMainImage');
+            const imgs = window.currentProjectImages;
+            if (!mainImage || !imgs || !imgs[index]) return;
+            const L = modalLabels[currentLang];
+            mainImage.src = imgs[index];
+            mainImage.alt = `${window.currentProjectTitle}, ${L.imagem.toLowerCase()} ${index + 1} ${L.de} ${imgs.length}`;
+            window.currentImageIndex = index;
+            document.querySelectorAll('.modal-thumb').forEach((t, i) => t.classList.toggle('active', i === index));
+        }
+
+        function showModal() {
+            lastFocus = document.activeElement;
+            document.getElementById('projectModal').classList.add('active');
+            document.body.classList.add('modal-open');
+            document.getElementById('modalClose').setAttribute('aria-label', modalLabels[currentLang].fechar);
+            setTimeout(() => document.getElementById('modalClose').focus({ preventScroll: true }), 50);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            if (!modal.classList.contains('active')) return;
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+            window.currentProjectImages = null;
+            if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+        }
+
+        // Project cards: open with click, Enter or Space (keyboard accessible)
+        document.querySelectorAll('.projeto-item').forEach(item => {
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+            const open = () => {
+                const projetoId = item.getAttribute('data-projeto');
+                if (projetoId && projetosData[projetoId]) openProjectModal(projetoId);
+            };
+            item.addEventListener('click', open);
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+            });
+        });
+
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('projectModal')) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('projectModal');
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') { closeModal(); return; }
+            const imgs = window.currentProjectImages;
+            if (imgs && imgs.length > 1 && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+                const d = e.key === 'ArrowRight' ? 1 : -1;
+                changeModalImage((window.currentImageIndex + d + imgs.length) % imgs.length);
+            }
+            if (e.key === 'Tab') { // keep focus inside the window
+                const f = [...modal.querySelectorAll('button, a[href], input, textarea')].filter(el => el.offsetParent !== null);
+                if (!f.length) return;
+                const first = f[0], last = f[f.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        });
+
+        // Swipe between images on touch screens
+        (() => {
+            let x0 = null;
+            const stage = document.getElementById('modalContent');
+            stage.addEventListener('touchstart', (e) => { if (e.target.closest('.modal-stage')) x0 = e.touches[0].clientX; }, { passive: true });
+            stage.addEventListener('touchend', (e) => {
+                const imgs = window.currentProjectImages;
+                if (x0 === null || !imgs || imgs.length < 2) return;
+                const dx = e.changedTouches[0].clientX - x0; x0 = null;
+                if (Math.abs(dx) > 40) changeModalImage((window.currentImageIndex + (dx < 0 ? 1 : -1) + imgs.length) % imgs.length);
+            }, { passive: true });
+        })();
+
+        // PRELOADER: hides as soon as the page structure and fonts are ready (max 2.5 s),
+        // instead of waiting for every image to finish downloading
+        (() => {
+            const hide = () => document.getElementById('preloader').classList.add('hide');
+            const ready = () => (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(hide, 150));
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready); else ready();
+            setTimeout(hide, 2500);
+        })();
+        
+        // HEADER SCROLL EFFECT
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // SCROLL REVEAL
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(reveal => revealObserver.observe(reveal));
+        
+        // FILTRO
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projetosItems = document.querySelectorAll('.projeto-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                projetosItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-categoria') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.style.opacity = '1', 10);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => item.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+        
+        let currentLang = 'pt';
+
+        // AVISO DE PRIVACIDADE (abre na mesma janela modal dos projetos)
+        function openPrivacy(e) {
+            if (e) e.preventDefault();
+            const t = translations[currentLang];
+            document.getElementById('modalContent').innerHTML =
+                `<h2 class="modal-title" id="modalTitle">${t.privacidade_titulo}</h2><div class="modal-description privacidade">${t.privacidade_html}</div>`;
+            window.currentProjectImages = null;
+            showModal();
+        }
+        document.querySelectorAll('.link-privacidade').forEach(a => a.addEventListener('click', openPrivacy));
+
+        // FORMULÁRIO
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        // The form keeps no data: it only opens WhatsApp with the text the visitor typed.
+        const WHATSAPP = '353833684707';
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const t = translations[currentLang];
+            const nome = document.getElementById('nome').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            if (!nome || !mensagem) {
+                formMessage.textContent = t.form_erro;
+                formMessage.className = 'form-message error';
+                return;
+            }
+
+            const texto = `${t.wa_intro} ${nome}.\n\n${mensagem}`;
+            window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+            formMessage.textContent = t.form_ok;
+            formMessage.className = 'form-message success';
+        });
+        
+        // BACK TO TOP
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTop.classList.add('show');
+            else backToTop.classList.remove('show');
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: motionOk() ? 'smooth' : 'auto' });
+        });
+        
+        // TRADUÇÕES (sem referências ao contador ou newsletter)
+        const translations = {
+            pt: {
+                menu_inicio: "Início", menu_escritorio: "Sobre", menu_projetos: "Projetos", menu_contato: "Contato",
+                sobre_cargo: "Projetista de arquitetura e interiores",
+                sobre_p1: "Tra­ba­lho com pro­je­to desde 2019, em es­cri­tó­rios e em em­pre­sa própria. De 2020 a 2025 dirigi a Granja Viana Ar­qui­te­tu­ra & Cons­tru­ção, aten­den­do cli­en­tes re­si­den­ci­ais e comerciais.",
+                sobre_p2: "Acom­pa­nho todas as etapas, do bri­e­fing à obra: le­van­ta­men­to, estudo pre­li­mi­nar, pro­je­to legal, pro­je­to exe­cu­ti­vo, de­ta­lha­men­to de mar­ce­na­ria, lu­mi­no­téc­ni­co e ima­gens 3D. Meu foco é um pro­je­to exe­cu­ti­vo que chegue à obra resolvido.",
+                sd1: "projetos entregues, de 50 a 400 m²", sd2: "nível avançado em projeto legal, executivo e marcenaria",
+                sd3t: "3D e render", sd3: "SketchUp e Twinmotion, com apoio de inteligência artificial",
+                sd4t: "Europa", sd4: "intercâmbio de oito meses em Dublin, na Irlanda",
+                sobre_clientes_t: "Clientes comerciais",
+                hero_titulo: "Arquitetura e interiores, do briefing à obra", hero_subtitulo: "Projetos residenciais e comerciais com projeto executivo completo e acompanhamento próximo da execução.",
+                hero_botao: "Conheça os Projetos", sobre_titulo: "Sobre mim",
+                projetos_titulo: "Projetos em Destaque", proj1_titulo: "Apartamento Samantha", proj1_desc: "Reforma e Interiores", 
+                proj2_titulo: "Cobertura Alex", proj2_desc: "Cobertura Duplex", 
+                proj3_titulo: "B Santana Clinic", proj3_desc: "Clínica de Estética",
+                proj4_titulo: "Residência em Ibiúna", proj4_desc: "Residência Térrea",
+                proj5_titulo: "Frigo", proj5_desc: "Minimercados Autônomos",
+                proj6_titulo: "Casa Avaré", proj6_desc: "Residência Unifamiliar",
+                contato_titulo: "Entre em Contato", contato_nome: "Seu nome",
+                contato_mensagem: "Conte um pouco sobre o seu projeto", contato_botao: "Enviar pelo WhatsApp",
+                form_erro: "Preencha seu nome e a mensagem.", form_ok: "O WhatsApp foi aberto com a sua mensagem. É só tocar em enviar.",
+                wa_intro: "Olá, Danniela! Meu nome é",
+                form_aviso: "Ao enviar, o WhatsApp abre com a sua mensagem pronta. Nenhum dado fica guardado neste site.",
+                privacidade_link: "Aviso de privacidade",
+                privacidade_titulo: "Aviso de privacidade",
+                privacidade_html: "<p><strong>Responsável:</strong> Danniela Teixeira, projetista de arquitetura e interiores.</p><p><strong>O que este site coleta:</strong> nada. Ele não usa cookies, não guarda informações no seu navegador, não tem ferramentas de estatística, publicidade ou rastreamento, e as fontes e imagens são servidas pelo próprio site.</p><p><strong>Formulário de contato:</strong> o nome e a mensagem que você digita não são enviados a este site; o botão apenas abre o WhatsApp com o texto pronto, e você decide se envia.</p><p><strong>Contato por WhatsApp, e-mail ou Instagram:</strong> os dados que você enviar por esses canais (como nome, telefone e mensagem) são usados somente para responder sobre o seu projeto e não são compartilhados com terceiros. Esses serviços têm as próprias políticas de privacidade.</p><p><strong>Hospedagem:</strong> o site é hospedado pelo GitHub Pages, que pode registrar dados técnicos de acesso, como o endereço IP, para segurança e funcionamento do serviço.</p><p><strong>Seus direitos (LGPD, Lei 13.709/2018):</strong> você pode pedir acesso, correção ou exclusão dos seus dados de contato a qualquer momento pelo WhatsApp ou pelo e-mail indicados no rodapé.</p>",
+                privacidade_fechar: "Fechar", footer_direitos: "Todos os direitos reservados.",
+                footer_whatsapp: "WhatsApp", footer_instagram: "Instagram", footer_email: "E-mail",
+                filtro_todos: "Todos", filtro_interiores: "Interiores", filtro_externos: "Externos"
+            },
+            en: {
+                menu_inicio: "Home", menu_escritorio: "About", menu_projetos: "Projects", menu_contato: "Contact",
+                sobre_cargo: "Architectural and interior designer",
+                sobre_p1: "I have worked on projects since 2019, in stu­dios and in my own company. From 2020 to 2025 I ran Granja Viana Ar­quite­tu­ra & Con­strução, serv­ing res­i­den­tial and com­mer­cial clients.",
+                sobre_p2: "I follow every stage, from brief to site: survey, con­cept design, plan­ning draw­ings, con­struc­tion doc­u­ments, join­ery de­tail­ing, light­ing design and 3D images. My focus is a con­struc­tion set that reach­es the site fully resolved.",
+                sd1: "projects delivered, from 50 to 400 m²", sd2: "advanced level in planning drawings, construction documents and joinery",
+                sd3t: "3D and rendering", sd3: "SketchUp and Twinmotion, supported by AI tools",
+                sd4t: "Europe", sd4: "eight-month exchange in Dublin, Ireland",
+                sobre_clientes_t: "Commercial clients",
+                hero_titulo: "Architecture and interiors, from brief to site", hero_subtitulo: "Residential and commercial projects with full construction documents and close site supervision.",
+                hero_botao: "View Projects", sobre_titulo: "About me",
+                projetos_titulo: "Featured Projects", proj1_titulo: "Apartamento Samantha", proj1_desc: "Renovation and Interiors",
+                proj2_titulo: "Cobertura Alex", proj2_desc: "Duplex Penthouse",
+                proj3_titulo: "B Santana Clinic", proj3_desc: "Aesthetics Clinic",
+                proj4_titulo: "Residência em Ibiúna", proj4_desc: "Single-storey House",
+                proj5_titulo: "Frigo", proj5_desc: "Self-service Mini Markets",
+                proj6_titulo: "Casa Avaré", proj6_desc: "Single-family House",
+                contato_titulo: "Contact Us", contato_nome: "Your name",
+                contato_mensagem: "Tell me a little about your project", contato_botao: "Send via WhatsApp",
+                form_erro: "Please fill in your name and message.", form_ok: "WhatsApp is open with your message. Just tap send.",
+                wa_intro: "Hello, Danniela! My name is",
+                form_aviso: "When you send, WhatsApp opens with your message ready. No data is stored on this site.",
+                privacidade_link: "Privacy notice",
+                privacidade_titulo: "Privacy notice",
+                privacidade_html: "<p><strong>Controller:</strong> Danniela Teixeira, architectural and interior designer.</p><p><strong>What this site collects:</strong> nothing. It uses no cookies, stores nothing in your browser, has no analytics, advertising or tracking tools, and fonts and images are served by the site itself.</p><p><strong>Contact form:</strong> the name and message you type are not sent to this site; the button only opens WhatsApp with the text ready, and you decide whether to send it.</p><p><strong>Contact via WhatsApp, email or Instagram:</strong> the data you send through these channels (such as name, phone number and message) is used only to reply about your project and is not shared with third parties. These services have their own privacy policies.</p><p><strong>Hosting:</strong> the site is hosted on GitHub Pages, which may log technical access data, such as IP addresses, for security and operation of the service.</p><p><strong>Your rights (Brazilian LGPD, Law 13,709/2018):</strong> you can ask to access, correct or delete your contact data at any time via the WhatsApp or email shown in the footer.</p>",
+                privacidade_fechar: "Close", footer_direitos: "All rights reserved.",
+                footer_whatsapp: "WhatsApp", footer_instagram: "Instagram", footer_email: "Email",
+                filtro_todos: "All", filtro_interiores: "Interiors", filtro_externos: "Exteriors"
+            }
+        };
+        
+        window.changeLanguage = function(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            const nomeInput = document.getElementById('nome');
+            const emailInput = document.getElementById('email');
+            const mensagemTextarea = document.getElementById('mensagem');
+            if (nomeInput) nomeInput.placeholder = translations[lang].contato_nome;
+            if (emailInput) emailInput.placeholder = translations[lang].contato_email;
+            if (mensagemTextarea) mensagemTextarea.placeholder = translations[lang].contato_mensagem;
+            
+            const footerSpans = document.querySelectorAll('.footer-btn span');
+            if (footerSpans.length >= 3) {
+                footerSpans[0].textContent = translations[lang].footer_whatsapp;
+                footerSpans[1].textContent = translations[lang].footer_instagram;
+                footerSpans[2].textContent = translations[lang].footer_email;
+            }
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.textContent.toLowerCase() === lang) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+        };
+        
+        // SCROLL SUAVE
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = document.getElementById('header').offsetHeight + 8;
+                    window.scrollTo({ top: target.offsetTop - offset, behavior: motionOk() ? 'smooth' : 'auto' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
