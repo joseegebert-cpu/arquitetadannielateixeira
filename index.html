@@ -1483,6 +1483,22 @@
                     <p data-i18n="proj6_desc">Residência Unifamiliar</p>
                 </div>
             </div>
+            <div class="projeto-item" data-categoria="interior" data-projeto="stylish">
+                <img src="img/card_sty_salao.jpg" alt="Stylish Hair" loading="lazy">
+                <div class="projeto-categoria">Interiores</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj7_titulo">Stylish Hair</h3>
+                    <p data-i18n="proj7_desc">Salão e Barbearia</p>
+                </div>
+            </div>
+            <div class="projeto-item" data-categoria="exterior" data-projeto="vitorello">
+                <img src="img/card_vv_fachada.jpg" alt="Villa Vitorello" loading="lazy">
+                <div class="projeto-categoria">Externos</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj8_titulo">Villa Vitorello</h3>
+                    <p data-i18n="proj8_desc">Edifício Residencial</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1605,6 +1621,25 @@
                 descricao: "Re­si­dên­cia de dois pa­vi­men­tos com fa­cha­da branca e es­qua­dri­as pretas de piso a teto. A laje su­pe­ri­or avança sobre a en­tra­da com ilu­mi­na­ção embutida. Imagem: render.",
                 materiais: "Es­qua­dri­as pretas, painel ama­dei­ra­do na la­te­ral, guarda-corpo de vidro na sacada e aran­de­las na fachada.",
                 imagens: ["img/avare.jpg"]
+            },
+            stylish: {
+                titulo: "Stylish Hair",
+                categoria: "Comercial",
+                local: "Golden Square Shopping, São Bernardo do Campo, SP",
+                ano: "2023",
+                area: "253 m²",
+                descricao: "Salão e bar­be­a­ria no ter­cei­ro piso do Golden Square Shopping. No térreo, de 172 m², a bar­be­a­ria ocupa a la­te­ral, o salão fica no centro com ban­ca­das duplas, a ma­ni­cu­re corre junto à parede verde e os la­va­tó­rios ficam no fundo, ao lado da escada. Um me­za­ni­no de 81 m², em es­tru­tu­ra me­tá­li­ca, reúne quatro es­to­ques, área de fun­ci­o­ná­rios e casa de máquinas. Pro­je­to exe­cu­ti­vo de Dan­ni­e­la Tei­xei­ra pela Granja Viana Ar­qui­te­tu­ra & Cons­tru­ção, em sete pran­chas re­vi­sa­das con­for­me os co­men­tá­rios do shop­ping até a aprovação. Ima­gens: renderizações.",
+                materiais: "Por­ce­la­na­to cinza, piso vi­ní­li­co ama­dei­ra­do, ti­jo­li­nho, ci­men­to quei­ma­do e ban­ca­das de la­va­tó­rio em már­mo­re preto. Na fa­cha­da, painel em ACM ama­dei­ra­do com le­trei­ro ilu­mi­na­do e vi­tri­ne em vidro chumbo de 12 mm; no salão, spots de trilho de 4000 K e fita de LED na marcenaria.",
+                imagens: ["img/sty_salao.jpg", "img/sty_lavatorios.jpg", "img/sty_layout_terreo.jpg", "img/sty_layout_mezanino.jpg", "img/sty_fachada.jpg"]
+            },
+            vitorello: {
+                titulo: "Villa Vitorello",
+                categoria: "Residencial",
+                local: "Carapicuíba, SP",
+                ano: "2025",
+                descricao: "Edi­fí­cio re­si­den­ci­al de quatro pa­vi­men­tos, com quatro apar­ta­men­tos de 43,69 m² por andar em torno de um hall cen­tral com escada. Cada apar­ta­men­to tem sala de estar e jantar in­te­gra­da, co­zi­nha, ser­vi­ço, sacada, ba­nhei­ro e dois dormitórios. Co­or­de­na­ção e planta de layout de Dan­ni­e­la Teixeira. Ima­gens: renderizações.",
+                materiais: "Os quatro apar­ta­men­tos se es­pe­lham em dois eixos; co­zi­nhas e áreas de ser­vi­ço se agru­pam de costas umas para as outras, junto às pru­ma­das, e as salas abrem direto para o hall.",
+                imagens: ["img/vv_fachada.jpg", "img/vv_fachada2.jpg", "img/vv_planta.jpg"]
             }
         };
 
@@ -1629,7 +1664,13 @@
                 materiais_en: "Timber join­ery with light­ing on every shelf, ap­plied let­ter­ing read­ing “Pick up, pay and take away”, a self-checkout kiosk; in the next unit, wood-effect panels, an L-shaped shelf and a light slot in the ceiling." },
             avare: { categoria: "Residential",
                 descricao_en: "A two-storey house with a white façade and floor-to-ceiling black frames. The upper slab projects over the en­trance with re­cessed lighting. Image: render.",
-                materiais_en: "Black frames, timber-effect side panel, glass balustrade on the bal­cony and wall lights on the façade." }
+                materiais_en: "Black frames, timber-effect side panel, glass balustrade on the bal­cony and wall lights on the façade." },
+            stylish: { categoria: "Commercial",
+                descricao_en: "A hair salon and bar­ber­shop on the third floor of Golden Square Shopping. On the 172 m² ground floor, the bar­ber­shop runs along one side, the salon sits in the middle with double work­sta­tions, the man­i­cure bar lines the green wall and the wash basins are at the back, next to the stairs. An 81 m² steel mez­za­nine holds four store­rooms, a staff area and the plant room. Con­struc­tion doc­u­ments by Dan­niela Teix­eira for Granja Viana Ar­quite­tu­ra & Con­strução, in seven sheets re­vised to the mall's com­ments until approval. Images: renderings.",
+                materiais_en: "Grey porce­lain tiles, wood-effect vinyl floor­ing, brick slips, burnt-cement paint and black marble basin counters. On the façade, a wood-effect ACM panel with an il­lu­mi­nat­ed sign and a 12 mm smoked-glass shopfront; in the salon, 4000 K track spots and LED strips in the joinery." },
+            vitorello: { categoria: "Residential",
+                descricao_en: "A four-storey res­i­den­tial build­ing with four 43.69 m² apart­ments per floor around a cen­tral hall and staircase. Each apart­ment has an open living and dining room, kitchen, laun­dry, bal­cony, bath­room and two bedrooms. Co­or­di­na­tion and layout plan by Dan­niela Teixeira. Images: renderings.",
+                materiais_en: "The four apart­ments mirror each other on two axes; kitchens and laun­dries sit back to back beside the ser­vice risers, and the living rooms open straight onto the hall." }
         };
         const modalLabels = {
             pt: { local: 'Localização', ano: 'Ano', area: 'Área', categoria: 'Categoria', materiais: 'Materiais e soluções', imagem: 'Imagem', de: 'de', anterior: 'Imagem anterior', proxima: 'Próxima imagem', fechar: 'Fechar', abrir: 'Ver projeto' },
@@ -1878,6 +1919,8 @@
                 proj4_titulo: "Residência em Ibiúna", proj4_desc: "Residência Térrea",
                 proj5_titulo: "Frigo", proj5_desc: "Minimercados Autônomos",
                 proj6_titulo: "Casa Avaré", proj6_desc: "Residência Unifamiliar",
+                proj7_titulo: "Stylish Hair", proj7_desc: "Salão e Barbearia",
+                proj8_titulo: "Villa Vitorello", proj8_desc: "Edifício Residencial",
                 contato_titulo: "Entre em Contato", contato_nome: "Seu nome",
                 contato_mensagem: "Conte um pouco sobre o seu projeto", contato_botao: "Enviar pelo WhatsApp",
                 form_erro: "Preencha seu nome e a mensagem.", form_ok: "O WhatsApp foi aberto com a sua mensagem. É só tocar em enviar.",
@@ -1907,6 +1950,8 @@
                 proj4_titulo: "Residência em Ibiúna", proj4_desc: "Single-storey House",
                 proj5_titulo: "Frigo", proj5_desc: "Self-service Mini Markets",
                 proj6_titulo: "Casa Avaré", proj6_desc: "Single-family House",
+                proj7_titulo: "Stylish Hair", proj7_desc: "Hair Salon and Barbershop",
+                proj8_titulo: "Villa Vitorello", proj8_desc: "Residential Building",
                 contato_titulo: "Contact Us", contato_nome: "Your name",
                 contato_mensagem: "Tell me a little about your project", contato_botao: "Send via WhatsApp",
                 form_erro: "Please fill in your name and message.", form_ok: "WhatsApp is open with your message. Just tap send.",
