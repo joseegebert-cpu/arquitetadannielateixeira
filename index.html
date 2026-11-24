@@ -1499,6 +1499,14 @@
                     <p data-i18n="proj8_desc">Edifício Residencial</p>
                 </div>
             </div>
+            <div class="projeto-item" data-categoria="interior exterior" data-projeto="outros">
+                <img src="img/card_gv_02.jpg" alt="Outros projetos" loading="lazy">
+                <div class="projeto-categoria">Seleção</div>
+                <div class="projeto-info">
+                    <h3 data-i18n="proj9_titulo">Outros projetos</h3>
+                    <p data-i18n="proj9_desc">Fachadas, Lazer e Interiores</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1640,6 +1648,13 @@
                 descricao: "Edi­fí­cio re­si­den­ci­al de quatro pa­vi­men­tos, com quatro apar­ta­men­tos de 43,69 m² por andar em torno de um hall cen­tral com escada. Cada apar­ta­men­to tem sala de estar e jantar in­te­gra­da, co­zi­nha, ser­vi­ço, sacada, ba­nhei­ro e dois dormitórios. Co­or­de­na­ção e planta de layout de Dan­ni­e­la Teixeira. Ima­gens: renderizações.",
                 materiais: "Os quatro apar­ta­men­tos se es­pe­lham em dois eixos; co­zi­nhas e áreas de ser­vi­ço se agru­pam de costas umas para as outras, junto às pru­ma­das, e as salas abrem direto para o hall.",
                 imagens: ["img/vv_fachada.jpg", "img/vv_fachada2.jpg", "img/vv_planta.jpg"]
+            },
+            outros: {
+                titulo: "Outros projetos",
+                categoria: "Residencial e comercial",
+                descricao: "Se­le­ção de ima­gens de pro­je­tos re­si­den­ci­ais e co­mer­ci­ais de­sen­vol­vi­dos na Granja Viana Ar­qui­te­tu­ra & Cons­tru­ção: fa­cha­das de re­si­dên­cias, áreas gour­met e de lazer, in­te­ri­o­res e um es­cri­tó­rio corporativo. Ima­gens: renderizações.",
+                materiais: "Nas fa­cha­das, vo­lu­mes em ba­lan­ço, ri­pa­dos de ma­dei­ra, pedra e ilu­mi­na­ção em­bu­ti­da; nas áreas de lazer, decks de ma­dei­ra, co­bo­gós, per­go­la­dos e jar­dins ver­ti­cais li­ga­dos à pis­ci­na; nos in­te­ri­o­res e no es­cri­tó­rio, mar­ce­na­ria sob medida com pai­néis ama­dei­ra­dos, nichos ilu­mi­na­dos e es­tan­tes vazadas.",
+                imagens: ["img/gv_02.jpg", "img/gv_03.jpg", "img/gv_05.jpg", "img/gv_06.jpg", "img/gv_07.jpg", "img/gv_14.jpg", "img/gv_09.jpg", "img/gv_10.jpg", "img/gv_11.jpg", "img/gv_12.jpg", "img/gv_13.jpg", "img/gv_15.jpg", "img/gv_16.jpg", "img/gv_17.jpg", "img/gv_19.jpg", "img/gv_20.jpg", "img/gv_21.jpg", "img/gv_23.jpg", "img/gv_22.jpg", "img/gv_24.jpg"]
             }
         };
 
@@ -1670,7 +1685,10 @@
                 materiais_en: "Grey porce­lain tiles, wood-effect vinyl floor­ing, brick slips, burnt-cement paint and black marble basin counters. On the façade, a wood-effect ACM panel with an il­lu­mi­nat­ed sign and a 12 mm smoked-glass shopfront; in the salon, 4000 K track spots and LED strips in the joinery." },
             vitorello: { categoria: "Residential",
                 descricao_en: "A four-storey res­i­den­tial build­ing with four 43.69 m² apart­ments per floor around a cen­tral hall and staircase. Each apart­ment has an open living and dining room, kitchen, laun­dry, bal­cony, bath­room and two bedrooms. Co­or­di­na­tion and layout plan by Dan­niela Teixeira. Images: renderings.",
-                materiais_en: "The four apart­ments mirror each other on two axes; kitchens and laun­dries sit back to back beside the ser­vice risers, and the living rooms open straight onto the hall." }
+                materiais_en: "The four apart­ments mirror each other on two axes; kitchens and laun­dries sit back to back beside the ser­vice risers, and the living rooms open straight onto the hall." },
+            outros: { categoria: "Residential and commercial",
+                descricao_en: "A se­lec­tion of images from res­i­den­tial and com­mer­cial projects de­vel­oped at Granja Viana Ar­quite­tu­ra & Con­strução: house façades, out­door kitchens and leisure areas, in­te­ri­ors and a cor­po­rate office. Images: renderings.",
+                materiais_en: "On the façades, can­tilevered vol­umes, timber slats, stone and re­cessed light­ing; in the leisure areas, timber decks, breeze blocks, per­go­las and green walls open­ing onto the pool; in the in­te­ri­ors and the office, be­spoke join­ery with wood panels, lit niches and open shelving." }
         };
         const modalLabels = {
             pt: { local: 'Localização', ano: 'Ano', area: 'Área', categoria: 'Categoria', materiais: 'Materiais e soluções', imagem: 'Imagem', de: 'de', anterior: 'Imagem anterior', proxima: 'Próxima imagem', fechar: 'Fechar', abrir: 'Ver projeto' },
@@ -1841,7 +1859,7 @@
                 btn.classList.add('active');
                 const filter = btn.getAttribute('data-filter');
                 projetosItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-categoria') === filter) {
+                    if (filter === 'all' || item.getAttribute('data-categoria').split(' ').includes(filter)) {
                         item.style.display = 'block';
                         setTimeout(() => item.style.opacity = '1', 10);
                     } else {
@@ -1921,6 +1939,7 @@
                 proj6_titulo: "Casa Avaré", proj6_desc: "Residência Unifamiliar",
                 proj7_titulo: "Stylish Hair", proj7_desc: "Salão e Barbearia",
                 proj8_titulo: "Villa Vitorello", proj8_desc: "Edifício Residencial",
+                proj9_titulo: "Outros projetos", proj9_desc: "Fachadas, Lazer e Interiores",
                 contato_titulo: "Entre em Contato", contato_nome: "Seu nome",
                 contato_mensagem: "Conte um pouco sobre o seu projeto", contato_botao: "Enviar pelo WhatsApp",
                 form_erro: "Preencha seu nome e a mensagem.", form_ok: "O WhatsApp foi aberto com a sua mensagem. É só tocar em enviar.",
@@ -1952,6 +1971,7 @@
                 proj6_titulo: "Casa Avaré", proj6_desc: "Single-family House",
                 proj7_titulo: "Stylish Hair", proj7_desc: "Hair Salon and Barbershop",
                 proj8_titulo: "Villa Vitorello", proj8_desc: "Residential Building",
+                proj9_titulo: "Other projects", proj9_desc: "Façades, Leisure and Interiors",
                 contato_titulo: "Contact Us", contato_nome: "Your name",
                 contato_mensagem: "Tell me a little about your project", contato_botao: "Send via WhatsApp",
                 form_erro: "Please fill in your name and message.", form_ok: "WhatsApp is open with your message. Just tap send.",
