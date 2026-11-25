@@ -1368,14 +1368,25 @@
             .reveal { opacity: 1; transform: none; }
             .hero { background-attachment: scroll; }
         }
+
+        /* ===== MELHORIAS: contraste do topo, entrada mais rápida, botão de orçamento ===== */
+        .hero {
+            background-image:
+                radial-gradient(ellipse at center, rgba(30,24,20,0.45) 0%, rgba(30,24,20,0.15) 70%),
+                linear-gradient(rgba(30,24,20,0.40), rgba(30,24,20,0.62)),
+                url('hero-principal.jpg');
+        }
+        .hero-content { animation-duration: 0.6s; }
+        .hero-botoes { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .hero .btn-primario { background: #A8854F; border-color: #A8854F; color: #F3EEE6; }
+        .hero .btn-primario:hover { background: #8F6F3E; border-color: #8F6F3E; }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-content, .reveal { animation: none; transition: none; opacity: 1; transform: none; }
+        }
     </style>
 </head>
 <body>
-    <!-- PRELOADER -->
-    <div class="preloader" id="preloader">
-        <div class="loader"></div>
-    </div>
-    
+
     <header id="header">
         <a href="#hero" class="logo">
             <img src="logo-bege.png" alt="Logo Danniela Teixeira" class="logo-img" width="760" height="182">
@@ -1400,7 +1411,10 @@
         <div class="hero-content">
             <h1 data-i18n="hero_titulo">Arquitetura e interiores, do briefing à obra</h1>
             <p data-i18n="hero_subtitulo">Projetos residenciais e comerciais com projeto executivo completo e acompanhamento próximo da execução.</p>
-            <a href="#projetos" class="btn" data-i18n="hero_botao">Conheça os Projetos</a>
+            <div class="hero-botoes">
+                <a href="https://wa.me/5511924806916?text=Ol%C3%A1%2C%20Danniela!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn btn-primario" data-i18n="hero_orcamento">Solicitar orçamento</a>
+                <a href="#projetos" class="btn" data-i18n="hero_botao">Conheça os Projetos</a>
+            </div>
         </div>
     </section>
 
@@ -1541,7 +1555,7 @@
 
     <footer>
         <div class="footer-buttons">
-            <a href="https://wa.me/353833684707" target="_blank" rel="noopener noreferrer" class="footer-btn whatsapp">
+            <a href="https://wa.me/5511924806916" target="_blank" rel="noopener noreferrer" class="footer-btn whatsapp">
                 <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.9 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
                 </svg>
@@ -1569,7 +1583,7 @@
         </svg>
     </button>
 
-    <a href="https://wa.me/353833684707" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <a href="https://wa.me/5511924806916" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
         <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.9 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
         </svg>
@@ -1819,15 +1833,6 @@
             }, { passive: true });
         })();
 
-        // PRELOADER: hides as soon as the page structure and fonts are ready (max 2.5 s),
-        // instead of waiting for every image to finish downloading
-        (() => {
-            const hide = () => document.getElementById('preloader').classList.add('hide');
-            const ready = () => (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(hide, 150));
-            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready); else ready();
-            setTimeout(hide, 2500);
-        })();
-        
         // HEADER SCROLL EFFECT
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
@@ -1888,7 +1893,7 @@
         const formMessage = document.getElementById('formMessage');
         
         // The form keeps no data: it only opens WhatsApp with the text the visitor typed.
-        const WHATSAPP = '353833684707';
+        const WHATSAPP = '5511924806916';
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const t = translations[currentLang];
@@ -1930,7 +1935,7 @@
                 sd4t: "Europa", sd4: "intercâmbio de oito meses em Dublin, na Irlanda",
                 sobre_clientes_t: "Clientes comerciais",
                 hero_titulo: "Arquitetura e interiores, do briefing à obra", hero_subtitulo: "Projetos residenciais e comerciais com projeto executivo completo e acompanhamento próximo da execução.",
-                hero_botao: "Conheça os Projetos", sobre_titulo: "Sobre mim",
+                hero_botao: "Conheça os Projetos", hero_orcamento: "Solicitar orçamento", sobre_titulo: "Sobre mim",
                 projetos_titulo: "Projetos em Destaque", proj1_titulo: "Apartamento Samantha", proj1_desc: "Reforma e Interiores", 
                 proj2_titulo: "Cobertura Alex", proj2_desc: "Cobertura Duplex", 
                 proj3_titulo: "B Santana Clinic", proj3_desc: "Clínica de Estética",
@@ -1962,7 +1967,7 @@
                 sd4t: "Europe", sd4: "eight-month exchange in Dublin, Ireland",
                 sobre_clientes_t: "Commercial clients",
                 hero_titulo: "Architecture and interiors, from brief to site", hero_subtitulo: "Residential and commercial projects with full construction documents and close site supervision.",
-                hero_botao: "View Projects", sobre_titulo: "About me",
+                hero_botao: "View Projects", hero_orcamento: "Request a quote", sobre_titulo: "About me",
                 projetos_titulo: "Featured Projects", proj1_titulo: "Apartamento Samantha", proj1_desc: "Renovation and Interiors",
                 proj2_titulo: "Cobertura Alex", proj2_desc: "Duplex Penthouse",
                 proj3_titulo: "B Santana Clinic", proj3_desc: "Aesthetics Clinic",
